@@ -87,6 +87,8 @@
   --shadow-sm: 0 1px 3px oklch(0.1 0.01 240 / 0.08);
   --shadow-md: 0 4px 16px oklch(0.1 0.01 240 / 0.10);
   --shadow-lg: 0 12px 40px oklch(0.1 0.01 240 / 0.14);
+  /* Always-dark surface — used by sections that must stay dark in every theme */
+  --color-dark-panel: #0f1117;
 }
 
 /* Dark mode */
@@ -111,6 +113,7 @@
   --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.25);
   --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
   --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.50);
+  --color-dark-panel: #08090d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -135,6 +138,7 @@
     --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.25);
     --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
     --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.50);
+    --color-dark-panel: #08090d;
   }
 }
 
@@ -183,6 +187,7 @@
   gap: var(--space-3);
   text-decoration: none;
   color: var(--color-text);
+  flex-shrink: 0;
 }
 .nav__logo-text {
   font-family: var(--font-display);
@@ -211,6 +216,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  flex-shrink: 0;
 }
 .nav__mobile-toggle {
   display: none;
@@ -234,9 +240,16 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .nav__links, .nav__cta-btn { display: none; }
   .nav__mobile-toggle { display: flex; }
+}
+
+/* Condense nav at mid-range desktop widths */
+@media (min-width: 961px) and (max-width: 1140px) {
+  .nav__links { gap: var(--space-5); }
+  .nav__logo-text { font-size: var(--text-base); }
+  .nav__cta-btn { padding-inline: var(--space-4); font-size: var(--text-xs); }
 }
 
 /* =============================================
@@ -722,8 +735,8 @@
    THE LOOP — Philosophy
    ============================================= */
 .loop-section {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--color-dark-panel);
+  color: rgba(255,255,255,0.8);
   position: relative;
   overflow: hidden;
 }
@@ -1044,7 +1057,7 @@
    FOOTER
    ============================================= */
 .footer {
-  background: var(--color-text);
+  background: var(--color-dark-panel);
   color: rgba(255,255,255,0.6);
 }
 .footer__top {
