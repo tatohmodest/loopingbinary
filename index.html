@@ -1,701 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-
-
-<!-- Perplexity Computer Attribution -->
 <meta name="generator" content="Looping Binary">
 <meta name="author" content="Looping Binary">
 <meta property="og:see_also" content="https://loopingbinary.com">
-<link rel="author" href="https://loopingbinary.com" >
+<link rel="author" href="https://loopingbinary.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Looping Binary — Technology company based in Douala, Cameroon. We build software, drive digital growth, and train the engineers who build it.">
+<meta property="og:title" content="Looping Binary">
+<meta property="og:description" content="We Build. We Grow. We Train. Technology partner for businesses in Cameroon and Africa.">
+<meta property="og:type" content="website">
+<title>Looping Binary — We Build. We Grow. We Train.</title>
+
+<!-- Fonts: Cabinet Grotesk (display) + Satoshi (body) via Fontshare -->
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Looping Binary — We Build. We Grow. We Train.</title>
-  <meta name="description" content="Looping Binary is a technology company based in Cameroon, operating across Africa. We build software for businesses and train the next generation of African tech talent.">
-  <meta property="og:title" content="Looping Binary — We Build. We Grow. We Train.">
-  <meta property="og:description" content="Software development and tech training for Africa. Based in Douala, Cameroon.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://loopingbinary.com">
-
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./base.css">
-  <link rel="stylesheet" href="./style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Looping Binary",
-    "url": "https://loopingbinary.com",
-    "description": "Technology company building software and training tech talent across Africa.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Douala", "addressCountry": "CM" },
-    "founder": { "@type": "Person", "name": "Tatoh Modest Wilton" },
-    "creator": { "@type": "SoftwareApplication", "name": "Perplexity Computer", "url": "https://www.perplexity.ai/computer" }
-  }
-  </script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- SKIP LINK -->
-  <a href="#main" class="sr-only" style="position:absolute;z-index:999;padding:var(--space-3) var(--space-4);background:var(--lb-green);color:white;border-radius:var(--radius-md);top:var(--space-3);left:var(--space-3);">Skip to content</a>
+<!-- Skip link -->
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- =========================================
-       NAVIGATION
-       ========================================= -->
-  <header class="nav" id="nav" role="banner">
-    <div class="container nav__inner">
-      <a href="/" class="nav__logo" aria-label="Looping Binary — home">
-        <!-- SVG Logo -->
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="36" height="36" rx="8" fill="#0b0c10"/>
-          <!-- Left lobe: green -->
-          <path d="M18 18 C17 14 14.5 11 11 11 C7 11 4 14 4 18 C4 22 7 25 11 25 C14.5 25 17 22 18 18 Z" stroke="#00bf63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- Right lobe: blue -->
-          <path d="M18 18 C19 14 21.5 11 25 11 C29 11 32 14 32 18 C32 22 29 25 25 25 C21.5 25 19 22 18 18 Z" stroke="#0097b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- Center crossover dot -->
-          <circle cx="18" cy="18" r="1.2" fill="#ffffff" opacity="0.6"/>
-        </svg>
-        <span class="nav__logo-text">Looping Binary</span>
-      </a>
+<!-- ═══════════════════════════════════════════════════════ NAV -->
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <!-- Logo SVG -->
+    <a href="/" class="nav-logo" aria-label="Looping Binary — home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Infinity-loop mark: two interlocked circles forming ∞ -->
+        <path d="M10 16 C10 11.6 13.6 8 18 8 C22.4 8 26 11.6 26 16 C26 20.4 22.4 24 18 24 C15.2 24 12.8 22.6 11.2 20.4" stroke="#00bf63" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <path d="M22 16 C22 20.4 18.4 24 14 24 C9.6 24 6 20.4 6 16 C6 11.6 9.6 8 14 8 C16.8 8 19.2 9.4 20.8 11.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+      </svg>
+      <span class="nav-wordmark"><span class="nav-lb-loop">Looping</span> <span class="nav-lb-bin">Binary</span></span>
+    </a>
 
-      <nav aria-label="Primary navigation">
-        <ul class="nav__links" role="list">
-          <li><a href="#services" class="nav__link">Services</a></li>
-          <li><a href="#the-loop" class="nav__link">The Loop</a></li>
-          <li><a href="#education" class="nav__link">Education</a></li>
-          <li><a href="#about" class="nav__link">About</a></li>
-          <li><a href="#testimonials" class="nav__link">Partners</a></li>
-        </ul>
-      </nav>
+    <ul class="nav-links" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#the-loop">The Loop</a></li>
+      <li><a href="#education">Programs</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
 
-      <div class="nav__actions">
-        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <a href="https://wa.me/237650318856" target="_blank" rel="noopener noreferrer" class="btn btn--primary nav__cta-btn">Contact Us</a>
-        <button class="nav__mobile-toggle" aria-label="Open menu" aria-expanded="false" id="menu-toggle">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile sidebar overlay -->
-  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
-
-  <!-- Mobile sidebar drawer -->
-  <aside class="sidebar" id="mobile-sidebar" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <div class="sidebar__header">
-      <a href="/" class="nav__logo" aria-label="Looping Binary — home">
-        <svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="36" height="36" rx="8" fill="#0b0c10"/>
-          <path d="M18 18 C17 14 14.5 11 11 11 C7 11 4 14 4 18 C4 22 7 25 11 25 C14.5 25 17 22 18 18 Z" stroke="#00bf63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M18 18 C19 14 21.5 11 25 11 C29 11 32 14 32 18 C32 22 29 25 25 25 C21.5 25 19 22 18 18 Z" stroke="#0097b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <circle cx="18" cy="18" r="1.2" fill="#ffffff" opacity="0.6"/>
-        </svg>
-        <span class="nav__logo-text">Looping Binary</span>
-      </a>
-      <button class="sidebar__close" id="sidebar-close" aria-label="Close menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <div class="nav-actions">
+      <button class="btn-ghost" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
+      <a href="#contact" class="btn-primary">Get in touch</a>
     </div>
 
-    <nav class="sidebar__nav" aria-label="Mobile navigation">
-      <a href="#services" class="sidebar__link">
-        <span class="sidebar__link-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </span>
-        Services
-      </a>
-      <a href="#the-loop" class="sidebar__link">
-        <span class="sidebar__link-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
-        </span>
-        The Loop
-      </a>
-      <a href="#education" class="sidebar__link">
-        <span class="sidebar__link-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </span>
-        Education
-      </a>
-      <a href="#about" class="sidebar__link">
-        <span class="sidebar__link-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </span>
-        About
-      </a>
-      <a href="#testimonials" class="sidebar__link">
-        <span class="sidebar__link-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </span>
-        Partners
-      </a>
-    </nav>
+    <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-    <div class="sidebar__footer">
-      <div class="sidebar__divider"></div>
-      <a href="https://wa.me/237650318856" target="_blank" rel="noopener noreferrer" class="btn btn--primary sidebar__cta">Contact Us</a>
-      <p class="sidebar__tagline">Douala, Cameroon — Building across Africa</p>
-    </div>
-  </aside>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#the-loop">The Loop</a></li>
+      <li><a href="#education">Programs</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary">Get in touch</a>
+  </div>
+</header>
 
-  <main id="main">
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+<main id="main">
+<section class="hero" aria-labelledby="hero-h1">
 
-    <!-- =========================================
-         HERO
-         ========================================= -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero__bg" role="img" aria-label="Abstract tech background with infinity loop in green and blue"></div>
-      <div class="hero__overlay"></div>
-      <div class="container hero__content">
-        <div class="hero__eyebrow">
-          <span class="hero__eyebrow-dot"></span>
-          Douala, Cameroon — Operating across Africa
-        </div>
-        <h1 class="hero__headline">
-          We Build.<br>
-          We Grow.<br>
-          We <em>Train.</em>
-        </h1>
-        <p class="hero__subline">
-          Looping Binary is a technology company that builds serious software for businesses and trains the next generation of African tech talent. The two sides feed each other. That is the loop.
-        </p>
-        <div class="hero__ctas">
-          <a href="#services" class="btn btn--primary btn--lg">Explore Our Work</a>
-          <a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--lg" style="color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.06);">Join the Programs</a>
-        </div>
-      </div>
-      <div class="hero__scroll-hint" aria-hidden="true">
-        <div class="hero__scroll-line"></div>
-        <span>Scroll</span>
-      </div>
-    </section>
+  <!-- Animated canvas background -->
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
 
-    <!-- =========================================
-         MARQUEE — Partners
-         ========================================= -->
-    <div class="marquee-strip" aria-label="Our partners and collaborators">
-      <div class="marquee-inner" aria-hidden="true">
-        <span class="marquee-item"><span class="marquee-separator"></span>Software Development</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Digital Marketing</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Mentorship Programs</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Junior Dev Tournament</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>AI Courses</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Internship Program</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Growth Agency</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Intellex Platform</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="marquee-item"><span class="marquee-separator"></span>Software Development</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Digital Marketing</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Mentorship Programs</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Junior Dev Tournament</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>AI Courses</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Internship Program</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Growth Agency</span>
-        <span class="marquee-item"><span class="marquee-separator"></span>Intellex Platform</span>
-      </div>
+  <!-- Hero illustration — right side -->
+ 
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <div class="hero-inner container">
+    <div class="hero-badge fade-in-up" style="--delay:0ms">
+      <span class="badge-dot"></span>
+      Douala, Cameroon — Operating across Africa
     </div>
 
-    <!-- =========================================
-         SERVICES
-         ========================================= -->
-    <section class="section" id="services" aria-labelledby="services-title">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-label">What We Do</p>
-          <h2 class="section-title" id="services-title">Software that works.<br>Growth that sticks.</h2>
-          <p class="section-body">We sit with a business, understand what they need, and build the thing that solves it. Then we make sure people find it.</p>
-        </div>
+    <h1 id="hero-h1" class="hero-title fade-in-up" style="--delay:80ms">
+      Software that<br>
+      <em class="hero-accent">actually ships.</em>
+    </h1>
 
-        <div class="services-grid">
-          <!-- Featured card -->
-          <article class="service-card service-card--featured reveal">
-            <div>
-              <p class="service-card__number">01</p>
-              <h3 class="service-card__title">Software Development</h3>
-              <p class="service-card__body">
-                Landing pages, full web applications, e-commerce platforms, business dashboards, internal tools. Whatever a business needs to operate better or grow faster online — we build it. We use the right technology for the problem, not the trendiest one.
-              </p>
-              <div class="service-card__tags">
-                <span class="tag tag--green">Web Applications</span>
-                <span class="tag tag--blue">E-Commerce</span>
-                <span class="tag">Dashboards</span>
-                <span class="tag">APIs</span>
-                <span class="tag">Mobile-Ready</span>
-              </div>
-              <a href="https://wa.me/237650318856" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="margin-top:var(--space-8);">Start a Project</a>
-            </div>
-            <div style="position:relative;">
-              <div style="background:var(--color-surface-offset);border-radius:var(--radius-xl);padding:var(--space-6);font-family:var(--font-body);font-size:var(--text-xs);line-height:1.6;color:var(--color-text-muted);border:1px solid var(--color-border);">
-                <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-4);">
-                  <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></span>
-                  <span style="width:10px;height:10px;border-radius:50%;background:#ffbd2e;"></span>
-                  <span style="width:10px;height:10px;border-radius:50%;background:#27c93f;"></span>
-                </div>
-                <div style="color:var(--lb-green);font-weight:700;">// loopingbinary.config.ts</div>
-                <div style="margin-top:var(--space-3);">
-                  <span style="color:var(--lb-blue);">const</span> project = {<br>
-                  &nbsp;&nbsp;<span style="color:var(--lb-green);">client</span>: <span style="color:#f4a460;">"Your Business"</span>,<br>
-                  &nbsp;&nbsp;<span style="color:var(--lb-green);">stack</span>: <span style="color:#f4a460;">"Next.js + Node"</span>,<br>
-                  &nbsp;&nbsp;<span style="color:var(--lb-green);">timeline</span>: <span style="color:#f4a460;">"We move fast"</span>,<br>
-                  &nbsp;&nbsp;<span style="color:var(--lb-green);">result</span>: <span style="color:#f4a460;">"It works"</span><br>
-                  };
-                </div>
-                <div style="margin-top:var(--space-4);color:var(--color-text-faint);">// Delivered on time. No excuses.</div>
-              </div>
-            </div>
-          </article>
+    <p class="hero-sub fade-in-up" style="--delay:160ms">
+      Looping Binary designs and builds digital products for businesses — websites,
+      platforms, applications, and systems. We also grow them and train the engineers who build them.
+    </p>
 
-          <!-- Card 2 -->
-          <article class="service-card reveal">
-            <div class="service-card__accent"></div>
-            <p class="service-card__number">02</p>
-            <h3 class="service-card__title">Digital Growth</h3>
-            <p class="service-card__body">
-              Digital marketing strategy, social media management, ad campaigns, content — the work of making sure the thing we built actually reaches the people it was made for.
-            </p>
-            <div class="service-card__tags">
-              <span class="tag tag--green">Social Media</span>
-              <span class="tag tag--blue">Ad Campaigns</span>
-              <span class="tag">SEO</span>
-              <span class="tag">Content</span>
-            </div>
-          </article>
+    <div class="hero-cta fade-in-up" style="--delay:240ms">
+      <a href="#contact" class="btn-primary btn-lg">Start a project</a>
+      <a href="#services" class="btn-outline btn-lg">See our work</a>
+    </div>
 
-          <!-- Card 3 -->
-          <article class="service-card reveal">
-            <div class="service-card__accent" style="background:radial-gradient(circle, oklch(from var(--lb-blue) l c h / 0.08) 0%, transparent 70%);"></div>
-            <p class="service-card__number">03</p>
-            <h3 class="service-card__title">Growth Agency Partner</h3>
-            <p class="service-card__body">
-              For businesses that want a deeper partnership — embedded in your operation, running your online presence, owning your results. Not a vendor. A partner.
-            </p>
-            <div class="service-card__tags">
-              <span class="tag tag--blue">Embedded Team</span>
-              <span class="tag">Full Ownership</span>
-              <span class="tag">Long-term</span>
-            </div>
-          </article>
-        </div>
+    <div class="hero-stats fade-in-up" style="--delay:360ms">
+      <div class="stat-item">
+        <span class="stat-val" data-count="10" data-suffix="+">10<span class="stat-plus">+</span></span>
+        <span class="stat-label">Business partners</span>
       </div>
-    </section>
-
-    <!-- =========================================
-         THE LOOP — Philosophy
-         ========================================= -->
-    <section class="section loop-section" id="the-loop" aria-labelledby="loop-title">
-      <div class="loop-bg-glow" aria-hidden="true"></div>
-      <div class="container">
-        <div class="loop-grid">
-          <div class="reveal">
-            <p class="section-label">The Loop</p>
-            <h2 class="section-title" id="loop-title">The company and the school are one thing.</h2>
-            <p class="section-body">
-              The company does better work because the people in it were trained rigorously. The training is better because the people teaching it are actively building things in the real world. That is the loop. And it is the whole point.
-            </p>
-
-            <div class="loop-stats">
-              <div class="loop-stat reveal">
-                <div class="loop-stat__number">10+</div>
-                <div class="loop-stat__label">Business Partners</div>
-              </div>
-              <div class="loop-stat reveal">
-                <div class="loop-stat__number">1K+</div>
-                <div class="loop-stat__label">Courses on Intellex</div>
-              </div>
-              <div class="loop-stat reveal">
-                <div class="loop-stat__number">🌍</div>
-                <div class="loop-stat__label" style="color:rgba(255,255,255,0.5);">Pan-African Vision</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="loop-diagram reveal" aria-label="The loop explained">
-            <div class="loop-node">
-              <div class="loop-node__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <div>
-                <div class="loop-node__title">We Build Software</div>
-                <div class="loop-node__desc">Real products. Client work. Live systems that businesses depend on every day.</div>
-              </div>
-            </div>
-            <div class="loop-connector" aria-hidden="true"></div>
-            <div class="loop-node">
-              <div class="loop-node__icon" style="background: oklch(from var(--lb-blue) l c h / 0.12);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lb-blue)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <div>
-                <div class="loop-node__title">We Train Talent</div>
-                <div class="loop-node__desc">Mentorship, tournaments, internships. Learning by building real things with real professionals.</div>
-              </div>
-            </div>
-            <div class="loop-connector" style="background:linear-gradient(to bottom, var(--lb-blue), var(--lb-green));" aria-hidden="true"></div>
-            <div class="loop-node">
-              <div class="loop-node__icon" style="background: linear-gradient(135deg, oklch(from var(--lb-green) l c h / 0.12), oklch(from var(--lb-blue) l c h / 0.12));">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad)" stroke-width="2">
-                  <defs><linearGradient id="icon-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00bf63"/><stop offset="100%" stop-color="#0097b2"/></linearGradient></defs>
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="loop-node__title">Both Get Better</div>
-                <div class="loop-node__desc">The trained become the builders. The builders become the teachers. The loop compounds.</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <span class="stat-val" data-count="3">3</span>
+        <span class="stat-label">Service lines</span>
       </div>
-    </section>
-
-    <!-- =========================================
-         EDUCATION — Programs
-         ========================================= -->
-    <section class="section education-section" id="education" aria-labelledby="education-title">
-      <div class="container--narrow">
-        <div class="reveal">
-          <p class="section-label">Education Arm</p>
-          <h2 class="section-title" id="education-title">Not to fill classrooms.<br>To build capability.</h2>
-          <p class="section-body">
-            We train people who want to work in tech and are serious about real skills — not certificates, not credentials. Real capability. The best of them end up working with us.
-          </p>
-        </div>
-
-        <div class="education-grid">
-          <div class="education-image-wrap reveal">
-            <img
-              src="./assets/education-illustration.png"
-              alt="Young African developers working together on laptops, collaborating on real code"
-              loading="lazy"
-              width="600"
-              height="400"
-            >
-          </div>
-
-          <div class="programs-list reveal">
-            <article class="program-item program-item--active">
-              <div class="program-item__header">
-                <h3 class="program-item__name">Internship Program</h3>
-                <span class="program-item__badge">Most Serious</span>
-              </div>
-              <p class="program-item__desc">You apply. You get accepted. You work with us on live LB projects, client work, real deliverables with real deadlines. This is not a simulation. The best interns stay.</p>
-            </article>
-
-            <article class="program-item">
-              <div class="program-item__header">
-                <h3 class="program-item__name">Junior Dev Tournament</h3>
-                <span class="program-item__badge program-item__badge--blue">6 Weeks</span>
-              </div>
-              <p class="program-item__desc">Team-based tournament. Build real projects. Ship them on Demo Day. The leaderboard is live. The stakes are real. The best performers get noticed.</p>
-            </article>
-
-            <article class="program-item">
-              <div class="program-item__header">
-                <h3 class="program-item__name">Mentorship Program</h3>
-                <span class="program-item__badge">1-on-1 &amp; Group</span>
-              </div>
-              <p class="program-item__desc">One-on-one and group mentorship with active professionals inside LB. Work on real problems. Get real feedback. Learn by doing it alongside people who do it every day.</p>
-            </article>
-
-            <article class="program-item">
-              <div class="program-item__header">
-                <h3 class="program-item__name">AI Courses</h3>
-                <span class="program-item__badge program-item__badge--blue">New</span>
-              </div>
-              <p class="program-item__desc">How to build with AI, use it in real products, and integrate it into business workflows. The skills reshaping every industry right now.</p>
-            </article>
-
-            <article class="program-item">
-              <div class="program-item__header">
-                <h3 class="program-item__name">Self-Paced Courses</h3>
-              </div>
-              <p class="program-item__desc">Web development, design, data, marketing, and business. Built around the actual skills our teams use. Move at your own pace on Intellex.</p>
-            </article>
-
-            <a href="https://intern.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="margin-top:var(--space-2);width:100%;justify-content:center;">Apply to a Program</a>
-          </div>
-        </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <span class="stat-val" data-count="1000" data-display="1k" data-suffix="+">1k<span class="stat-plus">+</span></span>
+        <span class="stat-label">Courses on Intellex</span>
       </div>
-    </section>
-
-    <!-- =========================================
-         ABOUT
-         ========================================= -->
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container--narrow">
-        <div class="about-grid reveal">
-          <div>
-            <p class="section-label">About Us</p>
-            <h2 class="section-title" id="about-title">Building toward being Africa's technology partner of choice.</h2>
-            <p class="section-body" style="margin-bottom:var(--space-5);">
-              Looping Binary is building toward becoming the technology partner of choice for businesses across Africa — the company you call when you need something built and you need it to actually work.
-            </p>
-            <p class="section-body">
-              On the education side, we are building the most serious training ground for African tech talent on the continent. Not the biggest. The most serious.
-            </p>
-          </div>
-          <div class="about-cards">
-            <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);">
-              <div style="font-family:var(--font-display);font-size:var(--text-base);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">Modest Wilton</div>
-              <div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-3);">Founder & CEO, Looping Binary</div>
-              <div style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;">Building Looping Binary from Douala, Cameroon — one product, one trained developer at a time. The goal is Africa. The standard is world-class.</div>
-            </div>
-            <div style="background:linear-gradient(135deg,oklch(from var(--lb-green) l c h / 0.06),oklch(from var(--lb-blue) l c h / 0.06));border:1px solid oklch(from var(--lb-green) l c h / 0.15);border-radius:var(--radius-xl);padding:var(--space-6);">
-              <div style="font-family:var(--font-display);font-size:var(--text-base);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">For businesses</div>
-              <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Who need software built and do not want to gamble on who builds it.</div>
-            </div>
-            <div style="background:linear-gradient(135deg,oklch(from var(--lb-blue) l c h / 0.06),oklch(from var(--lb-green) l c h / 0.06));border:1px solid oklch(from var(--lb-blue) l c h / 0.15);border-radius:var(--radius-xl);padding:var(--space-6);">
-              <div style="font-family:var(--font-display);font-size:var(--text-base);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">For developers</div>
-              <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Who want to work in tech and are serious about developing real skills. Not certificates. Real capability.</div>
-            </div>
-          </div>
-        </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <span class="stat-val" data-count="100" data-suffix="%">100<span class="stat-pct">%</span></span>
+        <span class="stat-label">Built in-house</span>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- =========================================
-         TESTIMONIALS
-         ========================================= -->
-    <section class="section" id="testimonials" style="background:var(--color-surface-2);" aria-labelledby="testimonials-title">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-label">Partners & Clients</p>
-          <h2 class="section-title" id="testimonials-title">What they say about us.</h2>
-        </div>
-        <div class="testimonials-grid">
-          <article class="testimonial-card testimonial-card--featured reveal">
-            <p class="testimonial-quote">"Looping Binary came in, understood exactly what our business needed, and shipped it. No back and forth. No guessing. They built the thing that solved the problem — and our revenue grew within the first quarter."</p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">NA</div>
-              <div>
-                <div class="testimonial-name">Nadia Ekoko</div>
-                <div class="testimonial-role">CEO, Aperture Labs Cameroon</div>
-              </div>
-            </div>
-          </article>
+  <!-- Scroll cue -->
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
-          <article class="testimonial-card reveal">
-            <p class="testimonial-quote">"What sets LB apart is that the people teaching are the people building. The mentorship program changed the trajectory of my career."</p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">VA</div>
-              <div>
-                <div class="testimonial-name">Victor Adebayo</div>
-                <div class="testimonial-role">Junior Dev Tournament Alumni</div>
-              </div>
-            </div>
-          </article>
+<!-- ═══════════════════════════════════════════════════════ MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Software Development</span><span class="marquee-dot">·</span>
+    <span>Digital Growth</span><span class="marquee-dot">·</span>
+    <span>Web Applications</span><span class="marquee-dot">·</span>
+    <span>API Development</span><span class="marquee-dot">·</span>
+    <span>E-Commerce</span><span class="marquee-dot">·</span>
+    <span>Growth Strategy</span><span class="marquee-dot">·</span>
+    <span>Developer Training</span><span class="marquee-dot">·</span>
+    <span>Tech Partnerships</span><span class="marquee-dot">·</span>
+    <!-- repeat -->
+    <span>Software Development</span><span class="marquee-dot">·</span>
+    <span>Digital Growth</span><span class="marquee-dot">·</span>
+    <span>Web Applications</span><span class="marquee-dot">·</span>
+    <span>API Development</span><span class="marquee-dot">·</span>
+    <span>E-Commerce</span><span class="marquee-dot">·</span>
+    <span>Growth Strategy</span><span class="marquee-dot">·</span>
+    <span>Developer Training</span><span class="marquee-dot">·</span>
+    <span>Tech Partnerships</span><span class="marquee-dot">·</span>
+  </div>
+</div>
 
-          <article class="testimonial-card reveal">
-            <p class="testimonial-quote">"We needed a platform that could scale across our schools in three countries. LB built it, and it works. That is all we needed."</p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">MN</div>
-              <div>
-                <div class="testimonial-name">Marie Nguema</div>
-                <div class="testimonial-role">Director, NovaTech Group</div>
-              </div>
-            </div>
-          </article>
+<!-- ═══════════════════════════════════════════════════════ SERVICES -->
+<section class="services section-gap" id="services" aria-labelledby="services-title">
+  <div class="container">
 
-          <article class="testimonial-card reveal">
-            <p class="testimonial-quote">"The internship is the most real working experience I have had. Real clients, real timelines, real feedback. It is how you actually learn."</p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar" aria-hidden="true">KB</div>
-              <div>
-                <div class="testimonial-name">Kwame Boateng</div>
-                <div class="testimonial-role">LB Intern, 2024 Cohort</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="section-header">
+      <p class="eyebrow">Services</p>
+      <h2 id="services-title" class="section-title">Everything your business<br>needs to operate online.</h2>
+    </div>
 
-    <!-- =========================================
-         CTA
-         ========================================= -->
-    <section class="section cta-section" id="contact" aria-labelledby="cta-title">
-      <div class="container--narrow" style="position:relative;z-index:1;">
-        <div class="reveal" style="text-align:center;">
-          <p class="section-label" style="color:rgba(255,255,255,0.8);justify-content:center;">Get Started</p>
-          <h2 class="section-title" id="cta-title" style="color:white;max-width:16ch;margin-inline:auto;">Ready to build something serious?</h2>
-        </div>
-        <div class="cta-cards reveal">
-          <div class="cta-card">
-            <h3 class="cta-card__title">For Businesses</h3>
-            <p class="cta-card__body">Tell us what you need built. We will sit down with you, understand the problem, and tell you exactly how we will solve it.</p>
-            <a href="https://wa.me/237650318856" target="_blank" rel="noopener noreferrer" class="btn btn--white">Start a Project</a>
-          </div>
-          <div class="cta-card">
-            <h3 class="cta-card__title">For Developers</h3>
-            <p class="cta-card__body">Apply for the internship, join the tournament, or start a course. All paths lead to the same place — real skills, real work, real results.</p>
-            <a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="btn btn--outline-white">Apply Now</a>
+    <!-- Services illustration -->
+    <div class="services-illustration-wrap" aria-hidden="true">
+      <img src="assets/services-illustration.png" alt="" width="1200" height="675" loading="lazy" class="services-illus-img reveal-fade">
+    </div>
+
+    <!-- Large asymmetric service layout -->
+    <div class="services-grid">
+
+      <!-- Featured: Software Dev — large card -->
+      <article class="service-card service-card--featured reveal-fade">
+        <div class="service-card-inner">
+          <div class="service-num">01</div>
+          <h3 class="service-name">Software<br>Development</h3>
+          <p class="service-desc">We build the digital infrastructure your business runs on. From a first landing page to a fully custom platform — designed precisely, built to last.</p>
+          <ul class="service-list" role="list">
+            <li>Landing pages & company websites</li>
+            <li>Web applications & platforms</li>
+            <li>E-commerce & payment systems</li>
+            <li>Dashboards & admin panels</li>
+            <li>APIs & back-end systems</li>
+          </ul>
+          <div class="service-cta-row">
+            <a href="#contact" class="btn-text">Start a project <span aria-hidden="true">→</span></a>
           </div>
         </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- =========================================
-       FOOTER
-       ========================================= -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__top">
-      <div>
-        <a href="/" class="nav__logo" style="color:rgba(255,255,255,0.9);" aria-label="Looping Binary home">
-          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="36" height="36" rx="8" fill="#1a1d28"/>
-            <path d="M18 18 C17 14 14.5 11 11 11 C7 11 4 14 4 18 C4 22 7 25 11 25 C14.5 25 17 22 18 18 Z" stroke="#00bf63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M18 18 C19 14 21.5 11 25 11 C29 11 32 14 32 18 C32 22 29 25 25 25 C21.5 25 19 22 18 18 Z" stroke="#0097b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle cx="18" cy="18" r="1.2" fill="#ffffff" opacity="0.4"/>
+        <!-- Visual: animated circuit nodes -->
+        <div class="service-visual" aria-hidden="true">
+          <svg class="circuit-svg" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="80" x2="160" y2="80" stroke="#00bf63" stroke-width="1" opacity="0.3"/>
+            <line x1="160" y1="80" x2="280" y2="140" stroke="#00bf63" stroke-width="1" opacity="0.3"/>
+            <line x1="160" y1="80" x2="160" y2="200" stroke="#00bf63" stroke-width="1" opacity="0.3"/>
+            <line x1="40" y1="200" x2="280" y2="200" stroke="#00bf63" stroke-width="1" opacity="0.3"/>
+            <circle cx="40" cy="80" r="5" fill="#00bf63" opacity="0.6" class="circuit-node"/>
+            <circle cx="160" cy="80" r="7" fill="#00bf63" opacity="0.9" class="circuit-node circuit-node--main"/>
+            <circle cx="280" cy="140" r="5" fill="#00bf63" opacity="0.6" class="circuit-node"/>
+            <circle cx="160" cy="200" r="5" fill="#00bf63" opacity="0.6" class="circuit-node"/>
+            <circle cx="40" cy="200" r="4" fill="#0097b2" opacity="0.5" class="circuit-node"/>
+            <circle cx="280" cy="200" r="4" fill="#0097b2" opacity="0.5" class="circuit-node"/>
+            <circle cx="160" cy="80" r="14" stroke="#00bf63" stroke-width="1" opacity="0.25" class="circuit-ring"/>
           </svg>
-          <span style="font-family:var(--font-display);font-size:var(--text-base);font-weight:700;color:rgba(255,255,255,0.9);">Looping Binary</span>
+        </div>
+      </article>
+
+      <!-- Right column: two smaller cards -->
+      <div class="services-right">
+        <article class="service-card reveal-fade" style="--reveal-delay:100ms">
+          <div class="service-num">02</div>
+          <h3 class="service-name">Digital Growth</h3>
+          <p class="service-desc">We run your digital marketing — social media, paid ads, SEO, content — with the same rigour we apply to code.</p>
+          <ul class="service-list" role="list">
+            <li>Social media strategy & management</li>
+            <li>Paid advertising (Facebook, Google)</li>
+            <li>SEO & organic visibility</li>
+            <li>Content creation & copywriting</li>
+          </ul>
+          <a href="#contact" class="btn-text">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="service-card service-card--accent reveal-fade" style="--reveal-delay:200ms">
+          <div class="service-num">03</div>
+          <h3 class="service-name">Growth Agency Partner</h3>
+          <p class="service-desc">An embedded tech and marketing team. We own the work — strategy, execution, results. You focus on running the business.</p>
+          <ul class="service-list" role="list">
+            <li>Dedicated embedded team</li>
+            <li>Full retainer model</li>
+            <li>Strategy + execution combined</li>
+            <li>Scales as you grow</li>
+          </ul>
+          <a href="#contact" class="btn-text">Explore partnership <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ THE LOOP -->
+<section class="the-loop section-gap" id="the-loop" aria-labelledby="loop-title">
+  <div class="container">
+    <div class="loop-layout">
+
+      <!-- Left: copy -->
+      <div class="loop-copy reveal-fade">
+        <p class="eyebrow eyebrow--light">The Loop</p>
+        <h2 id="loop-title" class="section-title">Why our work is<br>different.</h2>
+
+        <blockquote class="loop-quote">
+          <p>The company does better work because the people in it were trained rigorously. The training is better because the people teaching it are actively building things in the real world.</p>
+          <footer>That is the loop. And it is the whole point.</footer>
+        </blockquote>
+
+        <p class="loop-sub">For you: every project is staffed with engineers who have been tested — not just hired from a CV.</p>
+      </div>
+
+      <!-- Right: loop diagram -->
+      <div class="loop-diagram reveal-fade" style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="loop-node loop-node--company">
+          <span class="loop-node-label">The Company</span>
+          <ul role="list">
+            <li>Delivers real software</li>
+            <li>Works on real deadlines</li>
+            <li>Builds real products</li>
+          </ul>
+        </div>
+
+        <div class="loop-connector">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="loop-arrow-svg">
+            <!-- Top arrow: Company → School -->
+            <path id="arrow-top" d="M8 20 Q40 8 72 20" stroke="#00bf63" stroke-width="1.5" fill="none"/>
+            <polygon points="72,20 64,14 66,24" fill="#00bf63" opacity="0" class="arrow-head-top"/>
+            <!-- Bottom arrow: School → Company -->
+            <path id="arrow-bottom" d="M72 60 Q40 72 8 60" stroke="#0097b2" stroke-width="1.5" fill="none"/>
+            <polygon points="8,60 16,66 14,56" fill="#0097b2" opacity="0" class="arrow-head-bottom"/>
+          </svg>
+          <span class="loop-connector-label">feeds</span>
+        </div>
+
+        <div class="loop-node loop-node--school">
+          <span class="loop-node-label">The School</span>
+          <ul role="list">
+            <li>Trains developers rigorously</li>
+            <li>Uses real project work</li>
+            <li>Produces job-ready engineers</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ WHY LB -->
+<section class="why-lb section-gap" id="why" aria-labelledby="why-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Why Looping Binary</p>
+      <h2 id="why-title" class="section-title">Local knowledge.<br>Global standard.</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item reveal-fade" style="--reveal-delay:0ms">
+        <div class="why-num">01</div>
+        <h3>We are from here</h3>
+        <p>We operate from Cameroon. We understand the market — payment systems, connectivity constraints, business culture. We build for the African context, not a template copied from Europe.</p>
+      </div>
+      <div class="why-item reveal-fade" style="--reveal-delay:80ms">
+        <div class="why-num">02</div>
+        <h3>Trained team, not random hires</h3>
+        <p>Every engineer on your project went through a rigorous program — live projects, real deadlines, active mentorship. No guesses in the staffing.</p>
+      </div>
+      <div class="why-item reveal-fade" style="--reveal-delay:160ms">
+        <div class="why-num">03</div>
+        <h3>End-to-end, not hand-off</h3>
+        <p>Strategy, design, development, growth — one partner, one point of accountability. No bouncing between agencies and freelancers.</p>
+      </div>
+      <div class="why-item reveal-fade" style="--reveal-delay:240ms">
+        <div class="why-num">04</div>
+        <h3>We are operators, not contractors</h3>
+        <p>Looping Binary runs its own products. When we advise you, we have skin in the game.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ EDUCATION -->
+<section class="education section-gap" id="education" aria-labelledby="edu-title">
+  <div class="container">
+    <div class="edu-layout">
+
+      <div class="edu-header reveal-fade">
+        <p class="eyebrow">Education Programs</p>
+        <h2 id="edu-title" class="section-title">We train the next<br>generation of<br>African developers.</h2>
+        <p class="edu-intro">The school is not a side project. It is how the company stays sharp — and how we give serious developers a real path into tech.</p>
+        <a href="https://intellex.loopingbinary.com" class="btn-outline" target="_blank" rel="noopener">Explore Intellex <span aria-hidden="true">↗</span></a>
+
+      </div>
+
+      <div class="edu-programs reveal-fade" style="--reveal-delay:100ms">
+        <a href="https://intern.loopingbinary.com" class="program-card" target="_blank" rel="noopener">
+          <div class="program-card-top">
+            <span class="program-tag">Most rigorous</span>
+          </div>
+          <h3>Internship Program</h3>
+          <p>Work on live LB projects. Real deadlines. Real clients. Real consequences. The most demanding path we offer.</p>
         </a>
-        <p class="footer__brand-text">Technology company based in Douala, Cameroon. We build software for businesses and train the next generation of African tech talent.</p>
+
+        <a href="https://juniordev.loopingbinary.com" class="program-card" target="_blank" rel="noopener">
+          <div class="program-card-top">
+            <span class="program-tag">Competitive</span>
+          </div>
+          <h3>Junior Dev Tournament</h3>
+          <p>6-week team competition with live leaderboard, Demo Day, and real evaluation by active engineers.</p>
+        </a>
+
+        <div class="program-card program-card--static reveal-fade" style="--reveal-delay:160ms">
+          <div class="program-card-top">
+            <span class="program-tag">1-on-1</span>
+          </div>
+          <h3>Mentorship Program</h3>
+          <p>Direct guidance from professionals actively building at Looping Binary. Group and individual tracks.</p>
+        </div>
+
+        <div class="program-card program-card--static reveal-fade" style="--reveal-delay:200ms">
+          <div class="program-card-top">
+            <span class="program-tag">1,000+ courses</span>
+          </div>
+          <h3>Intellex Platform</h3>
+          <p>Self-paced courses in web development, design, data, marketing, and AI on our own learning platform.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="footer__col-title">Services</h3>
-        <ul class="footer__links" role="list">
-          <li><a href="#services" class="footer__link">Software Development</a></li>
-          <li><a href="#services" class="footer__link">Digital Marketing</a></li>
-          <li><a href="#services" class="footer__link">Growth Agency</a></li>
-          <li><a href="mailto:loopingbinary@gmail.com" class="footer__link">Partner with Us</a></li>
-        </ul>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ ABOUT -->
+<section class="about section-gap" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-copy reveal-fade">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title" class="section-title">Built from Douala.<br>Built for Africa.</h2>
+        <p>Looping Binary was founded because the gap between what African businesses need digitally and what they can actually get built is enormous. Foreign agencies don't understand the context. Local freelancers can't deliver at scale. We exist to close that gap.</p>
+        <p>We are a technology company and an education institution in one. The two reinforce each other — better engineers build better products, better products attract better engineers.</p>
+        <div class="about-founder">
+          <div class="founder-info">
+            <span class="founder-name">Tatoh Modest Wilton</span>
+            <span class="founder-role">Founder & CEO, Looping Binary</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 class="footer__col-title">Education</h3>
-        <ul class="footer__links" role="list">
-          <li><a href="https://intern.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="footer__link">Internship Program</a></li>
-          <li><a href="https://juniordev.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="footer__link">Junior Dev Tournament</a></li>
-          <li><a href="#education" class="footer__link">Mentorship</a></li>
-          <li><a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="footer__link">Intellex Courses</a></li>
-          <li><a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="footer__link">AI Courses</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="footer__col-title">Contact</h3>
-        <ul class="footer__links" role="list">
-          <li><a href="mailto:loopingbinary@gmail.com" class="footer__link">loopingbinary@gmail.com</a></li>
-          <li><a href="https://wa.me/237650318856" target="_blank" rel="noopener noreferrer" class="footer__link">WhatsApp +237 650 318 856</a></li>
-          <li><a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener noreferrer" class="footer__link">intellex.loopingbinary.com</a></li>
-          <li style="color:rgba(255,255,255,0.25);font-size:var(--text-xs);margin-top:var(--space-3);">Douala V, Cameroon</li>
-        </ul>
+
+      <div class="about-visual reveal-fade" style="--reveal-delay:120ms" aria-hidden="true">
+        <!-- Abstract data visualization: commit graph style -->
+        <div class="commit-grid">
+          <!-- JavaScript fills this -->
+        </div>
+        <div class="about-stat-block">
+          <div class="about-stat">
+            <span class="about-stat-val">2024</span>
+            <span class="about-stat-lbl">Founded</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-val">Douala V</span>
+            <span class="about-stat-lbl">Headquarters</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-val">Africa</span>
+            <span class="about-stat-lbl">Operating region</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container footer__bottom">
-      <p class="footer__copy">&copy; 2026 Looping Binary. All rights reserved. Douala, Cameroon.</p>
-      <div class="footer__attribution">
-        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ CTA / CONTACT -->
+<section class="contact section-gap" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-inner reveal-fade">
+      <p class="eyebrow eyebrow--light">Get Started</p>
+      <h2 id="contact-title" class="contact-title">Ready to build<br>something real?</h2>
+      <p class="contact-sub">One conversation. No commitments. We will tell you honestly whether we are the right fit and what it would take.</p>
+
+      <div class="contact-options">
+        <a href="https://wa.me/237650318856" class="contact-card contact-card--wa" target="_blank" rel="noopener">
+          <div class="contact-card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <span class="contact-card-label">WhatsApp</span>
+            <span class="contact-card-val">+237 650 318 856</span>
+          </div>
+        </a>
+
+        <a href="mailto:loopingbinary@gmail.com" class="contact-card contact-card--email">
+          <div class="contact-card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </div>
+          <div>
+            <span class="contact-card-label">Email</span>
+            <span class="contact-card-val">loopingbinary@gmail.com</span>
+          </div>
+        </a>
       </div>
+
+      <p class="contact-links">
+        <a href="https://loopingbinary.com" target="_blank" rel="noopener">loopingbinary.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener">Intellex</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://intern.loopingbinary.com" target="_blank" rel="noopener">Internship</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://juniordev.loopingbinary.com" target="_blank" rel="noopener">Junior Dev</a>
+      </p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // Theme toggle
-    (function(){
-      const t = document.querySelector('[data-theme-toggle]');
-      const r = document.documentElement;
-      let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      r.setAttribute('data-theme', d);
-      const sunIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-      const moonIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-      if(t){
-        t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
-        t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
-        t.addEventListener('click', () => {
-          d = d === 'dark' ? 'light' : 'dark';
-          r.setAttribute('data-theme', d);
-          t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
-          t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
-        });
-      }
-    })();
+</main>
 
-    // Nav scroll behaviour
-    (function(){
-      const nav = document.getElementById('nav');
-      window.addEventListener('scroll', () => {
-        nav.classList.toggle('nav--scrolled', window.scrollY > 10);
-      }, { passive: true });
-    })();
+<!-- ═══════════════════════════════════════════════════════ FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" aria-label="Looping Binary">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10 16 C10 11.6 13.6 8 18 8 C22.4 8 26 11.6 26 16 C26 20.4 22.4 24 18 24 C15.2 24 12.8 22.6 11.2 20.4" stroke="#00bf63" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M22 16 C22 20.4 18.4 24 14 24 C9.6 24 6 20.4 6 16 C6 11.6 9.6 8 14 8 C16.8 8 19.2 9.4 20.8 11.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+        </svg>
+        <span class="nav-wordmark"><span class="nav-lb-loop">Looping</span> <span class="nav-lb-bin">Binary</span></span>
+      </a>
+      <p>We Build. We Grow. We Train.</p>
+    </div>
 
-    // Mobile sidebar
-    (function(){
-      const btn = document.getElementById('menu-toggle');
-      const sidebar = document.getElementById('mobile-sidebar');
-      const overlay = document.getElementById('sidebar-overlay');
-      const closeBtn = document.getElementById('sidebar-close');
-      if(!btn || !sidebar) return;
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <div class="footer-col">
+        <p class="footer-col-title">Services</p>
+        <ul role="list">
+          <li><a href="#services">Software Development</a></li>
+          <li><a href="#services">Digital Growth</a></li>
+          <li><a href="#services">Agency Partner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Programs</p>
+        <ul role="list">
+          <li><a href="https://intern.loopingbinary.com" target="_blank" rel="noopener">Internship</a></li>
+          <li><a href="https://juniordev.loopingbinary.com" target="_blank" rel="noopener">Junior Dev</a></li>
+          <li><a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener">Intellex</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Contact</p>
+        <ul role="list">
+          <li><a href="mailto:loopingbinary@gmail.com">loopingbinary@gmail.com</a></li>
+          <li><a href="https://wa.me/237650318856" target="_blank" rel="noopener">+237 650 318 856</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-      function openSidebar() {
-        sidebar.classList.add('is-open');
-        overlay.classList.add('is-active');
-        btn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeSidebar() {
-        sidebar.classList.remove('is-open');
-        overlay.classList.remove('is-active');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 Looping Binary. Douala, Cameroon.</p>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="pplx-credit">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
 
-      btn.addEventListener('click', openSidebar);
-      if(closeBtn) closeBtn.addEventListener('click', closeSidebar);
-      overlay.addEventListener('click', closeSidebar);
-
-      sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', closeSidebar));
-
-      // Close on Escape
-      document.addEventListener('keydown', e => { if(e.key === 'Escape') closeSidebar(); });
-    })();
-
-    // Program items — click to activate
-    (function(){
-      const items = document.querySelectorAll('.program-item');
-      items.forEach(item => {
-        item.addEventListener('click', () => {
-          items.forEach(i => i.classList.remove('program-item--active'));
-          item.classList.add('program-item--active');
-        });
-      });
-    })();
-
-    // Scroll reveals
-    (function(){
-      const items = document.querySelectorAll('.reveal');
-      items.forEach(el => el.classList.add('reveal--hidden'));
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if(e.isIntersecting){
-            e.target.classList.remove('reveal--hidden');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-      items.forEach(el => obs.observe(el));
-    })();
-
-    // Active nav link on scroll
-    (function(){
-      const sections = document.querySelectorAll('section[id]');
-      const links = document.querySelectorAll('.nav__link');
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if(e.isIntersecting){
-            links.forEach(l => l.classList.remove('nav__link--active'));
-            const active = document.querySelector('.nav__link[href="#' + e.target.id + '"]');
-            if(active) active.classList.add('nav__link--active');
-          }
-        });
-      }, { threshold: 0.4 });
-      sections.forEach(s => obs.observe(s));
-    })();
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>

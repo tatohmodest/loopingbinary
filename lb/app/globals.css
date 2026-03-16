@@ -311,7 +311,7 @@ button { cursor: pointer; background: none; border: none; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   padding-top: 64px;
 }
 
@@ -327,6 +327,14 @@ button { cursor: pointer; background: none; border: none; }
   position: relative;
   z-index: 1;
   padding-block: clamp(5rem, 12vw, 10rem);
+}
+
+/* Text content: constrained to left ~55% so card has room beside it */
+.hero-content {
+  max-width: 55%;
+}
+@media (max-width: 896px) {
+  .hero-content { max-width: 100%; }
 }
 
 .hero-badge {
@@ -1223,15 +1231,31 @@ button { cursor: pointer; background: none; border: none; }
 }
 
 /* ─── SPLIT CHAR (hero title) ───────────── */
+/* GSAP animates these — only need display and will-change */
 .split-char {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: splitCharReveal 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
 }
-@keyframes splitCharReveal {
-  to { opacity: 1; transform: translateY(0); }
+
+/* ─── HERO LANYARD ───────────────────────── */
+.hero-lanyard {
+  /* Sits in the right half of the hero, rope anchor exits through the top */
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48%;
+  height: 100%;
+  pointer-events: auto;
+  overflow: visible;
+  z-index: 2;
+}
+.hero-lanyard canvas {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible;
+}
+@media (max-width: 896px) {
+  .hero-lanyard { display: none; }
 }
 
 /* ─── RESPONSIVE ─────────────────────────── */
