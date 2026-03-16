@@ -315,26 +315,39 @@ button { cursor: pointer; background: none; border: none; }
   padding-top: 64px;
 }
 
+.hero-darkveil {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-darkveil::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c-green);
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
 .hero-canvas {
   position: absolute;
   inset: 0;
   width: 100%; height: 100%;
-  opacity: 0.55;
+  opacity: 1;
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding-block: clamp(5rem, 12vw, 10rem);
 }
 
-/* Text content: constrained to left ~55% so card has room beside it */
 .hero-content {
-  max-width: 55%;
-}
-@media (max-width: 896px) {
-  .hero-content { max-width: 100%; }
+  max-width: 100%;
 }
 
 .hero-badge {

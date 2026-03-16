@@ -16,10 +16,25 @@ import * as THREE from 'three';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
-// Place these files in /public/assets/lanyard/
-// Download from: https://github.com/DavidHDev/react-bits (src/assets/lanyard)
-const CARD_GLB = '/assets/lanyard/scene.glb';
+const CARD_GLB    = '/assets/lanyard/scene.glb';
 const LANYARD_PNG = '/assets/lanyard/lanyard.png';
+
+// ─── GEOMETRY CONSTANTS ──────────────────────────────────────────────────────
+// Camera z=20, fov=20  →  half-height = 20·tan(10°) ≈ 3.53
+// Anchor sits at y = 3.4 (just inside the top edge)
+//
+// Rest position math:
+//   Rope:          3 × 0.6  = 1.8
+//   Spherical Y:           0.9
+//   Total drop:            2.7  →  card body at y = 3.4 − 2.7 = 0.7
+//   Visual centre: 0.7 − (1.2 × 2.25) = 0.7 − 2.7 = −2.0  ✓ well in view
+//
+// Joints start along −Y (hanging), NOT along +X.
+// This means zero swing on load → card is stable from frame 1.
+// ─────────────────────────────────────────────────────────────────────────────
+const ANCHOR_Y = 3.4;
+const ROPE_LEN = 0.6;   // length of each rope segment
+const SPH_Y    = 0.9;   // spherical joint local-Y anchor on card
 
 interface LanyardProps {
   position?: [number, number, number];
@@ -29,9 +44,9 @@ interface LanyardProps {
 }
 
 export default function Lanyard({
-  position = [0, 0, 20],
-  gravity = [0, -40, 0],
-  fov = 20,
+  position    = [0, 0, 20],
+  gravity     = [0, -20, 0],  // reduced from −40 → no overshoot on settle
+  fov         = 20,
   transparent = true,
 }: LanyardProps) {
   const [isMobile, setIsMobile] = useState(false);
@@ -59,19 +74,15 @@ export default function Lanyard({
           <Band isMobile={isMobile} />
         </Physics>
         <Environment blur={0.75}>
-          <Lightformer intensity={2} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
-          <Lightformer intensity={3} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
-          <Lightformer intensity={3} color="white" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+          <Lightformer intensity={2}  color="white" position={[0, -1, 5]}   rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+          <Lightformer intensity={3}  color="white" position={[-1, -1, 1]}  rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+          <Lightformer intensity={3}  color="white" position={[1, 1, 1]}    rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
           <Lightformer intensity={10} color="white" position={[-10, 0, 14]} rotation={[0, Math.PI / 2, Math.PI / 3]} scale={[100, 10, 1]} />
         </Environment>
       </Canvas>
     </div>
   );
 }
-
-// ─── Constants match the original react-bits source exactly ─────────────────
-const ROPE_LEN = 0.9;    // rope segment length
-const SPH_Y    = 3.0; // spherical joint y-anchor: matches card scale so rope ends at clip
 
 function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
   const { size } = useThree();
@@ -97,8 +108,8 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
     type: 'dynamic' as const,
     canSleep: false,
     colliders: false as const,
-    angularDamping: 2,
-    linearDamping: 2,
+    angularDamping: 20,
+    linearDamping: 20,
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -117,7 +128,6 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
   const [dragged, drag] = useState<THREE.Vector3 | false>(false);
   const [hovered, hover] = useState(false);
 
-  // Rope joints use the new shorter segment length
   useRopeJoint(fixed, j1,   [[0, 0, 0], [0, 0, 0], ROPE_LEN]);
   useRopeJoint(j1,    j2,   [[0, 0, 0], [0, 0, 0], ROPE_LEN]);
   useRopeJoint(j2,    j3,   [[0, 0, 0], [0, 0, 0], ROPE_LEN]);
@@ -160,7 +170,6 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
       band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
-      band.current.geometry.computeBoundingSphere();
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
@@ -172,11 +181,22 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
 
   return (
     <>
-      {/* Anchor at y=4: rope appears to exit through the top of the canvas */}
-      <group position={[0, 4, 0]}>
+      <group position={[0, ANCHOR_Y, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
-        {/* Joints start in natural hanging position (downward Y) — zero swing on load */}
-        <RigidBody position={[0, -ROPE_LEN, 0]} ref={j1} {...segmentProps}>
+
+        {/*
+         * Joints start hanging straight DOWN along −Y.
+         * This is already the rest position, so there is no initial swing
+         * and the card never leaves the camera frustum on load.
+         *
+         *  anchor  [0,  0,        0]  world y =  3.40
+         *  j1      [0, −0.60,     0]  world y =  2.80
+         *  j2      [0, −1.20,     0]  world y =  2.20
+         *  j3      [0, −1.80,     0]  world y =  1.60
+         *  card    [0, −2.70,     0]  world y =  0.70
+         *  visual  centre          →  world y = −2.00  ✓
+         */}
+        <RigidBody position={[0, -ROPE_LEN * 1, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody position={[0, -ROPE_LEN * 2, 0]} ref={j2} {...segmentProps}>
@@ -210,10 +230,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
               );
             }}
           >
-            {/* frustumCulled=false: Rapier moves the body externally so Three.js
-                bounding sphere goes stale — without this the meshes get culled
-                even when fully in view, causing the "disappeared" bug */}
-            <mesh geometry={nodes.card.geometry} frustumCulled={false}>
+            <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
                 map={materials.base.map}
                 map-anisotropy={16}
@@ -223,12 +240,13 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
                 metalness={0.8}
               />
             </mesh>
-            <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} frustumCulled={false} />
-            <mesh geometry={nodes.clamp.geometry} material={materials.metal} frustumCulled={false} />
+            <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
+            <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
           </group>
         </RigidBody>
       </group>
-      <mesh ref={band} frustumCulled={false}>
+
+      <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
           color="white"

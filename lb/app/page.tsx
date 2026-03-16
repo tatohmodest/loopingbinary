@@ -5,7 +5,7 @@ import StatCounters from "@/components/StatCounters";
 import CommitGrid from "@/components/CommitGrid";
 import ArrowDraw from "@/components/ArrowDraw";
 import ScrollRevealFallback from "@/components/ScrollRevealFallback";
-import LanyardLoader from "@/components/LanyardLoader";
+import DarkVeil from "@/components/DarkVeil";
 
 export default function Home() {
   return (
@@ -55,9 +55,15 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Lanyard: absolutely positioned right side, rope falls from top */}
-        <div className="hero-lanyard" aria-hidden="true">
-          <LanyardLoader />
+        <div className="hero-darkveil" aria-hidden="true">
+          <DarkVeil
+            hueShift={0}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={0.5}
+            scanlineFrequency={0}
+            warpAmount={0}
+          />
         </div>
 
         <div className="hero-scroll-cue" aria-hidden="true">
