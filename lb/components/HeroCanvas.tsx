@@ -14,9 +14,10 @@ export default function HeroCanvas() {
     const SPACING = 38;
     const DOT_R = 1.4;
     const GREEN = "0,191,99";
+    const BLUE = "0,151,178";
     const WHITE = "232,237,233";
 
-    type Dot = { x: number; y: number; dist: number; phase: number; speed: number };
+    type Dot = { x: number; y: number; dist: number; bdist: number; phase: number; speed: number };
     let W = 0, H = 0, dots: Dot[] = [], raf = 0;
     let isDark = document.documentElement.getAttribute("data-theme") !== "light";
 
@@ -43,8 +44,12 @@ export default function HeroCanvas() {
           const dx = x - W * 0.5;
           const dy = y - H * 0.45;
           const dist = Math.sqrt(dx * dx + dy * dy);
+          // distance from bottom-right corner for blue glow
+          const bdx = x - W * 0.85;
+          const bdy = y - H * 0.82;
+          const bdist = Math.sqrt(bdx * bdx + bdy * bdy);
           dots.push({
-            x, y, dist,
+            x, y, dist, bdist,
             phase: Math.random() * Math.PI * 2,
             speed: 0.4 + Math.random() * 0.6,
           });
@@ -65,6 +70,10 @@ export default function HeroCanvas() {
         const baseOpacity = 0.07 + 0.08 * pulse;
         const glowOpacity = proximityGlow * (0.18 + 0.22 * pulse);
 
+        // blue glow from bottom-right
+        const bProximity = 1 - Math.min(d.bdist / (maxDist * 0.4), 1);
+        const bGlowOpacity = bProximity * bProximity * (0.14 + 0.18 * pulse);
+
         if (baseOpacity > 0.01) {
           const color = isDark ? WHITE : "13,26,18";
           ctx!.beginPath();
@@ -77,6 +86,13 @@ export default function HeroCanvas() {
           ctx!.beginPath();
           ctx!.arc(d.x, d.y, DOT_R * (1 + proximityGlow * 0.8), 0, Math.PI * 2);
           ctx!.fillStyle = `rgba(${GREEN},${glowOpacity})`;
+          ctx!.fill();
+        }
+
+        if (bGlowOpacity > 0.01) {
+          ctx!.beginPath();
+          ctx!.arc(d.x, d.y, DOT_R * (1 + bProximity * 0.8), 0, Math.PI * 2);
+          ctx!.fillStyle = `rgba(${BLUE},${bGlowOpacity})`;
           ctx!.fill();
         }
       }

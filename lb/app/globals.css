@@ -326,7 +326,7 @@ button { cursor: pointer; background: none; border: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--c-green);
+  background: linear-gradient(135deg, var(--c-green) 0%, var(--c-blue) 100%);
   mix-blend-mode: color;
   pointer-events: none;
 }
@@ -462,7 +462,7 @@ button { cursor: pointer; background: none; border: none; }
 .scroll-line {
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, var(--c-green), transparent);
+  background: linear-gradient(to bottom, var(--c-green), var(--c-blue), transparent);
   animation: scroll-fade 2s ease-in-out infinite;
 }
 @keyframes scroll-fade {
