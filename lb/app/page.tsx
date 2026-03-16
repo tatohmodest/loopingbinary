@@ -34,7 +34,7 @@ export default function Home() {
               className="hero-sub fade-in-up"
               style={{ ["--delay" as string]: "160ms" }}
             >
-              Looping Binary designs and builds digital products for businesses —
+              Looping Binary designs and builds digital products for businesses,
               websites, platforms, applications, and systems. We also grow them
               and train the engineers who build them.
             </p>
@@ -143,7 +143,7 @@ export default function Home() {
                 </h3>
                 <p className="service-desc">
                   We build the digital infrastructure your business runs on.
-                  From a first landing page to a fully custom platform —
+                  From a first landing page to a fully custom platform,
                   designed precisely, built to last.
                 </p>
                 <ul className="service-list" role="list">
@@ -211,7 +211,7 @@ export default function Home() {
                 <div className="service-num">03</div>
                 <h3 className="service-name">Growth Agency Partner</h3>
                 <p className="service-desc">
-                  An embedded tech and marketing team. We own the work —
+                  An embedded tech and marketing team. We own the work,
                   strategy, execution, results. You focus on running the
                   business.
                 </p>
