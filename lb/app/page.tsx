@@ -25,7 +25,7 @@ export default function Home() {
               style={{ ["--delay" as string]: "0ms" }}
             >
               <span className="badge-dot" />
-              Douala, Cameroon — Operating across Africa
+              Douala, Cameroon,Operating across Africa
             </div>
 
             <HeroTitle />
@@ -190,8 +190,8 @@ export default function Home() {
                 <div className="service-num">02</div>
                 <h3 className="service-name">Digital Growth</h3>
                 <p className="service-desc">
-                  We run your digital marketing — social media, paid ads, SEO,
-                  content — with the same rigour we apply to code.
+                  We run your digital marketing,social media, paid ads, SEO,
+                  content,with the same rigour we apply to code.
                 </p>
                 <ul className="service-list" role="list">
                   <li>Social media strategy &amp; management</li>
@@ -258,11 +258,11 @@ export default function Home() {
 
               <p className="loop-sub">
                 For you: every project is staffed with engineers who have been
-                tested — not just hired from a CV.
+                tested,not just hired from a CV.
               </p>
             </div>
 
-            {/* Right: loop diagram — ArrowDraw adds class on scroll */}
+            {/* Right: loop diagram,ArrowDraw adds class on scroll */}
             <ArrowDraw>
               <div className="loop-node loop-node--company">
                 <span className="loop-node-label">The Company</span>
@@ -344,19 +344,19 @@ export default function Home() {
               {
                 num: "01",
                 title: "We are from here",
-                body: "We operate from Cameroon. We understand the market — payment systems, connectivity constraints, business culture. We build for the African context, not a template copied from Europe.",
+                body: "We operate from Cameroon. We understand the market,payment systems, connectivity constraints, business culture. We build for the African context, not a template copied from Europe.",
                 delay: "0ms",
               },
               {
                 num: "02",
                 title: "Trained team, not random hires",
-                body: "Every engineer on your project went through a rigorous program — live projects, real deadlines, active mentorship. No guesses in the staffing.",
+                body: "Every engineer on your project went through a rigorous program,live projects, real deadlines, active mentorship. No guesses in the staffing.",
                 delay: "80ms",
               },
               {
                 num: "03",
                 title: "End-to-end, not hand-off",
-                body: "Strategy, design, development, growth — one partner, one point of accountability. No bouncing between agencies and freelancers.",
+                body: "Strategy, design, development, growth,one partner, one point of accountability. No bouncing between agencies and freelancers.",
                 delay: "160ms",
               },
               {
@@ -399,7 +399,7 @@ export default function Home() {
               </h2>
               <p className="edu-intro">
                 The school is not a side project. It is how the company stays
-                sharp — and how we give serious developers a real path into
+                sharp,and how we give serious developers a real path into
                 tech.
               </p>
               <a
@@ -503,7 +503,7 @@ export default function Home() {
               </p>
               <p>
                 We are a technology company and an education institution in one.
-                The two reinforce each other — better engineers build better
+                The two reinforce each other,better engineers build better
                 products, better products attract better engineers.
               </p>
               <div className="about-founder">

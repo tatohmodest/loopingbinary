@@ -128,7 +128,7 @@ export default function Nav() {
     >
       <nav className="nav-inner" aria-label="Main navigation">
         {/* Logo */}
-        <a href="/" className="nav-logo" aria-label="Looping Binary — home">
+        <a href="/" className="nav-logo" aria-label="Looping Binary,home">
           <svg
             width="32"
             height="32"

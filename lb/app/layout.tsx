@@ -4,9 +4,9 @@ import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Looping Binary — We Build. We Grow. We Train.",
+  title: "Looping Binary,We Build. We Grow. We Train.",
   description:
-    "Looping Binary — Technology company based in Douala, Cameroon. We build software, drive digital growth, and train the engineers who build it.",
+    "Looping Binary,Technology company based in Douala, Cameroon. We build software, drive digital growth, and train the engineers who build it.",
   authors: [{ name: "Looping Binary" }],
   openGraph: {
     title: "Looping Binary",

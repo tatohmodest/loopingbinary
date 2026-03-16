@@ -311,7 +311,7 @@ button { cursor: pointer; background: none; border: none; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  overflow: visible;
+  overflow: hidden;
   padding-top: 64px;
 }
 
@@ -343,7 +343,7 @@ button { cursor: pointer; background: none; border: none; }
 .hero-inner {
   position: relative;
   z-index: 2;
-  padding-block: clamp(5rem, 12vw, 10rem);
+  padding-block: clamp(2.5rem, 8vw, 10rem);
 }
 
 .hero-content {
@@ -1320,7 +1320,7 @@ button { cursor: pointer; background: none; border: none; }
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+  .hero-title { font-size: clamp(2.75rem, 9vw, 3.5rem); }
   .hero-cta { flex-direction: column; }
   .hero-cta .btn-primary, .hero-cta .btn-outline { width: 100%; justify-content: center; }
   .section-title { font-size: clamp(1.75rem, 7vw, 2.5rem); }

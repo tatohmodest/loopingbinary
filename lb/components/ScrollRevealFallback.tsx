@@ -5,7 +5,7 @@ import { useEffect } from "react";
 /**
  * Fallback for browsers that don't support CSS scroll-driven animations.
  * Uses IntersectionObserver to add the `visible` class to `.reveal-fade` elements.
- * Renders nothing — pure side-effect component.
+ * Renders nothing,pure side-effect component.
  */
 export default function ScrollRevealFallback() {
   useEffect(() => {
