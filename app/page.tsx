@@ -653,36 +653,39 @@ export default function Home() {
         <div className="container footer-inner">
           <div className="footer-brand">
             <a href="/" className="nav-logo" aria-label="Looping Binary">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M10 16 C10 11.6 13.6 8 18 8 C22.4 8 26 11.6 26 16 C26 20.4 22.4 24 18 24 C15.2 24 12.8 22.6 11.2 20.4"
-                  stroke="#00bf63"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                <path
-                  d="M22 16 C22 20.4 18.4 24 14 24 C9.6 24 6 20.4 6 16 C6 11.6 9.6 8 14 8 C16.8 8 19.2 9.4 20.8 11.6"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  fill="none"
-                  opacity="0.7"
-                />
-              </svg>
+              <img src="/assets/logo.svg" width="32" height="16" alt="" aria-hidden="true" />
               <span className="nav-wordmark">
                 <span className="nav-lb-loop">Looping</span>{" "}
                 <span className="nav-lb-bin">Binary</span>
               </span>
             </a>
             <p>We Build. We Grow. We Train.</p>
+            <div className="footer-socials">
+              <a
+                href="https://web.facebook.com/profile.php?id=61586371936567"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="footer-social-link"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/looping-binary/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="footer-social-link"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
           </div>
 
           <nav className="footer-nav" aria-label="Footer navigation">
