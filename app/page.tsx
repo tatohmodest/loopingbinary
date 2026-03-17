@@ -760,14 +760,7 @@ export default function Home() {
         <div className="footer-bottom">
           <div className="container footer-bottom-inner">
             <p>© 2026 Looping Binary. Douala, Cameroon.</p>
-            <a
-              href="https://www.perplexity.ai/computer"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pplx-credit"
-            >
-              Created with Perplexity Computer
-            </a>
+      
           </div>
         </div>
       </footer>
