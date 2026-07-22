@@ -3,29 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 
 const MOON_ICON = (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
   </svg>
 );
 
 const SUN_ICON = (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <circle cx="12" cy="12" r="5" />
     <line x1="12" y1="1" x2="12" y2="3" />
     <line x1="12" y1="21" x2="12" y2="23" />
@@ -40,19 +24,17 @@ const SUN_ICON = (
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
-  // Frosted glass on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Apply theme to <html>
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     document.documentElement.dispatchEvent(
@@ -60,7 +42,6 @@ export default function Nav() {
     );
   }, [theme]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -68,7 +49,6 @@ export default function Nav() {
     };
   }, [menuOpen]);
 
-  // Escape key closes menu
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && menuOpen) {
@@ -80,7 +60,6 @@ export default function Nav() {
     return () => document.removeEventListener("keydown", onKey);
   }, [menuOpen]);
 
-  // Close menu when viewport becomes desktop-width
   useEffect(() => {
     const mql = window.matchMedia("(min-width: 769px)");
     const onChange = (e: MediaQueryListEvent) => {
@@ -90,7 +69,6 @@ export default function Nav() {
     return () => mql.removeEventListener("change", onChange);
   }, []);
 
-  // Active nav link via IntersectionObserver
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
     const links = document.querySelectorAll<HTMLAnchorElement>(
@@ -112,7 +90,7 @@ export default function Nav() {
           }
         });
       },
-      { threshold: 0.35, rootMargin: "-64px 0px 0px 0px" }
+      { threshold: 0.28, rootMargin: "-64px 0px 0px 0px" }
     );
 
     sections.forEach((s) => observer.observe(s));
@@ -122,13 +100,10 @@ export default function Nav() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header
-      className={`nav-wrap${scrolled ? " scrolled" : ""}`}
-      id="nav"
-    >
+    <header className={`nav-wrap${scrolled ? " scrolled" : ""}`} id="nav">
       <nav className="nav-inner" aria-label="Main navigation">
-        {/* Logo */}
-        <a href="/" className="nav-logo" aria-label="Looping Binary,home">
+        <a href="/" className="nav-logo" aria-label="Looping Binary, home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo.svg" width="36" height="18" alt="" aria-hidden="true" />
           <span className="nav-wordmark">
             <span className="nav-lb-loop">Looping</span>{" "}
@@ -137,6 +112,9 @@ export default function Nav() {
         </a>
 
         <ul className="nav-links" role="list">
+          <li>
+            <a href="#products">Products</a>
+          </li>
           <li>
             <a href="#services">Services</a>
           </li>
@@ -154,14 +132,12 @@ export default function Nav() {
         <div className="nav-actions">
           <button
             className="btn-ghost"
-            onClick={() =>
-              setTheme((t) => (t === "dark" ? "light" : "dark"))
-            }
+            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
             aria-label={
               theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
             }
           >
-            {theme === "dark" ? MOON_ICON : SUN_ICON}
+            {theme === "dark" ? SUN_ICON : MOON_ICON}
           </button>
           <a href="#contact" className="btn-primary">
             Get in touch
@@ -182,7 +158,6 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`mobile-menu${menuOpen ? " open" : ""}`}
         id="mobile-menu"
@@ -201,6 +176,7 @@ export default function Nav() {
         <ul role="list">
           {(
             [
+              ["#products", "Products"],
               ["#services", "Services"],
               ["#the-loop", "The Loop"],
               ["#education", "Programs"],

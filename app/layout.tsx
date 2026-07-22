@@ -4,14 +4,14 @@ import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Looping Binary,We Build. We Grow. We Train.",
+  title: "Looping Binary — We Build. We Grow. We Train.",
   description:
-    "Looping Binary,Technology company based in Douala, Cameroon. We build software, drive digital growth, and train the engineers who build it.",
+    "Looping Binary builds software, operates digital products across Africa, and trains the engineers who ship them. Intellex, Zela, Tech Shop, Auth, and more.",
   authors: [{ name: "Looping Binary" }],
   openGraph: {
     title: "Looping Binary",
     description:
-      "We Build. We Grow. We Train. Technology partner for businesses in Cameroon and Africa.",
+      "One company. An entire digital stack. Technology partner for businesses in Cameroon and Africa.",
     type: "website",
   },
 };
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link

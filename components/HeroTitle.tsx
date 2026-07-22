@@ -1,17 +1,15 @@
 'use client';
 import SplitText from './SplitText';
 
-// "Software that" = 13 chars × 50ms stagger = 0.65s before last char starts.
-// Give the accent line a matching startDelay so they feel sequential.
 export default function HeroTitle() {
   return (
     <h1 id="hero-h1" className="hero-title">
       <SplitText
-        text="Software that"
+        text="One company."
         tag="span"
         textAlign="left"
-        delay={50}
-        duration={1.25}
+        delay={45}
+        duration={1.15}
         ease="power3.out"
         from={{ opacity: 0, y: 40 }}
         to={{ opacity: 1, y: 0 }}
@@ -20,13 +18,13 @@ export default function HeroTitle() {
       />
       <br />
       <SplitText
-        text="actually ships."
+        text="An entire digital stack."
         tag="em"
         className="hero-accent"
         textAlign="left"
-        delay={50}
-        startDelay={0.65}
-        duration={1.25}
+        delay={45}
+        startDelay={0.55}
+        duration={1.15}
         ease="power3.out"
         from={{ opacity: 0, y: 40 }}
         to={{ opacity: 1, y: 0 }}
