@@ -26,27 +26,27 @@ export default function HeroDashboard() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         root,
-        { opacity: 0, y: 48, scale: 0.98 },
-        { opacity: 1, y: 0, scale: 1, duration: 1.05, ease: "power3.out", delay: 0.35 }
+        { opacity: 0, y: 40, scale: 0.985 },
+        { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out", delay: 0.3 }
       );
 
       gsap.fromTo(
         root.querySelectorAll("[data-rise]"),
-        { opacity: 0, y: 16 },
+        { opacity: 0, y: 14 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.55,
-          stagger: 0.05,
+          duration: 0.5,
+          stagger: 0.045,
           ease: "power2.out",
-          delay: 0.7,
+          delay: 0.6,
         }
       );
 
       gsap.to(root.querySelectorAll(".hd-bar"), {
-        scaleY: () => 0.45 + Math.random() * 0.55,
+        scaleY: () => 0.5 + Math.random() * 0.5,
         transformOrigin: "bottom",
-        duration: 1.4,
+        duration: 1.45,
         stagger: { each: 0.08, repeat: -1, yoyo: true },
         ease: "sine.inOut",
       });
@@ -75,7 +75,7 @@ export default function HeroDashboard() {
           <span className="hd-dot hd-dot--g" />
           <div className="hd-url">
             <span className="hd-lock" />
-            app.loopingbinary.com
+            <span className="hd-url-text">app.loopingbinary.com</span>
           </div>
         </div>
 
@@ -113,7 +113,7 @@ export default function HeroDashboard() {
               </div>
               <div className="hd-top-actions">
                 <span className="hd-pill">Live</span>
-                <span className="hd-btn">New project</span>
+                <span className="hd-btn hd-btn--desktop">New project</span>
               </div>
             </div>
 
@@ -123,8 +123,11 @@ export default function HeroDashboard() {
                 ["1k+", "Intellex courses"],
                 ["7", "Internship tracks"],
                 ["24/7", "Auth uptime"],
-              ].map(([val, label]) => (
-                <div key={label} className="hd-stat">
+              ].map(([val, label], i) => (
+                <div
+                  key={label}
+                  className={`hd-stat${i > 1 ? " hd-stat--desktop" : ""}`}
+                >
                   <strong>{val}</strong>
                   <span>{label}</span>
                 </div>
@@ -138,8 +141,14 @@ export default function HeroDashboard() {
                   <span className="hd-muted">This quarter</span>
                 </div>
                 <div className="hd-chart">
-                  {Array.from({ length: 14 }).map((_, i) => (
-                    <span key={i} className="hd-bar" style={{ ["--h" as string]: `${35 + ((i * 17) % 55)}%` }} />
+                  {Array.from({ length: 12 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="hd-bar"
+                      style={{
+                        ["--h" as string]: `${38 + ((i * 19) % 52)}%`,
+                      }}
+                    />
                   ))}
                 </div>
               </div>
@@ -150,8 +159,11 @@ export default function HeroDashboard() {
                   <span className="hd-pulse" />
                 </div>
                 <div className="hd-products">
-                  {PRODUCTS.map((p) => (
-                    <div key={p.name} className="hd-product">
+                  {PRODUCTS.map((p, i) => (
+                    <div
+                      key={p.name}
+                      className={`hd-product${i > 3 ? " hd-product--desktop" : ""}`}
+                    >
                       <span className={`hd-product-dot hd-product-dot--${p.tone}`} />
                       <div>
                         <strong>{p.name}</strong>
