@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService(slug);
   if (!service) return { title: "Service not found" };
   return {
-    title: `${service.name} — Looping Binary`,
+    title: `${service.name} | Looping Binary`,
     description: service.short,
     openGraph: {
-      title: `${service.name} — Looping Binary`,
+      title: `${service.name} | Looping Binary`,
       description: service.short,
     },
   };

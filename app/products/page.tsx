@@ -4,7 +4,7 @@ import { PRODUCTS } from "@/lib/catalog";
 import MagneticButton from "@/components/MagneticButton";
 
 export const metadata: Metadata = {
-  title: "All Products — Looping Binary",
+  title: "All Products | Looping Binary",
   description:
     "Explore every Looping Binary product: Intellex, Zela, Tech Shop, Auth, Business, Internship, Junior Dev, and more.",
 };
@@ -24,7 +24,7 @@ export default function ProductsIndexPage() {
           <h1 className="detail-title">Every product we operate.</h1>
           <p className="detail-lede">
             Education, commerce, infrastructure, identity, and developer
-            training — live platforms that prove what Looping Binary can build
+            training - live platforms that prove what Looping Binary can build
             for your business too.
           </p>
           <div className="detail-cta-row">

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import ProductSuite from "@/components/ProductSuite";
-import HeroMotion from "@/components/HeroMotion";
+import HeroDashboard from "@/components/HeroDashboard";
 import HeroTitle from "@/components/HeroTitle";
 import MagneticButton from "@/components/MagneticButton";
 import ArrowDraw from "@/components/ArrowDraw";
@@ -15,9 +15,15 @@ export default function Home() {
 
       {/* ═══ HERO ═══════════════════════════════════════════════════ */}
       <section className="hero" aria-labelledby="hero-h1">
-        <div className="hero-mesh" aria-hidden="true" />
-        <div className="hero-inner container">
-          <div className="hero-content">
+        <div className="hero-aurora" aria-hidden="true">
+          <span className="hero-aurora-blob hero-aurora-blob--a" />
+          <span className="hero-aurora-blob hero-aurora-blob--b" />
+          <span className="hero-aurora-blob hero-aurora-blob--c" />
+        </div>
+        <div className="hero-gridline" aria-hidden="true" />
+
+        <div className="hero-shell container">
+          <div className="hero-copy">
             <p className="hero-brand fade-in-up" style={{ ["--delay" as string]: "0ms" }}>
               Looping Binary
             </p>
@@ -26,16 +32,16 @@ export default function Home() {
 
             <p
               className="hero-sub fade-in-up"
-              style={{ ["--delay" as string]: "160ms" }}
+              style={{ ["--delay" as string]: "140ms" }}
             >
-              Software, digital growth, and vocational training — from Douala to
-              the rest of Africa. Our products already prove what we can do for
-              yours.
+              Software, digital growth, and vocational training from Douala to
+              the rest of Africa. Our live products already prove what we can
+              build for your business.
             </p>
 
             <div
               className="hero-cta fade-in-up"
-              style={{ ["--delay" as string]: "240ms" }}
+              style={{ ["--delay" as string]: "220ms" }}
             >
               <MagneticButton href="#contact" className="btn-primary btn-lg">
                 Grow your business
@@ -44,9 +50,23 @@ export default function Home() {
                 See our products
               </MagneticButton>
             </div>
+
+            <div
+              className="hero-chips fade-in-up"
+              style={{ ["--delay" as string]: "300ms" }}
+              aria-label="Products"
+            >
+              {["Intellex", "Zela", "Tech Shop", "Junior Dev", "Auth", "Business"].map(
+                (name) => (
+                  <span key={name} className="hero-chip">
+                    {name}
+                  </span>
+                )
+              )}
+            </div>
           </div>
 
-          <HeroMotion />
+          <HeroDashboard />
         </div>
       </section>
 
@@ -103,7 +123,7 @@ export default function Home() {
             </h2>
             <p className="section-lede">
               We build your software, run your digital growth, and train the
-              people who keep it moving — one partner for the full loop.
+              people who keep it moving - one partner for the full loop.
             </p>
           </div>
 
@@ -112,7 +132,7 @@ export default function Home() {
               <span className="bento-num">01</span>
               <h3>Software Development</h3>
               <p>
-                Landing pages, web apps, e-commerce, dashboards, APIs — designed
+                Landing pages, web apps, e-commerce, dashboards, APIs - designed
                 precisely, built to last.
               </p>
               <ul className="service-list" role="list">
@@ -133,7 +153,7 @@ export default function Home() {
               <span className="bento-num">02</span>
               <h3>Digital Growth</h3>
               <p>
-                Social, paid ads, SEO, and content — executed with the same
+                Social, paid ads, SEO, and content - executed with the same
                 rigour we apply to code.
               </p>
               <Link href="/services/digital-growth" className="btn-text">
@@ -149,7 +169,7 @@ export default function Home() {
               <h3>Growth Agency Partner</h3>
               <p>
                 An embedded tech and marketing team. Strategy, execution,
-                results — you run the business.
+                results - you run the business.
               </p>
               <Link href="/services/agency-partner" className="btn-text">
                 See details <span aria-hidden="true">→</span>
@@ -186,7 +206,7 @@ export default function Home() {
 
               <p className="loop-sub">
                 For you: every project is staffed with engineers who have been
-                tested — not just hired from a CV.
+                tested - not just hired from a CV.
               </p>
             </div>
 
@@ -271,7 +291,7 @@ export default function Home() {
               {
                 num: "01",
                 title: "We are from here",
-                body: "We operate from Cameroon. We understand the market, payment systems, connectivity, and business culture — and build for that context.",
+                body: "We operate from Cameroon. We understand the market, payment systems, connectivity, and business culture - and build for that context.",
               },
               {
                 num: "02",
@@ -281,7 +301,7 @@ export default function Home() {
               {
                 num: "03",
                 title: "End-to-end, not hand-off",
-                body: "Strategy, design, development, growth — one partner, one point of accountability.",
+                body: "Strategy, design, development, growth - one partner, one point of accountability.",
               },
               {
                 num: "04",
@@ -319,7 +339,7 @@ export default function Home() {
                 actually ship talent.
               </h2>
               <p className="edu-intro">
-                Internship, Junior Dev, mentorship, and Intellex — how we train
+                Internship, Junior Dev, mentorship, and Intellex - how we train
                 developers who can work on real products, not just certificates.
               </p>
               <a
@@ -398,7 +418,7 @@ export default function Home() {
               </p>
               <p>
                 We are a technology company and an education institution in one.
-                Better engineers build better products — better products attract
+                Better engineers build better products - better products attract
                 better engineers.
               </p>
               <div className="about-founder">
@@ -452,7 +472,7 @@ export default function Home() {
                 We’ll grow it.
               </h2>
               <p className="contact-sub">
-                Software, marketing, and training — tell us where you are. We’ll
+                Software, marketing, and training - tell us where you are. We’ll
                 tell you honestly what it takes.
               </p>
             </div>

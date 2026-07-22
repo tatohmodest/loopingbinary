@@ -11,26 +11,28 @@ export default function HeroTitle() {
     if (!el) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const lines = el.querySelectorAll('.hero-line');
     gsap.fromTo(
-      lines,
-      { opacity: 0, y: 28 },
+      el.querySelectorAll('.hero-line'),
+      { opacity: 0, y: 24 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.85,
-        stagger: 0.12,
+        duration: 0.8,
+        stagger: 0.1,
         ease: 'power3.out',
-        delay: 0.08,
+        delay: 0.05,
       }
     );
   }, []);
 
   return (
     <h1 id="hero-h1" className="hero-title" ref={ref}>
-      <span className="hero-line">We build &amp; grow</span>
+      <span className="hero-line">Build software.</span>
       <span className="hero-line">
-        <em className="hero-accent">African businesses.</em>
+        Grow businesses.
+      </span>
+      <span className="hero-line">
+        <em className="hero-accent">Train builders.</em>
       </span>
     </h1>
   );

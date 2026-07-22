@@ -63,7 +63,7 @@ export default function ProductSuite() {
             Real proof.
           </h2>
           <p className="section-lede">
-            We don’t just pitch services — we operate products used by learners,
+            We don’t just pitch services - we operate products used by learners,
             buyers, vendors, and developers across Cameroon. Scroll and see.
           </p>
         </div>
@@ -126,7 +126,7 @@ export default function ProductSuite() {
           <div className="stack-more-copy">
             <h3>There’s more in the stack.</h3>
             <p>
-              Auth, LB App, Internship, and the rest of the ecosystem — see every
+              Auth, LB App, Internship, and the rest of the ecosystem - see every
               product we operate.
             </p>
           </div>

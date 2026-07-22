@@ -4,7 +4,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Looping Binary — We Build. We Grow. We Train.",
+  title: "Looping Binary | We Build. We Grow. We Train.",
   description:
     "Looping Binary builds software, operates digital products across Africa, and trains the engineers who ship them. Intellex, Zela, Tech Shop, Auth, and more.",
   authors: [{ name: "Looping Binary" }],

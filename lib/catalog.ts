@@ -35,8 +35,8 @@ export const PRODUCTS: Product[] = [
     tag: "EdTech",
     headline: "Learn at your pace. Finish what you start.",
     short:
-      "Self-paced courses, live mentors, and an AI tutor — skills to income, built in Cameroon.",
-    body: "Intellex is Looping Binary’s learning platform. It combines structured courses, live mentorship, and an AI tutor so learners can actually finish what they start — one level at a time — and turn skills into income.",
+      "Self-paced courses, live mentors, and an AI tutor - skills to income, built in Cameroon.",
+    body: "Intellex is Looping Binary’s learning platform. It combines structured courses, live mentorship, and an AI tutor so learners can actually finish what they start - one level at a time - and turn skills into income.",
     href: "https://intellex.loopingbinary.com",
     image: "/assets/products/product-intellex-ui.png",
     accent: "#00bf63",
@@ -62,14 +62,14 @@ export const PRODUCTS: Product[] = [
       },
       {
         title: "Skills to income",
-        body: "Paths oriented toward real outcomes — portfolios, freelancing, and job readiness.",
+        body: "Paths oriented toward real outcomes - portfolios, freelancing, and job readiness.",
       },
     ],
     howItWorks: [
       {
         step: "01",
         title: "Choose a path",
-        body: "Pick a track — web development, design, data, marketing, or AI — and set your pace.",
+        body: "Pick a track - web development, design, data, marketing, or AI - and set your pace.",
       },
       {
         step: "02",
@@ -114,7 +114,7 @@ export const PRODUCTS: Product[] = [
     features: [
       {
         title: "Feed-first shopping",
-        body: "Browse products the way people already discover culture online — in a social stream.",
+        body: "Browse products the way people already discover culture online - in a social stream.",
       },
       {
         title: "Verified vendors",
@@ -163,8 +163,8 @@ export const PRODUCTS: Product[] = [
     tag: "Retail",
     headline: "Laptops & tech, delivered across Cameroon.",
     short:
-      "HP, Dell, Lenovo, MacBook and accessories — best XAF prices with fast Douala & Yaoundé delivery.",
-    body: "LB Tech Shop is Looping Binary’s electronics store. It sells laptops, phones, and accessories with transparent XAF pricing and delivery across Cameroon — especially Douala and Yaoundé.",
+      "HP, Dell, Lenovo, MacBook and accessories - best XAF prices with fast Douala & Yaoundé delivery.",
+    body: "LB Tech Shop is Looping Binary’s electronics store. It sells laptops, phones, and accessories with transparent XAF pricing and delivery across Cameroon - especially Douala and Yaoundé.",
     href: "https://shop.loopingbinary.com",
     image: "/assets/products/product-shop-ui.png",
     accent: "#00bf63",
@@ -186,7 +186,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         title: "Clear XAF pricing",
-        body: "No currency confusion — prices that make sense for local buyers.",
+        body: "No currency confusion - prices that make sense for local buyers.",
       },
       {
         title: "Support that sticks",
@@ -213,7 +213,7 @@ export const PRODUCTS: Product[] = [
     faq: [
       {
         q: "Do you deliver outside Douala?",
-        a: "Yes — Douala and Yaoundé are primary, with broader Cameroon delivery supported.",
+        a: "Yes - Douala and Yaoundé are primary, with broader Cameroon delivery supported.",
       },
       {
         q: "Are products new or refurbished?",
@@ -277,7 +277,7 @@ export const PRODUCTS: Product[] = [
     faq: [
       {
         q: "Is LB App a consumer product?",
-        a: "It is primarily infrastructure — the platform that powers the rest of the ecosystem.",
+        a: "It is primarily infrastructure - the platform that powers the rest of the ecosystem.",
       },
       {
         q: "Which products use it?",
@@ -291,7 +291,7 @@ export const PRODUCTS: Product[] = [
     tag: "Identity",
     headline: "OAuth 2.0 built for African developers.",
     short:
-      "Passwordless login and Sign in with LoopingBinary — integrate identity in a few lines of code.",
+      "Passwordless login and Sign in with LoopingBinary - integrate identity in a few lines of code.",
     body: "Looping Binary Auth is a secure OAuth 2.0 authorization server. Developers can add passwordless authentication and “Sign in with LoopingBinary” without reinventing identity.",
     href: "https://auth.loopingbinary.com",
     image: "/assets/products/product-auth-ui.png",
@@ -341,7 +341,7 @@ export const PRODUCTS: Product[] = [
     faq: [
       {
         q: "Is Auth free to try?",
-        a: "Developer access is designed to get you started quickly — check the Auth docs for current plans.",
+        a: "Developer access is designed to get you started quickly - check the Auth docs for current plans.",
       },
       {
         q: "Can external apps use it?",
@@ -356,7 +356,7 @@ export const PRODUCTS: Product[] = [
     headline: "Business management, elevated.",
     short:
       "Coordinate teams, track milestones, and manage your full portfolio from one workspace.",
-    body: "Looping Binary Business is the workspace for coordinating business portfolios — teams, milestones, and operational visibility in one architectural system.",
+    body: "Looping Binary Business is the workspace for coordinating business portfolios - teams, milestones, and operational visibility in one architectural system.",
     href: "https://business.loopingbinary.com",
     image: "/assets/products/product-business-ui.png",
     accent: "#0097b2",
@@ -419,7 +419,7 @@ export const PRODUCTS: Product[] = [
     tag: "Training",
     headline: "Work on real things. Build your career.",
     short:
-      "Eight weeks embedded in live LB teams — real deadlines, real mentorship, real outcomes.",
+      "Eight weeks embedded in live LB teams - real deadlines, real mentorship, real outcomes.",
     body: "The Looping Binary Internship embeds you into an active team. Not a simulation. Not a bootcamp. You ship real work for eight weeks with mentorship, feedback, and a Demo Day finish.",
     href: "https://intern.loopingbinary.com",
     image: "/assets/products/product-intern-ui.png",
@@ -469,7 +469,7 @@ export const PRODUCTS: Product[] = [
     faq: [
       {
         q: "Is the internship paid?",
-        a: "It is a rigorous training path focused on real contribution and career outcomes — check the internship site for the current cohort terms.",
+        a: "It is a rigorous training path focused on real contribution and career outcomes - check the internship site for the current cohort terms.",
       },
       {
         q: "Do I need prior experience?",
@@ -498,7 +498,7 @@ export const PRODUCTS: Product[] = [
     features: [
       {
         title: "Collaborative teams",
-        body: "Work in structured teams with clear roles — frontend, backend, and more.",
+        body: "Work in structured teams with clear roles - frontend, backend, and more.",
       },
       {
         title: "Production-grade modules",
@@ -550,8 +550,8 @@ export const SERVICES: Service[] = [
     num: "01",
     headline: "Digital infrastructure your business can actually run on.",
     short:
-      "Landing pages, web apps, e-commerce, dashboards, APIs — designed precisely, built to last.",
-    body: "We design and build the software African businesses need to operate online — from first websites to full custom platforms — with local context and global engineering standards.",
+      "Landing pages, web apps, e-commerce, dashboards, APIs - designed precisely, built to last.",
+    body: "We design and build the software African businesses need to operate online - from first websites to full custom platforms - with local context and global engineering standards.",
     accent: "#00bf63",
     offerings: [
       "Landing pages & company websites",
@@ -569,7 +569,7 @@ export const SERVICES: Service[] = [
       {
         step: "02",
         title: "Design & build",
-        body: "Interface, architecture, and implementation move together — not as hand-offs.",
+        body: "Interface, architecture, and implementation move together - not as hand-offs.",
       },
       {
         step: "03",
@@ -589,7 +589,7 @@ export const SERVICES: Service[] = [
     num: "02",
     headline: "Marketing executed with the same rigour as code.",
     short:
-      "Social, paid ads, SEO, and content — run to create demand, not noise.",
+      "Social, paid ads, SEO, and content - run to create demand, not noise.",
     body: "Digital Growth is Looping Binary’s marketing arm. We run social, paid acquisition, SEO, and content with the same discipline we apply to software delivery.",
     accent: "#0097b2",
     offerings: [
@@ -627,8 +627,8 @@ export const SERVICES: Service[] = [
     num: "03",
     headline: "An embedded tech and marketing team.",
     short:
-      "Strategy, execution, results — you run the business while we own the digital work.",
-    body: "Growth Agency Partner is a retainer model. You get an embedded Looping Binary team that owns strategy and execution across product and growth — without assembling freelancers yourself.",
+      "Strategy, execution, results - you run the business while we own the digital work.",
+    body: "Growth Agency Partner is a retainer model. You get an embedded Looping Binary team that owns strategy and execution across product and growth - without assembling freelancers yourself.",
     accent: "#00bf63",
     offerings: [
       "Dedicated embedded team",
