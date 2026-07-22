@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import ProductSuite from "@/components/ProductSuite";
 import HeroMotion from "@/components/HeroMotion";
 import HeroTitle from "@/components/HeroTitle";
@@ -60,6 +61,7 @@ export default function Home() {
             "Auth",
             "Business",
             "Internship",
+            "Junior Dev",
             "Software Development",
             "Digital Growth",
           ]
@@ -71,6 +73,7 @@ export default function Home() {
               "Auth",
               "Business",
               "Internship",
+              "Junior Dev",
               "Software Development",
               "Digital Growth",
             ])
@@ -120,9 +123,9 @@ export default function Home() {
                 <li>Dashboards &amp; admin panels</li>
                 <li>APIs &amp; back-end systems</li>
               </ul>
-              <a href="#contact" className="btn-text">
-                Start a project <span aria-hidden="true">→</span>
-              </a>
+              <Link href="/services/software-development" className="btn-text">
+                See details <span aria-hidden="true">→</span>
+              </Link>
             </article>
 
             <article
@@ -135,9 +138,9 @@ export default function Home() {
                 Social, paid ads, SEO, and content — executed with the same
                 rigour we apply to code.
               </p>
-              <a href="#contact" className="btn-text">
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+              <Link href="/services/digital-growth" className="btn-text">
+                See details <span aria-hidden="true">→</span>
+              </Link>
             </article>
 
             <article
@@ -150,9 +153,9 @@ export default function Home() {
                 An embedded tech and marketing team. Strategy, execution,
                 results — you run the business.
               </p>
-              <a href="#contact" className="btn-text">
-                Explore partnership <span aria-hidden="true">→</span>
-              </a>
+              <Link href="/services/agency-partner" className="btn-text">
+                See details <span aria-hidden="true">→</span>
+              </Link>
             </article>
           </div>
         </div>
@@ -337,33 +340,23 @@ export default function Home() {
               className="edu-programs reveal-fade"
               style={{ ["--reveal-delay" as string]: "100ms" }}
             >
-              <a
-                href="https://intern.loopingbinary.com"
-                className="program-tile"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/products/intern" className="program-tile">
                 <span className="program-tag">Most rigorous</span>
                 <h3>Internship Program</h3>
                 <p>
                   Work on live LB projects. Real deadlines. Real clients. Real
                   consequences.
                 </p>
-              </a>
+              </Link>
 
-              <a
-                href="https://juniordev.loopingbinary.com"
-                className="program-tile"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/products/junior-dev" className="program-tile">
                 <span className="program-tag">Competitive</span>
                 <h3>Junior Dev Tournament</h3>
                 <p>
-                  6-week team competition with live leaderboard, Demo Day, and
-                  real evaluation.
+                  Team seasons with live leaderboards, real modules, coins, and
+                  portfolio-ready projects.
                 </p>
-              </a>
+              </Link>
 
               <div className="program-tile program-tile--static">
                 <span className="program-tag">1-on-1</span>
@@ -374,19 +367,14 @@ export default function Home() {
                 </p>
               </div>
 
-              <a
-                href="https://intellex.loopingbinary.com"
-                className="program-tile"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/products/intellex" className="program-tile">
                 <span className="program-tag">1,000+ courses</span>
                 <h3>Intellex Platform</h3>
                 <p>
                   Self-paced courses in web development, design, data,
                   marketing, and AI.
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -544,55 +532,42 @@ export default function Home() {
               <p className="footer-col-title">Products</p>
               <ul role="list">
                 <li>
-                  <a href="https://intellex.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    Intellex
-                  </a>
+                  <Link href="/products/intellex">Intellex</Link>
                 </li>
                 <li>
-                  <a href="https://zela.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    Zela
-                  </a>
+                  <Link href="/products/zela">Zela</Link>
                 </li>
                 <li>
-                  <a href="https://shop.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    Tech Shop
-                  </a>
+                  <Link href="/products/shop">Tech Shop</Link>
                 </li>
                 <li>
-                  <a href="https://app.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    LB App
-                  </a>
+                  <Link href="/products/app">LB App</Link>
                 </li>
                 <li>
-                  <a href="https://auth.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    Auth
-                  </a>
+                  <Link href="/products/auth">Auth</Link>
                 </li>
                 <li>
-                  <a href="https://business.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    Business
-                  </a>
+                  <Link href="/products/business">Business</Link>
+                </li>
+                <li>
+                  <Link href="/products/junior-dev">Junior Dev</Link>
                 </li>
               </ul>
             </div>
             <div className="footer-col">
-              <p className="footer-col-title">Programs</p>
+              <p className="footer-col-title">Programs &amp; Services</p>
               <ul role="list">
                 <li>
-                  <a href="https://intern.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    Internship
-                  </a>
+                  <Link href="/products/intern">Internship</Link>
                 </li>
                 <li>
-                  <a href="https://juniordev.loopingbinary.com" target="_blank" rel="noopener noreferrer">
-                    Junior Dev
-                  </a>
+                  <Link href="/services/software-development">Software Development</Link>
                 </li>
                 <li>
-                  <a href="#services">Software Development</a>
+                  <Link href="/services/digital-growth">Digital Growth</Link>
                 </li>
                 <li>
-                  <a href="#services">Digital Growth</a>
+                  <Link href="/services/agency-partner">Agency Partner</Link>
                 </li>
               </ul>
             </div>

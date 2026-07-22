@@ -1,97 +1,9 @@
 "use client";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-  startTransition,
-  type CSSProperties,
-} from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState, startTransition, type CSSProperties } from "react";
 import gsap from "gsap";
-
-type Product = {
-  id: string;
-  name: string;
-  tag: string;
-  headline: string;
-  body: string;
-  href: string;
-  image: string;
-  accent: string;
-};
-
-const PRODUCTS: Product[] = [
-  {
-    id: "intellex",
-    name: "Intellex",
-    tag: "EdTech",
-    headline: "Learn at your pace. Finish what you start.",
-    body: "Self-paced courses, live mentors, and an AI tutor — skills to income, built in Cameroon.",
-    href: "https://intellex.loopingbinary.com",
-    image: "/assets/products/product-intellex-ui.png",
-    accent: "#00bf63",
-  },
-  {
-    id: "zela",
-    name: "Zela",
-    tag: "Commerce",
-    headline: "Cameroon’s social commerce marketplace.",
-    body: "Discover verified local vendors through a social feed, with escrow and mobile money payments.",
-    href: "https://zela.loopingbinary.com",
-    image: "/assets/products/product-zela-ui.png",
-    accent: "#f00457",
-  },
-  {
-    id: "shop",
-    name: "Tech Shop",
-    tag: "Retail",
-    headline: "Laptops & tech, delivered across Cameroon.",
-    body: "HP, Dell, Lenovo, MacBook and accessories — best XAF prices with fast Douala & Yaoundé delivery.",
-    href: "https://shop.loopingbinary.com",
-    image: "/assets/products/product-shop-ui.png",
-    accent: "#00bf63",
-  },
-  {
-    id: "app",
-    name: "LB App",
-    tag: "Infrastructure",
-    headline: "The digital infrastructure behind the stack.",
-    body: "Central auth, LBC coin, OAuth, and user management powering Intellex, Shop, and Junior Dev.",
-    href: "https://app.loopingbinary.com",
-    image: "/assets/products/hero-platform-ui.png",
-    accent: "#0097b2",
-  },
-  {
-    id: "auth",
-    name: "Auth",
-    tag: "Identity",
-    headline: "OAuth 2.0 built for African developers.",
-    body: "Passwordless login and Sign in with LoopingBinary — integrate identity in a few lines of code.",
-    href: "https://auth.loopingbinary.com",
-    image: "/assets/products/product-auth-ui.png",
-    accent: "#1ED77E",
-  },
-  {
-    id: "business",
-    name: "Business",
-    tag: "Ops",
-    headline: "Business management, elevated.",
-    body: "Coordinate teams, track milestones, and manage your full portfolio from one workspace.",
-    href: "https://business.loopingbinary.com",
-    image: "/assets/products/product-business-ui.png",
-    accent: "#0097b2",
-  },
-  {
-    id: "intern",
-    name: "Internship",
-    tag: "Training",
-    headline: "Work on real things. Build your career.",
-    body: "Eight weeks embedded in live LB teams — real deadlines, real mentorship, real outcomes.",
-    href: "https://intern.loopingbinary.com",
-    image: "/assets/products/product-intern-ui.png",
-    accent: "#00bf63",
-  },
-];
+import { PRODUCTS } from "@/lib/catalog";
 
 export default function ProductSuite() {
   const [active, setActive] = useState(0);
@@ -129,12 +41,9 @@ export default function ProductSuite() {
   }, [active]);
 
   useEffect(() => {
-    const start = () => {
-      autoRef.current = setInterval(() => {
-        setActive((i) => (i + 1) % PRODUCTS.length);
-      }, 5200);
-    };
-    start();
+    autoRef.current = setInterval(() => {
+      setActive((i) => (i + 1) % PRODUCTS.length);
+    }, 5200);
     return () => {
       if (autoRef.current) clearInterval(autoRef.current);
     };
@@ -161,7 +70,7 @@ export default function ProductSuite() {
             One connected company.
           </h2>
           <p className="section-lede">
-            Education, commerce, infrastructure, and identity — platforms we
+            Education, commerce, infrastructure, and tournaments — platforms we
             build, operate, and ship every day.
           </p>
         </div>
@@ -187,12 +96,7 @@ export default function ProductSuite() {
           ))}
         </div>
 
-        <div
-          className="suite-panel"
-          role="tabpanel"
-          ref={panelRef}
-          key={product.id}
-        >
+        <div className="suite-panel" role="tabpanel" ref={panelRef} key={product.id}>
           <div className="suite-copy">
             <span className="suite-tag" data-anim style={{ color: product.accent }}>
               {product.tag}
@@ -201,25 +105,27 @@ export default function ProductSuite() {
               {product.headline}
             </h3>
             <p className="suite-body" data-anim>
-              {product.body}
+              {product.short}
             </p>
-            <a
-              href={product.href}
-              className="btn-primary btn-lg"
-              data-anim
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open {product.name}
-              <span aria-hidden="true">↗</span>
-            </a>
+            <div className="suite-actions" data-anim>
+              <Link href={`/products/${product.id}`} className="btn-primary btn-lg">
+                Learn more
+                <span aria-hidden="true">→</span>
+              </Link>
+              <a
+                href={product.href}
+                className="btn-outline btn-lg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open live
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
 
           <div className="suite-visual" aria-hidden="true">
-            <div
-              className="suite-visual-glow"
-              style={{ background: product.accent }}
-            />
+            <div className="suite-visual-glow" style={{ background: product.accent }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               ref={imgRef}
@@ -234,16 +140,10 @@ export default function ProductSuite() {
 
         <div className="suite-grid reveal-fade">
           {PRODUCTS.map((p) => (
-            <a
-              key={p.id}
-              href={p.href}
-              className="suite-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link key={p.id} href={`/products/${p.id}`} className="suite-link">
               <span className="suite-link-name">{p.name}</span>
               <span className="suite-link-host">{p.href.replace("https://", "")}</span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

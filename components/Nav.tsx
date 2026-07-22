@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const MOON_ICON = (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -22,11 +24,21 @@ const SUN_ICON = (
   </svg>
 );
 
+const NAV_LINKS = [
+  ["/#products", "Products"],
+  ["/#services", "Services"],
+  ["/#the-loop", "The Loop"],
+  ["/#education", "Programs"],
+  ["/#about", "About"],
+] as const;
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">("light");
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -70,9 +82,10 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
+    if (!onHome) return;
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
     const links = document.querySelectorAll<HTMLAnchorElement>(
-      ".nav-links a[href^='#']"
+      ".nav-links a[href*='#']"
     );
     if (!sections.length || !links.length) return;
 
@@ -82,10 +95,8 @@ export default function Nav() {
           if (entry.isIntersecting) {
             const id = entry.target.id;
             links.forEach((link) => {
-              link.classList.toggle(
-                "active",
-                link.getAttribute("href") === `#${id}`
-              );
+              const href = link.getAttribute("href") || "";
+              link.classList.toggle("active", href.endsWith(`#${id}`));
             });
           }
         });
@@ -95,38 +106,29 @@ export default function Nav() {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [onHome]);
 
   const closeMenu = () => setMenuOpen(false);
+  const contactHref = onHome ? "#contact" : "/#contact";
 
   return (
     <header className={`nav-wrap${scrolled ? " scrolled" : ""}`} id="nav">
       <nav className="nav-inner" aria-label="Main navigation">
-        <a href="/" className="nav-logo" aria-label="Looping Binary, home">
+        <Link href="/" className="nav-logo" aria-label="Looping Binary, home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo.svg" width="36" height="18" alt="" aria-hidden="true" />
           <span className="nav-wordmark">
             <span className="nav-lb-loop">Looping</span>{" "}
             <span className="nav-lb-bin">Binary</span>
           </span>
-        </a>
+        </Link>
 
         <ul className="nav-links" role="list">
-          <li>
-            <a href="#products">Products</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#the-loop">The Loop</a>
-          </li>
-          <li>
-            <a href="#education">Programs</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
+          {NAV_LINKS.map(([href, label]) => (
+            <li key={href}>
+              <Link href={href}>{label}</Link>
+            </li>
+          ))}
         </ul>
 
         <div className="nav-actions">
@@ -139,9 +141,9 @@ export default function Nav() {
           >
             {theme === "dark" ? SUN_ICON : MOON_ICON}
           </button>
-          <a href="#contact" className="btn-primary">
+          <Link href={contactHref} className="btn-primary">
             Get in touch
-          </a>
+          </Link>
         </div>
 
         <button
@@ -174,25 +176,17 @@ export default function Nav() {
           </svg>
         </button>
         <ul role="list">
-          {(
-            [
-              ["#products", "Products"],
-              ["#services", "Services"],
-              ["#the-loop", "The Loop"],
-              ["#education", "Programs"],
-              ["#about", "About"],
-            ] as const
-          ).map(([href, label]) => (
+          {NAV_LINKS.map(([href, label]) => (
             <li key={href}>
-              <a href={href} onClick={closeMenu}>
+              <Link href={href} onClick={closeMenu}>
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
-        <a href="#contact" className="btn-primary" onClick={closeMenu}>
+        <Link href={contactHref} className="btn-primary" onClick={closeMenu}>
           Get in touch
-        </a>
+        </Link>
       </div>
     </header>
   );
