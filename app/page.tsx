@@ -70,6 +70,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══ TRUST STRIP ════════════════════════════════════════════ */}
+      <section className="trust-strip" aria-label="What we offer">
+        <div className="container trust-strip-inner">
+          {[
+            ["Build", "Custom software and digital products"],
+            ["Grow", "Marketing and digital growth systems"],
+            ["Train", "Internships, Junior Dev, and Intellex"],
+            ["Operate", "Live platforms across Africa"],
+          ].map(([title, body]) => (
+            <div key={title} className="trust-item">
+              <strong>{title}</strong>
+              <span>{body}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ═══ MARQUEE ═════════════════════════════════════════════════ */}
       <div className="marquee-wrap" aria-hidden="true">
         <div className="marquee-track">
