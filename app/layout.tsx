@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Syne } from "next/font/google";
+import { DM_Sans, Outfit } from "next/font/google";
 import Nav from "@/components/Nav";
 import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
@@ -12,9 +12,9 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const syne = Syne({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
@@ -41,7 +41,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="light"
-      className={`${dmSans.variable} ${syne.variable}`}
+      className={`${dmSans.variable} ${outfit.variable}`}
       suppressHydrationWarning
     >
       <body>

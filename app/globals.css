@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
    LOOPING BINARY - ClickUp-inspired Design System
-   Syne (display) + DM Sans (body) via next/font
+   Outfit (display) + DM Sans (body) via next/font
    LB Green #00bf63 | LB Blue #0097b2
    Default: white / light theme
 ═══════════════════════════════════════════ */
@@ -28,10 +28,10 @@ img, video, canvas, svg { display: block; max-width: 100%; }
 ul[role="list"], ol[role="list"] { list-style: none; }
 h1, h2, h3, h4 {
   text-wrap: balance;
-  line-height: 1.08;
+  line-height: 1.1;
   font-family: var(--font-display), var(--font-body), sans-serif;
   font-weight: 700;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
 }
 p, li { text-wrap: pretty; }
 a { color: inherit; text-decoration: none; }
@@ -444,18 +444,20 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 .hero-brand::after { display: none; }
 
 .hero-title {
-  font-size: clamp(2.6rem, 1.35rem + 4.4vw, 5rem);
-  font-weight: 800;
-  letter-spacing: -0.045em;
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(2.75rem, 1.5rem + 4.2vw, 4.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
   color: var(--c-text);
-  line-height: 1.02;
+  line-height: 1.05;
   margin-bottom: 1.25rem;
-  max-width: 13ch;
+  max-width: 14ch;
 }
 .hero-title .hero-line { display: block; }
 .hero-accent {
   font-style: normal;
-  background: linear-gradient(120deg, var(--c-green) 10%, var(--c-blue) 90%);
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--c-green) 8%, var(--c-blue) 92%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
