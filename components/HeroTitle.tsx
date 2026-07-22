@@ -1,36 +1,37 @@
 'use client';
-import SplitText from './SplitText';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 export default function HeroTitle() {
+  const ref = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const lines = el.querySelectorAll('.hero-line');
+    gsap.fromTo(
+      lines,
+      { opacity: 0, y: 28 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.85,
+        stagger: 0.12,
+        ease: 'power3.out',
+        delay: 0.08,
+      }
+    );
+  }, []);
+
   return (
-    <h1 id="hero-h1" className="hero-title">
-      <SplitText
-        text="One company."
-        tag="span"
-        textAlign="left"
-        delay={45}
-        duration={1.15}
-        ease="power3.out"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="0px"
-      />
-      <br />
-      <SplitText
-        text="An entire digital stack."
-        tag="em"
-        className="hero-accent"
-        textAlign="left"
-        delay={45}
-        startDelay={0.55}
-        duration={1.15}
-        ease="power3.out"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="0px"
-      />
+    <h1 id="hero-h1" className="hero-title" ref={ref}>
+      <span className="hero-line">We build &amp; grow</span>
+      <span className="hero-line">
+        <em className="hero-accent">African businesses.</em>
+      </span>
     </h1>
   );
 }

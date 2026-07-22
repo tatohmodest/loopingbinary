@@ -1,150 +1,139 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, startTransition, type CSSProperties } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PRODUCTS } from "@/lib/catalog";
 
+gsap.registerPlugin(ScrollTrigger);
+
+const FEATURED_IDS = ["intellex", "zela", "shop", "junior-dev", "business"];
+
 export default function ProductSuite() {
-  const [active, setActive] = useState(0);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const autoRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const product = PRODUCTS[active];
-
-  const goTo = (index: number) => {
-    if (index === active) return;
-    startTransition(() => setActive(index));
-  };
+  const rootRef = useRef<HTMLElement>(null);
+  const featured = FEATURED_IDS.map(
+    (id) => PRODUCTS.find((p) => p.id === id)!
+  ).filter(Boolean);
 
   useEffect(() => {
-    const panel = panelRef.current;
-    const img = imgRef.current;
-    if (!panel || !img) return;
+    const root = rootRef.current;
+    if (!root) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const tl = gsap.timeline();
-    tl.fromTo(
-      panel.querySelectorAll("[data-anim]"),
-      { opacity: 0, y: 18 },
-      { opacity: 1, y: 0, duration: 0.45, stagger: 0.06, ease: "power3.out" }
-    ).fromTo(
-      img,
-      { opacity: 0, scale: 1.04, y: 24 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "power3.out" },
-      0.05
-    );
+    const ctx = gsap.context(() => {
+      root.querySelectorAll<HTMLElement>(".stack-row").forEach((row) => {
+        const copy = row.querySelector(".stack-copy");
+        const visual = row.querySelector(".stack-visual");
+        gsap.fromTo(
+          [copy, visual],
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+      });
+    }, root);
 
-    return () => {
-      tl.kill();
-    };
-  }, [active]);
-
-  useEffect(() => {
-    autoRef.current = setInterval(() => {
-      setActive((i) => (i + 1) % PRODUCTS.length);
-    }, 5200);
-    return () => {
-      if (autoRef.current) clearInterval(autoRef.current);
-    };
+    return () => ctx.revert();
   }, []);
-
-  const pauseAuto = () => {
-    if (autoRef.current) clearInterval(autoRef.current);
-  };
 
   return (
     <section
       className="product-suite section-gap"
       id="products"
       aria-labelledby="products-title"
-      onMouseEnter={pauseAuto}
-      onFocusCapture={pauseAuto}
+      ref={rootRef}
     >
       <div className="container">
         <div className="section-header reveal-fade">
-          <p className="eyebrow">The Looping Binary Stack</p>
+          <p className="eyebrow">Our products speak for us</p>
           <h2 id="products-title" className="section-title">
-            All our products.
+            Real platforms.
             <br />
-            One connected company.
+            Real proof.
           </h2>
           <p className="section-lede">
-            Education, commerce, infrastructure, and tournaments — platforms we
-            build, operate, and ship every day.
+            We don’t just pitch services — we operate products used by learners,
+            buyers, vendors, and developers across Cameroon. Scroll and see.
           </p>
         </div>
 
-        <div className="suite-tabs" role="tablist" aria-label="Products">
-          {PRODUCTS.map((p, i) => (
-            <button
-              key={p.id}
-              role="tab"
-              type="button"
-              aria-selected={i === active}
-              className={`suite-tab${i === active ? " is-active" : ""}`}
-              style={
-                i === active
-                  ? ({ ["--tab-accent" as string]: p.accent } as CSSProperties)
-                  : undefined
-              }
-              onClick={() => goTo(i)}
+        <div className="product-stack">
+          {featured.map((product, i) => (
+            <article
+              key={product.id}
+              className={`stack-row${i % 2 === 1 ? " stack-row--flip" : ""}`}
             >
-              <span className="suite-tab-dot" aria-hidden="true" />
-              {p.name}
-            </button>
+              <div className="stack-copy">
+                <span className="suite-tag" style={{ color: product.accent }}>
+                  {product.tag}
+                </span>
+                <h3 className="stack-headline">{product.headline}</h3>
+                <p className="stack-body">{product.short}</p>
+                <ul className="stack-points" role="list">
+                  {product.highlights.slice(0, 3).map((h) => (
+                    <li key={h}>{h}</li>
+                  ))}
+                </ul>
+                <div className="suite-actions">
+                  <Link href={`/products/${product.id}`} className="btn-primary">
+                    Learn more
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                  <a
+                    href={product.href}
+                    className="btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open live
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="stack-visual">
+                <div
+                  className="suite-visual-glow"
+                  style={{ background: product.accent }}
+                  aria-hidden="true"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={product.image}
+                  alt={`${product.name} interface`}
+                  width={1200}
+                  height={675}
+                  className="suite-img"
+                  loading="lazy"
+                />
+              </div>
+            </article>
           ))}
         </div>
 
-        <div className="suite-panel" role="tabpanel" ref={panelRef} key={product.id}>
-          <div className="suite-copy">
-            <span className="suite-tag" data-anim style={{ color: product.accent }}>
-              {product.tag}
-            </span>
-            <h3 className="suite-headline" data-anim>
-              {product.headline}
-            </h3>
-            <p className="suite-body" data-anim>
-              {product.short}
+        <div className="stack-more reveal-fade">
+          <div className="stack-more-copy">
+            <h3>There’s more in the stack.</h3>
+            <p>
+              Auth, LB App, Internship, and the rest of the ecosystem — see every
+              product we operate.
             </p>
-            <div className="suite-actions" data-anim>
-              <Link href={`/products/${product.id}`} className="btn-primary btn-lg">
-                Learn more
-                <span aria-hidden="true">→</span>
-              </Link>
-              <a
-                href={product.href}
-                className="btn-outline btn-lg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open live
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
           </div>
-
-          <div className="suite-visual" aria-hidden="true">
-            <div className="suite-visual-glow" style={{ background: product.accent }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              ref={imgRef}
-              src={product.image}
-              alt=""
-              width={1200}
-              height={675}
-              className="suite-img"
-            />
-          </div>
-        </div>
-
-        <div className="suite-grid reveal-fade">
-          {PRODUCTS.map((p) => (
-            <Link key={p.id} href={`/products/${p.id}`} className="suite-link">
-              <span className="suite-link-name">{p.name}</span>
-              <span className="suite-link-host">{p.href.replace("https://", "")}</span>
-            </Link>
-          ))}
+          <Link href="/products" className="btn-primary btn-lg">
+            See all products
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>

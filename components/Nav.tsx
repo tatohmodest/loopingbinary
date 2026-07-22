@@ -26,9 +26,9 @@ const SUN_ICON = (
 
 const NAV_LINKS = [
   ["/#products", "Products"],
+  ["/products", "All products"],
   ["/#services", "Services"],
-  ["/#the-loop", "The Loop"],
-  ["/#education", "Programs"],
+  ["/#education", "Training"],
   ["/#about", "About"],
 ] as const;
 

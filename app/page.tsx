@@ -28,9 +28,9 @@ export default function Home() {
               className="hero-sub fade-in-up"
               style={{ ["--delay" as string]: "160ms" }}
             >
-              We build software, operate digital products, grow businesses, and
-              train the engineers who ship it all — from Douala to the rest of
-              Africa.
+              Software, digital growth, and vocational training — from Douala to
+              the rest of Africa. Our products already prove what we can do for
+              yours.
             </p>
 
             <div
@@ -38,10 +38,10 @@ export default function Home() {
               style={{ ["--delay" as string]: "240ms" }}
             >
               <MagneticButton href="#contact" className="btn-primary btn-lg">
-                Start a project
+                Grow your business
               </MagneticButton>
               <MagneticButton href="#products" className="btn-outline btn-lg">
-                Explore products
+                See our products
               </MagneticButton>
             </div>
           </div>
@@ -97,15 +97,13 @@ export default function Home() {
       >
         <div className="container">
           <div className="section-header reveal-fade">
-            <p className="eyebrow">Services</p>
+            <p className="eyebrow">For businesses</p>
             <h2 id="services-title" className="section-title">
-              Everything your business
-              <br />
-              needs to operate online.
+              Come grow with us.
             </h2>
             <p className="section-lede">
-              From first landing page to full digital operations — one partner,
-              one standard.
+              We build your software, run your digital growth, and train the
+              people who keep it moving — one partner for the full loop.
             </p>
           </div>
 
@@ -314,17 +312,15 @@ export default function Home() {
         <div className="container">
           <div className="edu-layout">
             <div className="edu-header reveal-fade">
-              <p className="eyebrow">Education Programs</p>
+              <p className="eyebrow">Education &amp; training</p>
               <h2 id="edu-title" className="section-title">
-                We train the next
+                Vocational paths that
                 <br />
-                generation of
-                <br />
-                African developers.
+                actually ship talent.
               </h2>
               <p className="edu-intro">
-                The school is not a side project. It is how the company stays
-                sharp — and how serious developers get a real path into tech.
+                Internship, Junior Dev, mentorship, and Intellex — how we train
+                developers who can work on real products, not just certificates.
               </p>
               <a
                 href="https://intellex.loopingbinary.com"
@@ -449,15 +445,15 @@ export default function Home() {
         <div className="container">
           <div className="contact-banner reveal-fade">
             <div className="contact-banner-copy">
-              <p className="eyebrow eyebrow--on-dark">Get Started</p>
+              <p className="eyebrow eyebrow--on-dark">Let’s talk</p>
               <h2 id="contact-title" className="contact-title">
-                Ready to build
+                Bring your business.
                 <br />
-                something real?
+                We’ll grow it.
               </h2>
               <p className="contact-sub">
-                One conversation. No commitments. We will tell you honestly
-                whether we are the right fit.
+                Software, marketing, and training — tell us where you are. We’ll
+                tell you honestly what it takes.
               </p>
             </div>
 
