@@ -19,7 +19,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
             <span>{service.name}</span>
           </nav>
 
-          <p className="eyebrow" style={{ color: service.accent }}>
+          <p className="eyebrow">
             Service {service.num}
           </p>
           <h1 className="detail-title">{service.headline}</h1>
