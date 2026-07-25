@@ -238,7 +238,7 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   border-bottom-color: var(--c-border);
 }
 .nav-inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin-inline: auto;
   padding-inline: clamp(1.25rem, 5vw, 4rem);
   height: 68px;
