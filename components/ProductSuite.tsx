@@ -75,9 +75,7 @@ export default function ProductSuite() {
               className={`stack-row${i % 2 === 1 ? " stack-row--flip" : ""}`}
             >
               <div className="stack-copy">
-                <span className="suite-tag" style={{ color: product.accent }}>
-                  {product.tag}
-                </span>
+                <span className="suite-tag">{product.tag}</span>
                 <h3 className="stack-headline">{product.headline}</h3>
                 <p className="stack-body">{product.short}</p>
                 <ul className="stack-points" role="list">
@@ -103,11 +101,6 @@ export default function ProductSuite() {
               </div>
 
               <div className="stack-visual">
-                <div
-                  className="suite-visual-glow"
-                  style={{ background: product.accent }}
-                  aria-hidden="true"
-                />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={product.image}

@@ -13,24 +13,24 @@ export default function HeroTitle() {
 
     gsap.fromTo(
       el.querySelectorAll('.hero-line'),
-      { opacity: 0, y: 18 },
+      { opacity: 0, y: 14 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.7,
-        stagger: 0.09,
+        duration: 0.65,
+        stagger: 0.08,
         ease: 'power3.out',
-        delay: 0.04,
+        delay: 0.05,
       }
     );
   }, []);
 
   return (
     <h1 id="hero-h1" className="hero-title" ref={ref}>
-      <span className="hero-line">Build software.</span>
-      <span className="hero-line">Grow businesses.</span>
+      <span className="hero-line">Software that ships.</span>
+      <span className="hero-line">Growth that sticks.</span>
       <span className="hero-line">
-        <em className="hero-accent">Train builders.</em>
+        Talent that is <em className="hero-accent">trained</em>.
       </span>
     </h1>
   );

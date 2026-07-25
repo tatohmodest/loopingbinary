@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     body: "Intellex is Looping Binary’s learning platform. It combines structured courses, live mentorship, and an AI tutor so learners can actually finish what they start - one level at a time - and turn skills into income.",
     href: "https://intellex.loopingbinary.com",
     image: "/assets/products/product-intellex-ui.png",
-    accent: "#00bf63",
+    accent: "#1f8f57",
     audience: "Students, career switchers, and professionals building practical tech skills.",
     highlights: [
       "1,000+ courses across web, design, data, marketing, and AI",
@@ -167,7 +167,7 @@ export const PRODUCTS: Product[] = [
     body: "LB Tech Shop is Looping Binary’s electronics store. It sells laptops, phones, and accessories with transparent XAF pricing and delivery across Cameroon - especially Douala and Yaoundé.",
     href: "https://shop.loopingbinary.com",
     image: "/assets/products/product-shop-ui.png",
-    accent: "#00bf63",
+    accent: "#1f8f57",
     audience: "Students, professionals, and businesses buying reliable tech.",
     highlights: [
       "Laptops, phones, and accessories",
@@ -231,7 +231,7 @@ export const PRODUCTS: Product[] = [
     body: "LB App is Looping Binary’s digital infrastructure platform. It centralizes authentication, LBC coin, OAuth, and user management so every product in the ecosystem can share identity and economy.",
     href: "https://app.loopingbinary.com",
     image: "/assets/products/hero-platform-ui.png",
-    accent: "#0097b2",
+    accent: "#2f7d8f",
     audience: "Internal teams, platform operators, and ecosystem product owners.",
     highlights: [
       "Centralized authentication",
@@ -295,7 +295,7 @@ export const PRODUCTS: Product[] = [
     body: "Looping Binary Auth is a secure OAuth 2.0 authorization server. Developers can add passwordless authentication and “Sign in with LoopingBinary” without reinventing identity.",
     href: "https://auth.loopingbinary.com",
     image: "/assets/products/product-auth-ui.png",
-    accent: "#1ED77E",
+    accent: "#1f8f57",
     audience: "Developers and startups who need trusted identity fast.",
     highlights: [
       "OAuth 2.0 authorization server",
@@ -359,7 +359,7 @@ export const PRODUCTS: Product[] = [
     body: "Looping Binary Business is the workspace for coordinating business portfolios - teams, milestones, and operational visibility in one architectural system.",
     href: "https://business.loopingbinary.com",
     image: "/assets/products/product-business-ui.png",
-    accent: "#0097b2",
+    accent: "#2f7d8f",
     audience: "Founders, operators, and teams managing multiple workstreams.",
     highlights: [
       "Portfolio coordination",
@@ -423,7 +423,7 @@ export const PRODUCTS: Product[] = [
     body: "The Looping Binary Internship embeds you into an active team. Not a simulation. Not a bootcamp. You ship real work for eight weeks with mentorship, feedback, and a Demo Day finish.",
     href: "https://intern.loopingbinary.com",
     image: "/assets/products/product-intern-ui.png",
-    accent: "#00bf63",
+    accent: "#1f8f57",
     audience: "Serious juniors ready for real production pressure.",
     highlights: [
       "7 active tracks",
@@ -487,7 +487,7 @@ export const PRODUCTS: Product[] = [
     body: "Looping Binary Junior Dev is a competitive developer tournament. Talented juniors form teams, complete real-world project modules, earn coins, dominate leaderboards, and leave with production-grade work that proves they can ship.",
     href: "https://juniordev.loopingbinary.com",
     image: "/assets/products/product-juniordev-ui.png",
-    accent: "#00bf63",
+    accent: "#1f8f57",
     audience: "Junior developers who want competition, collaboration, and a serious portfolio.",
     highlights: [
       "Team-based competitive seasons",
@@ -552,7 +552,7 @@ export const SERVICES: Service[] = [
     short:
       "Landing pages, web apps, e-commerce, dashboards, APIs - designed precisely, built to last.",
     body: "We design and build the software African businesses need to operate online - from first websites to full custom platforms - with local context and global engineering standards.",
-    accent: "#00bf63",
+    accent: "#1f8f57",
     offerings: [
       "Landing pages & company websites",
       "Web applications & platforms",
@@ -591,7 +591,7 @@ export const SERVICES: Service[] = [
     short:
       "Social, paid ads, SEO, and content - run to create demand, not noise.",
     body: "Digital Growth is Looping Binary’s marketing arm. We run social, paid acquisition, SEO, and content with the same discipline we apply to software delivery.",
-    accent: "#0097b2",
+    accent: "#2f7d8f",
     offerings: [
       "Social media strategy & management",
       "Paid advertising (Facebook, Google)",
@@ -629,7 +629,7 @@ export const SERVICES: Service[] = [
     short:
       "Strategy, execution, results - you run the business while we own the digital work.",
     body: "Growth Agency Partner is a retainer model. You get an embedded Looping Binary team that owns strategy and execution across product and growth - without assembling freelancers yourself.",
-    accent: "#00bf63",
+    accent: "#1f8f57",
     offerings: [
       "Dedicated embedded team",
       "Full retainer model",

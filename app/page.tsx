@@ -15,58 +15,51 @@ export default function Home() {
 
       {/* ═══ HERO ═══════════════════════════════════════════════════ */}
       <section className="hero" aria-labelledby="hero-h1">
-        <div className="hero-aurora" aria-hidden="true">
-          <span className="hero-aurora-blob hero-aurora-blob--a" />
-          <span className="hero-aurora-blob hero-aurora-blob--b" />
-          <span className="hero-aurora-blob hero-aurora-blob--c" />
-        </div>
-        <div className="hero-gridline" aria-hidden="true" />
+        <div className="container hero-wrap">
+          <div className="hero-card">
+            <div className="hero-card-copy">
+              <span className="hero-badge fade-in-up" style={{ ["--delay" as string]: "0ms" }}>
+                Douala · Africa · Built in-house
+              </span>
 
-        <div className="hero-shell container">
-          <div className="hero-copy">
-            <p className="hero-brand fade-in-up" style={{ ["--delay" as string]: "0ms" }}>
-              Looping Binary
-            </p>
+              <HeroTitle />
 
-            <HeroTitle />
+              <p
+                className="hero-sub fade-in-up"
+                style={{ ["--delay" as string]: "120ms" }}
+              >
+                Looping Binary builds software, runs digital growth, and trains
+                the people who keep shipping. Our live products are the proof.
+              </p>
 
-            <p
-              className="hero-sub fade-in-up"
-              style={{ ["--delay" as string]: "140ms" }}
-            >
-              Software, digital growth, and vocational training from Douala to
-              the rest of Africa. Our live products already prove what we can
-              build for your business.
-            </p>
+              <div
+                className="hero-cta fade-in-up"
+                style={{ ["--delay" as string]: "200ms" }}
+              >
+                <MagneticButton href="#contact" className="btn-primary btn-lg">
+                  Talk to us
+                </MagneticButton>
+                <MagneticButton href="#products" className="btn-outline btn-lg">
+                  Browse products
+                </MagneticButton>
+              </div>
 
-            <div
-              className="hero-cta fade-in-up"
-              style={{ ["--delay" as string]: "220ms" }}
-            >
-              <MagneticButton href="#contact" className="btn-primary btn-lg">
-                Grow your business
-              </MagneticButton>
-              <MagneticButton href="#products" className="btn-outline btn-lg">
-                See our products
-              </MagneticButton>
+              <div
+                className="hero-chips fade-in-up"
+                style={{ ["--delay" as string]: "280ms" }}
+                aria-label="What we do"
+              >
+                <span className="hero-chip">Software</span>
+                <span className="hero-chip hero-chip--soft">Digital growth</span>
+                <span className="hero-chip hero-chip--mint">Training</span>
+                <span className="hero-chip hero-chip--sand">Live products</span>
+              </div>
             </div>
 
-            <div
-              className="hero-chips fade-in-up"
-              style={{ ["--delay" as string]: "300ms" }}
-              aria-label="Products"
-            >
-              {["Intellex", "Zela", "Tech Shop", "Junior Dev", "Auth", "Business"].map(
-                (name) => (
-                  <span key={name} className="hero-chip">
-                    {name}
-                  </span>
-                )
-              )}
+            <div className="hero-card-visual">
+              <HeroDashboard />
             </div>
           </div>
-
-          <HeroDashboard />
         </div>
       </section>
 
@@ -247,26 +240,26 @@ export default function Home() {
                   <path
                     id="arrow-top"
                     d="M8 20 Q40 8 72 20"
-                    stroke="#00bf63"
+                    stroke="#1f8f57"
                     strokeWidth="1.5"
                     fill="none"
                   />
                   <polygon
                     points="72,20 64,14 66,24"
-                    fill="#00bf63"
+                    fill="#1f8f57"
                     opacity="0"
                     className="arrow-head-top"
                   />
                   <path
                     id="arrow-bottom"
                     d="M72 60 Q40 72 8 60"
-                    stroke="#0097b2"
+                    stroke="#2f7d8f"
                     strokeWidth="1.5"
                     fill="none"
                   />
                   <polygon
                     points="8,60 16,66 14,56"
-                    fill="#0097b2"
+                    fill="#2f7d8f"
                     opacity="0"
                     className="arrow-head-bottom"
                   />

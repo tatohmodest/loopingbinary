@@ -19,9 +19,7 @@ export default function ProductDetail({ product }: { product: Product }) {
             <span>{product.name}</span>
           </nav>
 
-          <p className="eyebrow" style={{ color: product.accent }}>
-            {product.tag}
-          </p>
+          <p className="eyebrow">{product.tag}</p>
           <h1 className="detail-title">{product.headline}</h1>
           <p className="detail-lede">{product.body}</p>
 
