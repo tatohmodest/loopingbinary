@@ -1006,7 +1006,7 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 
 .feature-visual {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -1029,8 +1029,8 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  border: none;
+  border-radius: 8px;
+  border: 1px solid #141413;
   box-shadow: none;
   background: #111110;
 }
