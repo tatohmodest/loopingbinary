@@ -8,11 +8,11 @@ import { PRODUCTS } from "@/lib/catalog";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FEATURED_IDS = ["intellex", "zela", "shop", "junior-dev", "business"];
+const DEEP_DIVE_IDS = ["intellex", "zela", "junior-dev"];
 
 export default function ProductSuite() {
   const rootRef = useRef<HTMLElement>(null);
-  const featured = FEATURED_IDS.map(
+  const deepDives = DEEP_DIVE_IDS.map(
     (id) => PRODUCTS.find((p) => p.id === id)!
   ).filter(Boolean);
 
@@ -22,12 +22,12 @@ export default function ProductSuite() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const ctx = gsap.context(() => {
-      root.querySelectorAll<HTMLElement>(".stack-row").forEach((row) => {
-        const copy = row.querySelector(".stack-copy");
-        const visual = row.querySelector(".stack-visual");
+      root.querySelectorAll<HTMLElement>(".feature-row").forEach((row) => {
+        const copy = row.querySelector(".feature-copy");
+        const visual = row.querySelector(".feature-visual");
         gsap.fromTo(
           [copy, visual],
-          { opacity: 0, y: 40 },
+          { opacity: 0, y: 36 },
           {
             opacity: 1,
             y: 0,
@@ -36,7 +36,7 @@ export default function ProductSuite() {
             ease: "power3.out",
             scrollTrigger: {
               trigger: row,
-              start: "top 80%",
+              start: "top 82%",
               once: true,
             },
           }
@@ -55,26 +55,48 @@ export default function ProductSuite() {
       ref={rootRef}
     >
       <div className="container">
-        <div className="section-header reveal-fade">
-          <p className="eyebrow">Our products speak for us</p>
+        <div className="section-header section-header--center reveal-fade">
+          <p className="eyebrow">Product platform</p>
           <h2 id="products-title" className="section-title">
-            Real platforms.
-            <br />
-            Real proof.
+            Everything we operate.
           </h2>
           <p className="section-lede">
-            We don’t just pitch services - we operate products used by learners,
-            buyers, vendors, and developers across Cameroon. Scroll and see.
+            Live products across learning, commerce, auth, and developer
+            training - the proof behind how we build.
           </p>
         </div>
 
-        <div className="product-stack">
-          {featured.map((product, i) => (
-            <article
+        <div className="product-grid">
+          {PRODUCTS.map((product) => (
+            <Link
               key={product.id}
-              className={`stack-row${i % 2 === 1 ? " stack-row--flip" : ""}`}
+              href={`/products/${product.id}`}
+              className="product-card reveal-fade"
             >
-              <div className="stack-copy">
+              <div className="product-card-top">
+                <span className="product-card-tag">{product.tag}</span>
+                <span className="product-card-arrow" aria-hidden="true">
+                  →
+                </span>
+              </div>
+              <h3 className="product-card-name">{product.name}</h3>
+              <p className="product-card-body">{product.short}</p>
+              <span className="product-card-host">
+                {product.href.replace("https://", "")}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="feature-dives">
+        {deepDives.map((product, i) => (
+          <article
+            key={product.id}
+            className={`feature-row${i % 2 === 1 ? " feature-row--flip" : ""}`}
+          >
+            <div className="container feature-row-inner">
+              <div className="feature-copy">
                 <span className="suite-tag">{product.tag}</span>
                 <h3 className="stack-headline">{product.headline}</h3>
                 <p className="stack-body">{product.short}</p>
@@ -100,7 +122,7 @@ export default function ProductSuite() {
                 </div>
               </div>
 
-              <div className="stack-visual">
+              <div className="feature-visual">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={product.image}
@@ -111,16 +133,18 @@ export default function ProductSuite() {
                   loading="lazy"
                 />
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
+          </article>
+        ))}
+      </div>
 
+      <div className="container">
         <div className="stack-more reveal-fade">
           <div className="stack-more-copy">
-            <h3>There’s more in the stack.</h3>
+            <h3>Explore the full catalog.</h3>
             <p>
-              Auth, LB App, Internship, and the rest of the ecosystem - see every
-              product we operate.
+              Every product with details, highlights, and live links in one
+              place.
             </p>
           </div>
           <Link href="/products" className="btn-primary btn-lg">

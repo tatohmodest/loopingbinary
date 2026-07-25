@@ -28,9 +28,8 @@ export default function HeroTitle() {
   return (
     <h1 id="hero-h1" className="hero-title" ref={ref}>
       <span className="hero-line">Software that ships.</span>
-      <span className="hero-line">Growth that sticks.</span>
       <span className="hero-line">
-        Talent that is <em className="hero-accent">trained</em>.
+        Growth that <em className="hero-accent">sticks</em>.
       </span>
     </h1>
   );

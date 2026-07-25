@@ -13,74 +13,47 @@ export default function Home() {
     <main id="main">
       <ScrollRevealFallback />
 
-      {/* ═══ HERO ═══════════════════════════════════════════════════ */}
+      {/* ═══ HERO (Supabase-style: centered copy + full-width product) ═══ */}
       <section className="hero" aria-labelledby="hero-h1">
         <div className="container hero-wrap">
-          <div className="hero-card">
-            <div className="hero-card-copy">
-              <span className="hero-badge fade-in-up" style={{ ["--delay" as string]: "0ms" }}>
-                Douala · Africa · Built in-house
-              </span>
+          <div className="hero-copy">
+            <span
+              className="hero-badge fade-in-up"
+              style={{ ["--delay" as string]: "0ms" }}
+            >
+              Douala · Africa · Built in-house
+            </span>
 
-              <HeroTitle />
+            <HeroTitle />
 
-              <p
-                className="hero-sub fade-in-up"
-                style={{ ["--delay" as string]: "120ms" }}
-              >
-                Looping Binary builds software, runs digital growth, and trains
-                the people who keep shipping. Our live products are the proof.
-              </p>
+            <p
+              className="hero-sub fade-in-up"
+              style={{ ["--delay" as string]: "120ms" }}
+            >
+              Looping Binary builds software, runs digital growth, and trains
+              the people who keep shipping. Our live products are the proof.
+            </p>
 
-              <div
-                className="hero-cta fade-in-up"
-                style={{ ["--delay" as string]: "200ms" }}
-              >
-                <MagneticButton href="#contact" className="btn-primary btn-lg">
-                  Talk to us
-                </MagneticButton>
-                <MagneticButton href="#products" className="btn-outline btn-lg">
-                  Browse products
-                </MagneticButton>
-              </div>
-
-              <div
-                className="hero-chips fade-in-up"
-                style={{ ["--delay" as string]: "280ms" }}
-                aria-label="What we do"
-              >
-                <span className="hero-chip">Software</span>
-                <span className="hero-chip hero-chip--soft">Digital growth</span>
-                <span className="hero-chip hero-chip--mint">Training</span>
-                <span className="hero-chip hero-chip--sand">Live products</span>
-              </div>
+            <div
+              className="hero-cta fade-in-up"
+              style={{ ["--delay" as string]: "200ms" }}
+            >
+              <MagneticButton href="#contact" className="btn-primary btn-lg">
+                Talk to us
+              </MagneticButton>
+              <MagneticButton href="#products" className="btn-outline btn-lg">
+                Browse products
+              </MagneticButton>
             </div>
+          </div>
 
-            <div className="hero-card-visual">
-              <HeroDashboard />
-            </div>
+          <div className="hero-visual fade-in-up" style={{ ["--delay" as string]: "280ms" }}>
+            <HeroDashboard />
           </div>
         </div>
       </section>
 
-      {/* ═══ TRUST STRIP ════════════════════════════════════════════ */}
-      <section className="trust-strip" aria-label="What we offer">
-        <div className="container trust-strip-inner">
-          {[
-            ["Build", "Custom software and digital products"],
-            ["Grow", "Marketing and digital growth systems"],
-            ["Train", "Internships, Junior Dev, and Intellex"],
-            ["Operate", "Live platforms across Africa"],
-          ].map(([title, body]) => (
-            <div key={title} className="trust-item">
-              <strong>{title}</strong>
-              <span>{body}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ═══ MARQUEE ═════════════════════════════════════════════════ */}
+      {/* ═══ PRODUCT / OFFERING STRIP ════════════════════════════════ */}
       <div className="marquee-wrap" aria-hidden="true">
         <div className="marquee-track">
           {[
@@ -126,7 +99,7 @@ export default function Home() {
         aria-labelledby="services-title"
       >
         <div className="container">
-          <div className="section-header reveal-fade">
+          <div className="section-header section-header--center reveal-fade">
             <p className="eyebrow">For businesses</p>
             <h2 id="services-title" className="section-title">
               Come grow with us.
@@ -137,8 +110,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="services-bento">
-            <article className="bento-item bento-item--lg reveal-fade">
+          <div className="services-grid">
+            <article className="service-card reveal-fade">
               <span className="bento-num">01</span>
               <h3>Software Development</h3>
               <p>
@@ -157,7 +130,7 @@ export default function Home() {
             </article>
 
             <article
-              className="bento-item reveal-fade"
+              className="service-card reveal-fade"
               style={{ ["--reveal-delay" as string]: "80ms" }}
             >
               <span className="bento-num">02</span>
@@ -172,7 +145,7 @@ export default function Home() {
             </article>
 
             <article
-              className="bento-item bento-item--accent reveal-fade"
+              className="service-card reveal-fade"
               style={{ ["--reveal-delay" as string]: "140ms" }}
             >
               <span className="bento-num">03</span>
@@ -287,7 +260,7 @@ export default function Home() {
         aria-labelledby="why-title"
       >
         <div className="container">
-          <div className="section-header reveal-fade">
+          <div className="section-header section-header--center reveal-fade">
             <p className="eyebrow">Why Looping Binary</p>
             <h2 id="why-title" className="section-title">
               Local knowledge.
