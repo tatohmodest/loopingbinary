@@ -1,31 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const MOON_ICON = (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
   </svg>
 );
 
 const SUN_ICON = (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
     <circle cx="12" cy="12" r="5" />
     <line x1="12" y1="1" x2="12" y2="3" />
     <line x1="12" y1="21" x2="12" y2="23" />
@@ -38,13 +24,27 @@ const SUN_ICON = (
   </svg>
 );
 
+const LINKS = [
+  ["/work", "Work"],
+  ["#services", "Services"],
+  ["#the-loop", "The Loop"],
+  ["#education", "Programs"],
+  ["#about", "About"],
+] as const;
+
 export default function Nav() {
+  const pathname = usePathname();
+  const home = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
-  // Frosted glass on scroll
+  const hrefFor = (href: string) => {
+    if (href.startsWith("#")) return home ? href : `/${href}`;
+    return href;
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -52,7 +52,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Apply theme to <html>
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     document.documentElement.dispatchEvent(
@@ -60,7 +59,6 @@ export default function Nav() {
     );
   }, [theme]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -68,7 +66,6 @@ export default function Nav() {
     };
   }, [menuOpen]);
 
-  // Escape key closes menu
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && menuOpen) {
@@ -80,7 +77,6 @@ export default function Nav() {
     return () => document.removeEventListener("keydown", onKey);
   }, [menuOpen]);
 
-  // Close menu when viewport becomes desktop-width
   useEffect(() => {
     const mql = window.matchMedia("(min-width: 769px)");
     const onChange = (e: MediaQueryListEvent) => {
@@ -90,7 +86,10 @@ export default function Nav() {
     return () => mql.removeEventListener("change", onChange);
   }, []);
 
-  // Active nav link via IntersectionObserver
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
     const links = document.querySelectorAll<HTMLAnchorElement>(
@@ -117,53 +116,45 @@ export default function Nav() {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header
-      className={`nav-wrap${scrolled ? " scrolled" : ""}`}
-      id="nav"
-    >
+    <header className={`nav-wrap${scrolled ? " scrolled" : ""}`} id="nav">
       <nav className="nav-inner" aria-label="Main navigation">
-        {/* Logo */}
-        <a href="/" className="nav-logo" aria-label="Looping Binary,home">
+        <Link href="/" className="nav-logo" aria-label="Looping Binary, home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo.svg" width="36" height="18" alt="" aria-hidden="true" />
           <span className="nav-wordmark">
             <span className="nav-lb-loop">Looping</span>{" "}
             <span className="nav-lb-bin">Binary</span>
           </span>
-        </a>
+        </Link>
 
         <ul className="nav-links" role="list">
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#the-loop">The Loop</a>
-          </li>
-          <li>
-            <a href="#education">Programs</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
+          {LINKS.map(([href, label]) => (
+            <li key={href}>
+              {href.startsWith("/") ? (
+                <Link href={href} className={pathname.startsWith(href) ? "active" : undefined}>
+                  {label}
+                </Link>
+              ) : (
+                <a href={hrefFor(href)}>{label}</a>
+              )}
+            </li>
+          ))}
         </ul>
 
         <div className="nav-actions">
           <button
             className="btn-ghost"
-            onClick={() =>
-              setTheme((t) => (t === "dark" ? "light" : "dark"))
-            }
-            aria-label={
-              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-            }
+            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
           >
             {theme === "dark" ? MOON_ICON : SUN_ICON}
           </button>
-          <a href="#contact" className="btn-primary">
+          <a href={hrefFor("#contact")} className="btn-primary">
             Get in touch
           </a>
         </div>
@@ -182,39 +173,33 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`mobile-menu${menuOpen ? " open" : ""}`}
         id="mobile-menu"
         aria-hidden={!menuOpen}
       >
-        <button
-          className="mobile-menu-close"
-          onClick={closeMenu}
-          aria-label="Close menu"
-        >
+        <button className="mobile-menu-close" onClick={closeMenu} aria-label="Close menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
         <ul role="list">
-          {(
-            [
-              ["#services", "Services"],
-              ["#the-loop", "The Loop"],
-              ["#education", "Programs"],
-              ["#about", "About"],
-            ] as const
-          ).map(([href, label]) => (
+          {LINKS.map(([href, label]) => (
             <li key={href}>
-              <a href={href} onClick={closeMenu}>
-                {label}
-              </a>
+              {href.startsWith("/") ? (
+                <Link href={href} onClick={closeMenu}>
+                  {label}
+                </Link>
+              ) : (
+                <a href={hrefFor(href)} onClick={closeMenu}>
+                  {label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
-        <a href="#contact" className="btn-primary" onClick={closeMenu}>
+        <a href={hrefFor("#contact")} className="btn-primary" onClick={closeMenu}>
           Get in touch
         </a>
       </div>
