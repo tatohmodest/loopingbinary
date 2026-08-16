@@ -31,8 +31,10 @@ export default async function WorkDetailPage({ params }: Props) {
 
   return (
     <main id="main" className="case-page">
-      <section className="case-hero">
-        <div className="container case-hero-copy">
+      <section className="case-bleed">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={item.image} alt="" />
+        <div className="case-bleed-copy">
           <p className="eyebrow">{item.kind === "client" ? "Client work" : "Product"}</p>
           <h1>{item.name}</h1>
           <p className="case-lede">{item.headline}</p>
@@ -43,31 +45,19 @@ export default async function WorkDetailPage({ params }: Props) {
           </div>
           <div className="hero-cta">
             {item.href && (
-              <a
-                href={item.href}
-                className="btn-primary btn-lg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open live site <span aria-hidden="true">↗</span>
+              <a href={item.href} data-cursor="live" target="_blank" rel="noopener noreferrer">
+                Open live site
               </a>
             )}
-            <Link href="/#contact" className="btn-outline btn-lg">
+            <Link href="/#contact" data-cursor="talk">
               Start a project
             </Link>
           </div>
         </div>
       </section>
 
-      <div className="container">
-        <figure className="case-frame">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={item.image} alt={`${item.name} interface`} />
-        </figure>
-      </div>
-
       <section className="section-gap">
-        <div className="container case-body">
+        <div className="case-body">
           <div className="case-story">
             {item.body.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -75,7 +65,7 @@ export default async function WorkDetailPage({ params }: Props) {
           </div>
           <aside className="case-aside">
             <div>
-              <p className="footer-col-title">What we did</p>
+              <p>What we did</p>
               <ul role="list">
                 {item.services.map((service) => (
                   <li key={service}>{service}</li>
@@ -83,7 +73,7 @@ export default async function WorkDetailPage({ params }: Props) {
               </ul>
             </div>
             <div>
-              <p className="footer-col-title">In the room</p>
+              <p>In the room</p>
               <ul role="list">
                 {item.results.map((result) => (
                   <li key={result}>{result}</li>
@@ -95,25 +85,22 @@ export default async function WorkDetailPage({ params }: Props) {
       </section>
 
       {related.length > 0 && (
-        <section className="section-gap case-more">
-          <div className="container">
-            <p className="eyebrow">Continue</p>
-            <h2 className="section-title">More work</h2>
-            <div className="work-grid work-grid--related">
-              {related.map((other) => (
-                <Link key={other.slug} href={`/work/${other.slug}`} className="work-tile">
-                  <div className="work-tile-media">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={other.image} alt="" />
-                  </div>
-                  <div className="work-tile-copy">
-                    <span className="work-kicker">{other.tag}</span>
-                    <h3>{other.name}</h3>
-                    <p>{other.summary}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+        <section className="case-more">
+          <p className="eyebrow">Continue</p>
+          <h2 className="section-title">More work</h2>
+          <div className="work-grid work-grid--related">
+            {related.map((other) => (
+              <Link key={other.slug} href={`/work/${other.slug}`} className="work-tile" data-cursor="view">
+                <div className="work-tile-media">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={other.image} alt="" />
+                </div>
+                <div className="work-tile-copy">
+                  <span className="work-kicker">{other.tag}</span>
+                  <h3>{other.name}</h3>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       )}

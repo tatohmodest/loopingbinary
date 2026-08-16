@@ -19,23 +19,25 @@ export default function WorkIndexPage() {
         <p className="case-lede">Not mockups. Live rooms. Click anything.</p>
       </section>
 
-      <div className="work-grid">
-        {clients.map((item) => (
-          <Link key={item.slug} href={`/work/${item.slug}`} className="work-tile" data-cursor="view">
-            <div className="work-tile-media">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={item.image} alt={`${item.name} website`} />
-            </div>
-            <div className="work-tile-copy">
-              <span className="work-kicker">{item.tag}</span>
-              <h3>{item.name}</h3>
-              <p>{item.summary}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {clients.map((item, i) => (
+        <Link
+          key={item.slug}
+          href={`/work/${item.slug}`}
+          className="archive-row"
+          data-cursor="view"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={item.image} alt={`${item.name} website`} />
+          <div className="archive-row-inner">
+            <span>
+              0{i + 1} · {item.tag} · {item.location}
+            </span>
+            <h2>{item.name}</h2>
+          </div>
+        </Link>
+      ))}
 
-      <p className="eyebrow" style={{ paddingInline: "6vw" }}>
+      <p className="eyebrow" style={{ padding: "4rem 6vw 0.8rem" }}>
         Products
       </p>
       <div className="stack-grid">

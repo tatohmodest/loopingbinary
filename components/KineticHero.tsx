@@ -1,85 +1,95 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import DarkVeil from "@/components/DarkVeil";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { CLIENT_WORK } from "@/lib/catalog";
 
-const FLOAT = CLIENT_WORK.slice(0, 4);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function KineticHero() {
-  const stage = useRef<HTMLElement>(null);
+  const root = useRef<HTMLElement>(null);
+  const [on, setOn] = useState(0);
 
   useEffect(() => {
-    const root = stage.current;
-    if (!root) return;
-    const cards = root.querySelectorAll<HTMLElement>("[data-float]");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
-
-    const onMove = (e: PointerEvent) => {
-      const r = root.getBoundingClientRect();
-      const nx = (e.clientX - r.left) / r.width - 0.5;
-      const ny = (e.clientY - r.top) / r.height - 0.5;
-      cards.forEach((card, i) => {
-        const depth = (i + 1) * 18;
-        card.style.transform = `translate3d(${nx * depth}px, ${ny * depth}px, 0) rotate(${(i - 1.5) * 6}deg)`;
-      });
-    };
-
-    root.addEventListener("pointermove", onMove);
-    return () => root.removeEventListener("pointermove", onMove);
+    const id = window.setInterval(() => {
+      setOn((i) => (i + 1) % CLIENT_WORK.length);
+    }, 4200);
+    return () => window.clearInterval(id);
   }, []);
 
+  useGSAP(
+    () => {
+      const el = root.current;
+      if (!el) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) return;
+
+      gsap.to(".kh-film", {
+        yPercent: 18,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+      gsap.to(".kh-stage", {
+        yPercent: -10,
+        opacity: 0.2,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    },
+    { scope: root }
+  );
+
+  const current = CLIENT_WORK[on];
+
   return (
-    <section className="kh" ref={stage} aria-labelledby="hero-h1">
-      <div className="kh-veil" aria-hidden="true">
-        <DarkVeil
-          hueShift={-12}
-          noiseIntensity={0.08}
-          scanlineIntensity={0.08}
-          speed={0.35}
-          scanlineFrequency={0.8}
-          warpAmount={1.4}
-        />
-      </div>
-
-      <div className="kh-copy">
-        <p className="kh-loc">Douala · Africa · Live products</p>
-        <h1 id="hero-h1" className="kh-title">
-          <span>We don&apos;t</span>
-          <span>make websites.</span>
-          <span className="kh-title-slash">We make gravity.</span>
-        </h1>
-        <p className="kh-sub">
-          Looping Binary builds the thing, grows the thing, and trains the
-          people who keep the thing alive. From Cameroon. For anyone who is
-          done with amateur hour.
-        </p>
-        <div className="kh-row">
-          <a href="#work" className="kh-link" data-cursor="work">
-            Watch the reel
-          </a>
-          <a href="#contact" className="kh-link kh-link--hot" data-cursor="talk">
-            Talk to us
-          </a>
-        </div>
-      </div>
-
-      <div className="kh-floats" aria-hidden="true">
-        {FLOAT.map((item, i) => (
-          <figure key={item.slug} className={`kh-float kh-float--${i}`} data-float>
+    <section className="kh" ref={root} aria-labelledby="hero-h1">
+      <div className="kh-film" aria-hidden="true">
+        {CLIENT_WORK.map((item, i) => (
+          <figure key={item.slug} className={i === on ? "is-on" : undefined}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={item.image} alt="" />
           </figure>
         ))}
       </div>
+      <div className="kh-vignette" aria-hidden="true" />
 
-      <div className="kh-tick" aria-hidden="true">
-        <div className="kh-tick-track">
-          <span>01001100 01001111 01001111 01010000 01001001 01001110 01000111 00100000 01000010 01001001 01001110 01000001 01010010 01011001</span>
-          <span>01001100 01001111 01001111 01010000 01001001 01001110 01000111 00100000 01000010 01001001 01001110 01000001 01010010 01011001</span>
-        </div>
+      <div className="kh-stage">
+        <p className="kh-loc">Douala · Africa · Live work</p>
+        <h1 id="hero-h1" className="kh-cut">
+          <span className="kh-clip">
+            <span>Looping</span>
+          </span>
+          <span className="kh-clip">
+            <span>Binary</span>
+          </span>
+        </h1>
+        <p className="kh-now">
+          <span>{current?.name}</span>
+          <span>{current?.tag}</span>
+        </p>
       </div>
+
+      <div className="kh-bar">
+        <p>We build. We grow. We train.</p>
+        <a href="#work" data-cursor="reel">
+          Hold scroll
+        </a>
+      </div>
+      <span className="kh-progress" key={on} aria-hidden="true" />
     </section>
   );
 }

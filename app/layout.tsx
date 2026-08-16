@@ -3,11 +3,12 @@ import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import Cursor from "@/components/Cursor";
 import Preloader from "@/components/Preloader";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Looping Binary — We make gravity",
+    default: "Looping Binary — Live work from Douala",
     template: "%s · Looping Binary",
   },
   description:
@@ -45,6 +46,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Preloader />
+        <SmoothScroll />
         <Cursor />
         <Nav />
         {children}
