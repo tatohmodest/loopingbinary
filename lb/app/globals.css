@@ -263,47 +263,86 @@ button { cursor: pointer; background: none; border: none; }
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
   width: 40px; height: 40px;
   margin-left: auto;
   padding: 8px;
 }
 .nav-mobile-toggle span {
   display: block;
-  width: 100%;
-  height: 1.5px;
+  height: 2px;
   background: var(--c-text);
-  border-radius: 2px;
-  transition: transform 200ms var(--ease-out), opacity 200ms;
+  border-radius: 1px;
+  transition: transform 260ms var(--ease-out), opacity 260ms, width 260ms var(--ease-out);
 }
-.nav-mobile-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-mobile-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-mobile-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-mobile-toggle span:nth-child(1) { width: 100%; }
+.nav-mobile-toggle span:nth-child(2) { width: 70%; }
+.nav-mobile-toggle span:nth-child(3) { width: 85%; }
+.nav-mobile-toggle[aria-expanded="true"] span:nth-child(1) { width: 100%; transform: translateY(8px) rotate(45deg); }
+.nav-mobile-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; width: 0; }
+.nav-mobile-toggle[aria-expanded="true"] span:nth-child(3) { width: 100%; transform: translateY(-8px) rotate(-45deg); }
 
-/* Mobile menu */
+/* Mobile menu — fullscreen cover */
 .mobile-menu {
-  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: flex;
   flex-direction: column;
-  gap: 0;
-  padding: 1rem clamp(1.25rem, 5vw, 5rem) 1.5rem;
-  border-top: 1px solid var(--c-border);
-  background: rgba(8,12,10,0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  justify-content: center;
+  padding: 5rem clamp(1.75rem, 8vw, 4rem) 3rem;
+  background: var(--c-bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms var(--ease-out), visibility 0s 220ms;
 }
-.mobile-menu.open { display: flex; }
-.mobile-menu ul { list-style: none; display: flex; flex-direction: column; }
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 220ms var(--ease-out), visibility 0s;
+}
+@media (min-width: 769px) { .mobile-menu { display: none !important; } }
+
+.mobile-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text);
+  border-radius: var(--radius-sm);
+  transition: color 160ms;
+}
+.mobile-menu-close:hover { color: var(--c-green); }
+
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; margin: 0; }
+.mobile-menu ul li { border-bottom: 1px solid var(--c-border); }
+.mobile-menu ul li:first-child { border-top: 1px solid var(--c-border); }
 .mobile-menu ul a {
   display: block;
-  padding: 0.75rem 0;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 1rem 0;
+  font-size: clamp(2rem, 9vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   color: var(--c-text-muted);
-  border-bottom: 1px solid var(--c-border-subtle);
-  transition: color 180ms;
+  transition: color 160ms var(--ease-out), padding-left 160ms var(--ease-out);
 }
-.mobile-menu ul a:hover { color: var(--c-text); }
-.mobile-menu .btn-primary { margin-top: 1rem; align-self: flex-start; }
+.mobile-menu ul a:hover {
+  color: var(--c-green);
+  padding-left: 0.5rem;
+}
+.mobile-menu .btn-primary {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.9rem 1.5rem;
+}
 
 /* ─── HERO ───────────────────────────────── */
 .hero {
@@ -321,6 +360,11 @@ button { cursor: pointer; background: none; border: none; }
   z-index: 0;
   width: 100%;
   height: 100%;
+  transition: opacity 300ms;
+}
+[data-theme="light"] .hero-darkveil {
+  opacity: 0;
+  pointer-events: none;
 }
 .hero-darkveil::after {
   content: '';
@@ -1001,6 +1045,26 @@ button { cursor: pointer; background: none; border: none; }
 .footer-brand p {
   font-size: 0.8rem;
   color: var(--c-text-faint);
+}
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border);
+  color: var(--c-text-muted);
+  transition: color 180ms var(--ease-out), border-color 180ms var(--ease-out);
+}
+.footer-social-link:hover {
+  color: #00bf63;
+  border-color: #00bf63;
 }
 .footer-nav {
   display: grid;

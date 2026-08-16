@@ -129,30 +129,7 @@ export default function Nav() {
       <nav className="nav-inner" aria-label="Main navigation">
         {/* Logo */}
         <a href="/" className="nav-logo" aria-label="Looping Binary,home">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M10 16 C10 11.6 13.6 8 18 8 C22.4 8 26 11.6 26 16 C26 20.4 22.4 24 18 24 C15.2 24 12.8 22.6 11.2 20.4"
-              stroke="#00bf63"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <path
-              d="M22 16 C22 20.4 18.4 24 14 24 C9.6 24 6 20.4 6 16 C6 11.6 9.6 8 14 8 C16.8 8 19.2 9.4 20.8 11.6"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.7"
-            />
-          </svg>
+          <img src="/assets/logo.svg" width="36" height="18" alt="" aria-hidden="true" />
           <span className="nav-wordmark">
             <span className="nav-lb-loop">Looping</span>{" "}
             <span className="nav-lb-bin">Binary</span>
@@ -211,6 +188,16 @@ export default function Nav() {
         id="mobile-menu"
         aria-hidden={!menuOpen}
       >
+        <button
+          className="mobile-menu-close"
+          onClick={closeMenu}
+          aria-label="Close menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
         <ul role="list">
           {(
             [
