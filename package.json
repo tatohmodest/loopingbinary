@@ -1,0 +1,7 @@
+{
+  "name": "loopingbinary",
+  "private": true,
+  "scripts": {
+    "vercel-build": "npm ci --prefix lb && npm run build --prefix lb && rm -rf .next && cp -a lb/.next .next"
+  }
+}
