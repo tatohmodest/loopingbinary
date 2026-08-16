@@ -678,4 +678,5 @@ body:has(.overlay.is-open) .top {
 
 @media (prefers-reduced-motion: reduce) {
   .kh-tick-track, .boot-mark path { animation: none; }
+  .boot { display: none !important; }
 }
