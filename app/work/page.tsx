@@ -1,10 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { WORK } from "@/lib/catalog";
+import { KEYWORDS } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Client work and live products from Looping Binary.",
+  description:
+    "Client work and live products from Looping Binary in Douala: Pejah, Presto, Laji, Strategix, Intellex, Zela, Tech Shop, Junior Dev, and more.",
+  keywords: KEYWORDS,
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkIndexPage() {

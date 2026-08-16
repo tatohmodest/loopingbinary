@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { WORK, getRelatedWork, getWork } from "@/lib/catalog";
+import { KEYWORDS } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -16,9 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${item.name} · Looping Binary`,
     description: item.summary,
+    keywords: [item.name, item.tag, item.location, ...item.services, ...KEYWORDS.slice(0, 40)],
+    alternates: { canonical: `/work/${item.slug}` },
     openGraph: {
       title: `${item.name} · Looping Binary`,
       description: item.summary,
+      images: [item.image],
     },
   };
 }
