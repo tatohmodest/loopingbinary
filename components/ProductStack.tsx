@@ -5,8 +5,8 @@ export default function ProductStack() {
   return (
     <section className="pstack" id="stack" aria-labelledby="stack-title">
       <div className="pstack-head">
-        <p>The stack</p>
-        <h2 id="stack-title">Products we still run, every day.</h2>
+        <p>Built by Looping Binary</p>
+        <h2 id="stack-title">Our technology ecosystem.</h2>
       </div>
       {PRODUCT_WORK.map((item, i) => (
         <Link
@@ -28,8 +28,8 @@ export default function ProductStack() {
           </div>
         </Link>
       ))}
-      <Link href="/work" className="pstack-more" data-cursor="all">
-        Full archive
+      <Link href="/products" className="pstack-more" data-cursor="all">
+        Full ecosystem
       </Link>
     </section>
   );

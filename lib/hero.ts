@@ -1,5 +1,6 @@
 export const HERO_STILLS = [
-  { src: "/assets/hero-loop.png", label: "The loop" },
-  { src: "/assets/hero-orbit.png", label: "The orbit" },
-  { src: "/assets/hero-volume.png", label: "The volume" },
-] as const;
+  { src: "/lblogo/infinity.png", label: "The Loop", fit: "contain" as const },
+  { src: "/assets/hero-infinity.png", label: "The mark", fit: "cover" as const },
+  { src: "/assets/hero-cycle.png", label: "Learn · Build · Teach", fit: "cover" as const },
+  { src: "/assets/hero-builders.png", label: "Operators", fit: "cover" as const },
+];

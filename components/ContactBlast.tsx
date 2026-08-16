@@ -15,11 +15,12 @@ export default function ContactBlast() {
 
   return (
     <section className="blast" id="contact" aria-labelledby="contact-title">
-      <p className="blast-kicker">Douala · WhatsApp · Email</p>
-      <h2 id="contact-title">Say it.</h2>
+      <p className="blast-kicker">Douala · WhatsApp · hello@loopingbinary.com</p>
+      <h2 id="contact-title">Let&apos;s build it.</h2>
       <p className="blast-sub">
-        Tap WhatsApp or email and the message is already written. Fill the
-        lines if you want it to arrive with your name on it.
+        Tell us what you&apos;re trying to build, what problem you&apos;re
+        trying to solve, or where the business needs to grow. The message is
+        already written when you tap.
       </p>
 
       <form className="blast-form" onSubmit={(e) => e.preventDefault()}>
@@ -65,7 +66,7 @@ export default function ContactBlast() {
         +237 650 318 856
       </a>
       <a className="blast-mail" href={mailUrl(message)} data-cursor="mail">
-        loopingbinary@gmail.com
+        hello@loopingbinary.com
       </a>
     </section>
   );

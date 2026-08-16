@@ -57,7 +57,10 @@ export default function KineticHero() {
     <section className="kh" ref={root} aria-labelledby="hero-h1">
       <div className="kh-film" aria-hidden="true">
         {HERO_STILLS.map((still, i) => (
-          <figure key={still.src} className={i === on ? "is-on" : undefined}>
+          <figure
+            key={still.src}
+            className={`${i === on ? "is-on" : ""} ${still.fit === "contain" ? "is-mark" : ""}`.trim()}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={still.src} alt="" />
           </figure>
@@ -66,27 +69,33 @@ export default function KineticHero() {
       <div className="kh-vignette" aria-hidden="true" />
 
       <div className="kh-stage">
-        <p className="kh-loc">Douala · Africa · Software + school</p>
+        <p className="kh-loc">Douala · Cameroon · Africa</p>
         <h1 id="hero-h1" className="kh-cut">
           <span className="kh-clip">
-            <span>Looping</span>
+            <span>We Build.</span>
           </span>
           <span className="kh-clip">
-            <span>Binary</span>
+            <span>We Grow.</span>
+          </span>
+          <span className="kh-clip">
+            <span>We Train.</span>
           </span>
         </h1>
         <p className="kh-now">
-          <span>We build</span>
-          <span>We grow</span>
-          <span>We train</span>
+          Technology company. Own products. Own school. One loop.
         </p>
       </div>
 
       <div className="kh-bar">
         <p>{HERO_STILLS[on]?.label}</p>
-        <a href="#work" data-cursor="reel">
-          Hold scroll
-        </a>
+        <div className="kh-bar-links">
+          <a href="/contact" data-cursor="start">
+            Start a Project
+          </a>
+          <a href="#pillars" data-cursor="ecosystem">
+            Explore the ecosystem
+          </a>
+        </div>
       </div>
       <span className="kh-progress" key={on} aria-hidden="true" />
     </section>

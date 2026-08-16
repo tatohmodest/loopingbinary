@@ -2,7 +2,7 @@ export const SITE_URL = "https://loopingbinary.com";
 export const SITE_NAME = "Looping Binary";
 
 export const SITE_DESCRIPTION =
-  "Looping Binary is a Douala software company that builds products, websites, and systems, and trains engineers on live work. Client work includes Pejah, Presto, Laji, and Strategix. Products include Intellex, Zela, Tech Shop, LB App, LB Auth, Internship, Junior Dev, and LB Vote.";
+  "Looping Binary is a Douala technology company that builds software, grows businesses, trains people, and operates its own products — Intellex, Zela, Tech Shop, Junior Dev, Auth, and more. We Build. We Grow. We Train.";
 
 export const KEYWORDS: string[] = [
   "Looping Binary",

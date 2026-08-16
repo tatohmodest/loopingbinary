@@ -10,7 +10,7 @@ export default function JsonLd() {
         "@id": `${SITE_URL}/#org`,
         name: SITE_NAME,
         url: SITE_URL,
-        logo: `${SITE_URL}/assets/logo.svg`,
+        logo: `${SITE_URL}/lblogo/infinity.png`,
         email: EMAIL,
         telephone: `+${WHATSAPP_E164}`,
         slogan: "We Build. We Grow. We Train.",
@@ -43,7 +43,9 @@ export default function JsonLd() {
           "Marketplaces",
           "Education software",
           "Authentication",
+          "Digital transformation",
           "Developer training",
+          "The Loop education-to-product model",
         ],
       },
       {

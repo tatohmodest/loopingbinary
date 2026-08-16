@@ -11,7 +11,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Looping Binary — Software company in Douala, Cameroon",
+    default: "Looping Binary — We Build. We Grow. We Train.",
     template: "%s · Looping Binary",
   },
   description: SITE_DESCRIPTION,

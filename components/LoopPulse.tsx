@@ -1,20 +1,31 @@
+import BrandMark from "@/components/BrandMark";
+import { LOOP_STEPS } from "@/lib/site";
+
 export default function LoopPulse() {
-  const line =
-    "COMPANY FEEDS SCHOOL  ·  SCHOOL FEEDS COMPANY  ·  TESTED ENGINEERS  ·  LIVE WORK  ·  ";
+  const line = `${LOOP_STEPS.join("  ·  ")}  ·  `;
 
   return (
     <section className="loopx" id="the-loop" aria-labelledby="loop-title">
       <div className="loopx-copy">
-        <p className="loopx-kicker">The Loop</p>
+        <p className="loopx-kicker">This is the Loop</p>
         <h2 id="loop-title">
-          The people who teach
+          The company builds the products.
           <br />
-          are the people who ship.
+          The products train the people.
+          <br />
+          The people build better products.
         </h2>
         <p>
-          That is why the work holds. Not a slogan. A staffing model. Every
-          engineer on your job was already tested on live products.
+          We do not build software, deliver it, and leave. Technology builds
+          businesses. Businesses create problems. Those problems make better
+          technology. The school feeds the company. The company feeds the
+          school. That is the Loop.
         </p>
+        <ol className="loop-steps">
+          {LOOP_STEPS.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
       </div>
 
       <div className="orbit" aria-hidden="true">
@@ -27,10 +38,13 @@ export default function LoopPulse() {
           </defs>
           <circle cx="200" cy="200" r="118" fill="none" stroke="#0a7a3e" strokeWidth="1" opacity="0.35" />
           <text>
-            <textPath href="#orbit-path">{line}{line}</textPath>
+            <textPath href="#orbit-path">
+              {line}
+              {line}
+            </textPath>
           </text>
         </svg>
-        <span>LB</span>
+        <BrandMark variant="infinity" />
       </div>
     </section>
   );

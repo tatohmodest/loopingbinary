@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import BrandMark from "@/components/BrandMark";
 
 export default function Preloader() {
   const [gone, setGone] = useState(false);
@@ -35,11 +36,12 @@ export default function Preloader() {
 
   return (
     <div className="boot" aria-hidden="true">
+      <BrandMark variant="infinity" />
       <span className="boot-count" ref={count}>
         00
       </span>
       <div className="boot-line" />
-      <p>Looping Binary</p>
+      <p>We Build. We Grow. We Train.</p>
     </div>
   );
 }

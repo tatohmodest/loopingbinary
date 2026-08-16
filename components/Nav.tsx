@@ -3,20 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CLIENT_WORK } from "@/lib/catalog";
-
-const LINKS = [
-  ["/work", "Work", CLIENT_WORK[0]?.image],
-  ["/#work", "Reel", CLIENT_WORK[1]?.image],
-  ["/#stack", "Stack", "/lb_projects/intellex.png"],
-  ["/#the-loop", "Loop", "/assets/loop-object.png"],
-  ["/#contact", "Talk", CLIENT_WORK[2]?.image],
-] as const;
+import BrandMark from "@/components/BrandMark";
+import { NAV } from "@/lib/site";
 
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [preview, setPreview] = useState<string>(LINKS[0][2] ?? "");
+  const [preview, setPreview] = useState<string>(NAV[0]?.preview ?? "/lblogo/infinity.png");
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -40,17 +33,12 @@ export default function Nav() {
     <>
       <header className="top">
         <Link href="/" className="top-mark" aria-label="Looping Binary home" onClick={close}>
-          <svg viewBox="0 0 200 100" width="42" height="21" aria-hidden="true">
-            <path
-              d="M100 50 C100 22 78 5 52 5 C26 5 5 22 5 50 C5 78 26 95 52 95 C78 95 100 78 100 50 C100 22 122 5 148 5 C174 5 195 22 195 50 C195 78 174 95 148 95 C122 95 100 78 100 50Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="14"
-            />
-          </svg>
-          <span>LB</span>
+          <BrandMark variant="infinity" />
         </Link>
         <p className="top-loc">Douala</p>
+        <Link href="/contact" className="top-cta" data-cursor="start" onClick={close}>
+          Start a Project
+        </Link>
         <button
           ref={toggleRef}
           className="top-menu"
@@ -66,24 +54,27 @@ export default function Nav() {
       <div className={`overlay${open ? " is-open" : ""}`} id="overlay" aria-hidden={!open}>
         <nav>
           <ul>
-            {LINKS.map(([href, label, img]) => (
-              <li key={href}>
+            {NAV.map((item) => (
+              <li key={item.href}>
                 <Link
-                  href={href}
+                  href={item.href}
                   onClick={close}
-                  onPointerEnter={() => setPreview(img)}
+                  onPointerEnter={() => setPreview(item.preview)}
                   data-cursor="go"
                 >
-                  {label}
+                  {item.label}
                 </Link>
               </li>
             ))}
           </ul>
+          <Link href="/contact" className="overlay-cta" onClick={close} data-cursor="start">
+            Start a Project
+          </Link>
         </nav>
         <div className="overlay-shot" aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {preview ? <img src={preview} alt="" /> : null}
-          <p>{pathname === "/" ? "You are home." : "Back when you are ready."}</p>
+          <p>{pathname === "/" ? "Digital headquarters." : "Looping Binary"}</p>
         </div>
       </div>
     </>

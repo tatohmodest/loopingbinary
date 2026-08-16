@@ -1,5 +1,5 @@
 export const WHATSAPP_E164 = "237650318856";
-export const EMAIL = "loopingbinary@gmail.com";
+export const EMAIL = "hello@loopingbinary.com";
 export const SUBJECT = "Project inquiry — Looping Binary";
 
 export function composeInquiry(input: {
