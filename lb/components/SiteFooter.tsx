@@ -1,16 +1,18 @@
+import Link from "next/link";
+
 export default function SiteFooter() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <a href="/" className="nav-logo" aria-label="Looping Binary">
+          <Link href="/" className="nav-logo" aria-label="Looping Binary">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/logo.svg" width="32" height="16" alt="" aria-hidden="true" />
             <span className="nav-wordmark">
               <span className="nav-lb-loop">Looping</span>{" "}
               <span className="nav-lb-bin">Binary</span>
             </span>
-          </a>
+          </Link>
           <p>We Build. We Grow. We Train.</p>
           <div className="footer-socials">
             <a
@@ -45,16 +47,16 @@ export default function SiteFooter() {
             <p className="footer-col-title">Work</p>
             <ul role="list">
               <li>
-                <a href="/work/pejah">Pejah</a>
+                <Link href="/work/pejah">Pejah</Link>
               </li>
               <li>
-                <a href="/work/presto">Presto</a>
+                <Link href="/work/presto">Presto</Link>
               </li>
               <li>
-                <a href="/work/laji">Laji</a>
+                <Link href="/work/laji">Laji</Link>
               </li>
               <li>
-                <a href="/work/strategix">Strategix</a>
+                <Link href="/work/strategix">Strategix</Link>
               </li>
             </ul>
           </div>
@@ -62,16 +64,16 @@ export default function SiteFooter() {
             <p className="footer-col-title">Company</p>
             <ul role="list">
               <li>
-                <a href="/#services">Services</a>
+                <Link href="/#services">Services</Link>
               </li>
               <li>
-                <a href="/#the-loop">The Loop</a>
+                <Link href="/#the-loop">The Loop</Link>
               </li>
               <li>
-                <a href="/#education">Programs</a>
+                <Link href="/#education">Programs</Link>
               </li>
               <li>
-                <a href="/#about">About</a>
+                <Link href="/#about">About</Link>
               </li>
             </ul>
           </div>

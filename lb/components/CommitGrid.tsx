@@ -23,12 +23,17 @@ function pickClass(rand: number) {
   return "";
 }
 
+function hash01(n: number) {
+  const x = Math.sin(n * 12.9898) * 43758.5453;
+  return x - Math.floor(x);
+}
+
 export default function CommitGrid() {
   const cells = useMemo(
     () =>
       Array.from({ length: COLS * ROWS }, (_, i) => ({
         key: i,
-        cls: pickClass(Math.random()),
+        cls: pickClass(hash01(i + 1)),
       })),
     []
   );

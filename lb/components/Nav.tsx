@@ -87,10 +87,6 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
     const links = document.querySelectorAll<HTMLAnchorElement>(
       ".nav-links a[href^='#']"
