@@ -66,7 +66,7 @@ export default function ContactBlast() {
         +237 650 318 856
       </a>
       <a className="blast-mail" href={mailUrl(message)} data-cursor="mail">
-        hello@loopingbinary.com
+        loopingbinary@gmail.com
       </a>
     </section>
   );
