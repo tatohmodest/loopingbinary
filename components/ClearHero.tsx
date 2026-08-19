@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function ClearHero() {
   return (
-    <section className="ch" aria-labelledby="hero-brand">
+    <section className="ch ch--bright" aria-labelledby="hero-brand">
       <div className="ch-media" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/hero-builders.png" alt="" />
+        <img src="/assets/illustrations/hero-cover.png" alt="" />
         <div className="ch-wash" />
       </div>
 
@@ -23,7 +23,7 @@ export default function ClearHero() {
           <Link href="#projects" className="btn btn-hero-primary">
             See projects
           </Link>
-          <Link href="/contact" className="btn btn-ghost">
+          <Link href="/contact" className="btn btn-hero-ghost">
             Start a project
           </Link>
         </div>
