@@ -1,7 +1,7 @@
-import KineticHero from "@/components/KineticHero";
+import ClearHero from "@/components/ClearHero";
 import Pillars from "@/components/Pillars";
-import WorkFilm from "@/components/WorkFilm";
-import ProductStack from "@/components/ProductStack";
+import ProjectGallery from "@/components/ProjectGallery";
+import ProductLane from "@/components/ProductLane";
 import LoopPulse from "@/components/LoopPulse";
 import WhyStrip from "@/components/WhyStrip";
 import ContactBlast from "@/components/ContactBlast";
@@ -9,10 +9,10 @@ import ContactBlast from "@/components/ContactBlast";
 export default function Home() {
   return (
     <main id="main">
-      <KineticHero />
+      <ClearHero />
       <Pillars />
-      <WorkFilm />
-      <ProductStack />
+      <ProjectGallery />
+      <ProductLane />
       <LoopPulse />
       <WhyStrip />
       <ContactBlast />

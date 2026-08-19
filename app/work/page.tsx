@@ -18,9 +18,11 @@ export default function WorkIndexPage() {
   return (
     <main id="main" className="work-index">
       <section className="case-hero">
-        <p className="eyebrow">Archive</p>
-        <h1>The work.</h1>
-        <p className="case-lede">Not mockups. Live rooms. Click anything.</p>
+        <p className="eyebrow">Projects</p>
+        <h1>Selected projects.</h1>
+        <p className="case-lede">
+          Client work and live products. Open any project to see the story.
+        </p>
       </section>
 
       {clients.map((item, i) => (

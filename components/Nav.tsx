@@ -1,16 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import BrandMark from "@/components/BrandMark";
-import { NAV } from "@/lib/site";
+
+const LINKS = [
+  { href: "/work", label: "Projects" },
+  { href: "/products", label: "Products" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/training", label: "Training" },
+  { href: "/about", label: "About" },
+] as const;
 
 export default function Nav() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [preview, setPreview] = useState<string>(NAV[0]?.preview ?? "/lblogo/infinity.png");
-  const toggleRef = useRef<HTMLButtonElement>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -31,21 +42,31 @@ export default function Nav() {
 
   return (
     <>
-      <header className="top">
+      <header className={`top${scrolled ? " is-solid" : ""}`}>
         <Link href="/" className="top-mark" aria-label="Looping Binary home" onClick={close}>
           <BrandMark variant="infinity" />
+          <span className="top-word">
+            Looping <em>Binary</em>
+          </span>
         </Link>
-        <p className="top-loc">Douala</p>
-        <Link href="/contact" className="top-cta" data-cursor="start" onClick={close}>
-          Start a Project
+
+        <nav className="top-links" aria-label="Primary">
+          {LINKS.map((item) => (
+            <Link key={item.href} href={item.href} onClick={close}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <Link href="/contact" className="top-cta" onClick={close}>
+          Start a project
         </Link>
+
         <button
-          ref={toggleRef}
           className="top-menu"
           aria-expanded={open}
           aria-controls="overlay"
           onClick={() => setOpen((v) => !v)}
-          data-cursor="menu"
         >
           {open ? "Close" : "Menu"}
         </button>
@@ -54,28 +75,25 @@ export default function Nav() {
       <div className={`overlay${open ? " is-open" : ""}`} id="overlay" aria-hidden={!open}>
         <nav>
           <ul>
-            {NAV.map((item) => (
+            {LINKS.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={close}
-                  onPointerEnter={() => setPreview(item.preview)}
-                  data-cursor="go"
-                >
+                <Link href={item.href} onClick={close}>
                   {item.label}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/insights" onClick={close}>
+                Insights
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={close}>
+                Contact
+              </Link>
+            </li>
           </ul>
-          <Link href="/contact" className="overlay-cta" onClick={close} data-cursor="start">
-            Start a Project
-          </Link>
         </nav>
-        <div className="overlay-shot" aria-hidden="true">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          {preview ? <img src={preview} alt="" /> : null}
-          <p>{pathname === "/" ? "Digital headquarters." : "Looping Binary"}</p>
-        </div>
       </div>
     </>
   );

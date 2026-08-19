@@ -6,7 +6,7 @@ export default function Pillars() {
     <section className="pillars" id="pillars" aria-labelledby="pillars-title">
       <div className="pillars-head">
         <p>What we do</p>
-        <h2 id="pillars-title">Four engines. One company.</h2>
+        <h2 id="pillars-title">Build. Grow. Train. Operate.</h2>
       </div>
       <ul role="list">
         {PILLARS.map((pillar) => (

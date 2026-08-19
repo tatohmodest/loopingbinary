@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
-import Cursor from "@/components/Cursor";
-import Preloader from "@/components/Preloader";
-import SmoothScroll from "@/components/SmoothScroll";
 import JsonLd from "@/components/JsonLd";
 import { KEYWORDS, SITE_DESCRIPTION, SITE_URL } from "@/lib/seo";
 import "./globals.css";
@@ -72,9 +69,6 @@ export default function RootLayout({
           Skip to content
         </a>
         <JsonLd />
-        <Preloader />
-        <SmoothScroll />
-        <Cursor />
         <Nav />
         {children}
         <SiteFooter />
