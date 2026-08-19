@@ -21,7 +21,7 @@ export default function TrainingPage() {
           <h1>Develop people who can build.</h1>
           <p className="case-lede">
             The goal is not a certificate. The goal is skills, then projects,
-            then experience, then opportunity — on live Looping Binary work.
+            then experience, then opportunity on live Looping Binary work.
           </p>
           <div className="hero-cta">
             <Link href="https://intellex.loopingbinary.com">
@@ -63,7 +63,7 @@ export default function TrainingPage() {
         <p>
           Career direction, technical guidance, and portfolio work from
           engineers shipping Looping Binary products. Mentorship lives inside
-          Intellex and the internship — not as a separate slogan.
+          Intellex and the internship, not as a separate slogan.
         </p>
         <div className="hero-cta">
           <Link href="https://intellex.loopingbinary.com" data-cursor="mentor">

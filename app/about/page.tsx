@@ -3,7 +3,7 @@ import Link from "next/link";
 import { KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const ABOUT_DESCRIPTION =
-  "About Looping Binary — Douala technology company founded by Tatoh Modest Wilton. We build software, mobile apps, EdTech platforms, train developers, and create opportunities across Africa. We Build. We Grow. We Train.";
+  "About Looping Binary - Douala technology company founded by Tatoh Modest Wilton. We build software, mobile apps, EdTech platforms, train developers, and create opportunities across Africa. We Build. We Grow. We Train.";
 
 const ABOUT_KEYWORDS = [
   ...KEYWORDS,
@@ -37,12 +37,12 @@ const ABOUT_KEYWORDS = [
 ];
 
 export const metadata: Metadata = {
-  title: "About Looping Binary — Building Technology. Empowering People.",
+  title: "About Looping Binary - Building Technology. Empowering People.",
   description: ABOUT_DESCRIPTION,
   keywords: ABOUT_KEYWORDS,
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Looping Binary — Building Technology. Empowering People.",
+    title: "About Looping Binary - Building Technology. Empowering People.",
     description: ABOUT_DESCRIPTION,
     url: `${SITE_URL}/about`,
     siteName: SITE_NAME,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: "/assets/og-loopingbinary.jpg",
         width: 1200,
         height: 630,
-        alt: "About Looping Binary — Douala technology company",
+        alt: "About Looping Binary - Douala technology company",
       },
     ],
   },
@@ -179,7 +179,7 @@ export default function AboutPage() {
           <p className="case-lede">
             Looping Binary is a technology company focused on building
             innovative digital products, developing talent, and creating
-            opportunities through technology — from Douala, Cameroon, for Africa
+            opportunities through technology, from Douala, Cameroon, for Africa
             and beyond.
           </p>
           <div className="hero-cta">
@@ -220,7 +220,7 @@ export default function AboutPage() {
           Useful. Accessible. Scalable. Impactful.
         </h2>
         <p>
-          Looping Binary operates across multiple areas of technology — one
+          Looping Binary operates across multiple areas of technology. One
           company, clear offers.
         </p>
         <ul className="about-do-grid" role="list">
@@ -348,7 +348,7 @@ export default function AboutPage() {
           <p>
             Whether that means helping a student learn a new skill, helping a
             developer build their first real project, helping a business
-            digitize its operations, or turning an idea into a real product — we
+            digitize its operations, or turning an idea into a real product. We
             want Looping Binary to be part of that journey.
           </p>
           <p className="about-signoff">

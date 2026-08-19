@@ -27,7 +27,7 @@ export default function Pillars() {
         <p>What we offer</p>
         <h2 id="pillars-title">Build. Grow. Train. Operate.</h2>
         <p className="pillars-lede">
-          Four clear offers. Each one has a person and a job — scroll any to
+          Four clear offers. Each one has a person and a job. Scroll any to
           open the full story.
         </p>
       </div>

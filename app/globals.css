@@ -131,7 +131,7 @@ ul[role="list"] { list-style: none; }
   border-color: #fff;
 }
 
-/* nav — light over hero, ink once solid */
+/* nav: light over hero, ink once solid */
 .top {
   position: fixed;
   top: 0;
@@ -265,7 +265,7 @@ ul[role="list"] { list-style: none; }
   .top-menu { display: inline-flex; }
 }
 
-/* clear hero — dark illustrated cover */
+/* clear hero: dark illustrated cover */
 .ch {
   position: relative;
   min-height: 100svh;

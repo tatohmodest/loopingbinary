@@ -1,6 +1,6 @@
 export const WHATSAPP_E164 = "237650318856";
 export const EMAIL = "loopingbinary@gmail.com";
-export const SUBJECT = "Project inquiry — Looping Binary";
+export const SUBJECT = "Project inquiry - Looping Binary";
 
 export function composeInquiry(input: {
   name?: string;
@@ -12,9 +12,9 @@ export function composeInquiry(input: {
     "",
     "I want to start a project with you.",
     "",
-    `Name: ${input.name?.trim() || "—"}`,
-    `Company: ${input.company?.trim() || "—"}`,
-    `What we need: ${input.need?.trim() || "—"}`,
+    `Name: ${input.name?.trim() || "-"}`,
+    `Company: ${input.company?.trim() || "-"}`,
+    `What we need: ${input.need?.trim() || "-"}`,
     "",
     "Sent from loopingbinary.com",
   ].join("\n");

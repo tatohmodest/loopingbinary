@@ -9,14 +9,14 @@ const OG_IMAGE = {
   url: "/assets/og-loopingbinary.jpg",
   width: 1200,
   height: 630,
-  alt: "Looping Binary — We Build. We Grow. We Train.",
+  alt: "Looping Binary - We Build. We Grow. We Train.",
   type: "image/jpeg",
 } as const;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Looping Binary — We Build. We Grow. We Train.",
+    default: "Looping Binary - We Build. We Grow. We Train.",
     template: "%s · Looping Binary",
   },
   description: SITE_DESCRIPTION,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     shortcut: "/lblogo/infinity.png",
   },
   openGraph: {
-    title: "Looping Binary — We Build. We Grow. We Train.",
+    title: "Looping Binary - We Build. We Grow. We Train.",
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: "Looping Binary",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Looping Binary — Software from Douala",
+    title: "Looping Binary - Software from Douala",
     description: SITE_DESCRIPTION,
     images: [OG_IMAGE.url],
   },
@@ -75,7 +75,7 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Looping Binary — We Build. We Grow. We Train." />
+        <meta property="og:image:alt" content="Looping Binary - We Build. We Grow. We Train." />
         <meta name="twitter:image" content={`${SITE_URL}/assets/og-loopingbinary.jpg`} />
       </head>
       <body>

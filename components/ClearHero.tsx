@@ -19,8 +19,8 @@ export default function ClearHero() {
         </p>
         <h1 className="ch-line">We build. We grow. We train.</h1>
         <p className="ch-sub">
-          A technology company with its own products and its own school —
-          software, digital growth, and talent in one loop.
+          We build digital products, help businesses grow, and empower people
+          with the skills and opportunities to build with technology.
         </p>
         <div className="ch-cta">
           <Link href="#projects" className="btn btn-hero-primary">

@@ -24,7 +24,7 @@ export default function SolutionsPage() {
           <p className="eyebrow">Solutions</p>
           <h1>Have a business problem? Let&apos;s build the solution.</h1>
           <p className="case-lede">
-            Software, growth, training, and operated products — under one
+            Software, growth, training, and operated products, under one
             organization from Douala.
           </p>
           <div className="hero-cta">

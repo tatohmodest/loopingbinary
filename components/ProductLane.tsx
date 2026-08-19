@@ -11,7 +11,7 @@ export default function ProductLane() {
             Things we build and run ourselves.
           </h2>
           <p className="sec-lede">
-            The same stack we ship for clients — live in our own ecosystem.
+            The same stack we ship for clients, live in our own ecosystem.
           </p>
         </div>
         <Link href="/products" className="sec-link">

@@ -93,7 +93,7 @@ export const SERVICES = [
 export const WHY = [
   {
     title: "Local knowledge. Global standard.",
-    body: "African markets, payments, connectivity, and business reality — built to modern technical standards.",
+    body: "African markets, payments, connectivity, and business reality, built to modern technical standards.",
   },
   {
     title: "We build what we sell.",
