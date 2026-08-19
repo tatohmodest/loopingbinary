@@ -21,10 +21,7 @@ export default function Nav() {
   const solid = !onHome || scrolled || open;
 
   useEffect(() => {
-    if (!onHome) {
-      setScrolled(false);
-      return;
-    }
+    if (!onHome) return;
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
