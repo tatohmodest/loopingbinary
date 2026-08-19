@@ -45,7 +45,7 @@ export default function JsonLd() {
         "@id": `${SITE_URL}/#studio`,
         name: SITE_NAME,
         url: SITE_URL,
-        image: `${SITE_URL}/assets/og-loopingbinary.png`,
+        image: `${SITE_URL}/assets/og-loopingbinary.jpg`,
         description: SITE_DESCRIPTION,
         priceRange: "$$",
         telephone: `+${WHATSAPP_E164}`,

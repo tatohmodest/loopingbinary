@@ -5,6 +5,14 @@ import JsonLd from "@/components/JsonLd";
 import { KEYWORDS, SITE_DESCRIPTION, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
+const OG_IMAGE = {
+  url: "/assets/og-loopingbinary.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Looping Binary — We Build. We Grow. We Train.",
+  type: "image/jpeg",
+} as const;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -20,6 +28,11 @@ export const metadata: Metadata = {
   applicationName: "Looping Binary",
   alternates: { canonical: SITE_URL },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  icons: {
+    icon: [{ url: "/lblogo/infinity.png", type: "image/png" }],
+    apple: [{ url: "/lblogo/infinity.png", type: "image/png" }],
+    shortcut: "/lblogo/infinity.png",
+  },
   openGraph: {
     title: "Looping Binary — We Build. We Grow. We Train.",
     description: SITE_DESCRIPTION,
@@ -27,20 +40,13 @@ export const metadata: Metadata = {
     siteName: "Looping Binary",
     locale: "en_CM",
     type: "website",
-    images: [
-      {
-        url: "/assets/og-loopingbinary.png",
-        width: 1920,
-        height: 1080,
-        alt: "Looping Binary — Douala software company",
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Looping Binary — Software from Douala",
     description: SITE_DESCRIPTION,
-    images: ["/assets/og-loopingbinary.png"],
+    images: [OG_IMAGE.url],
   },
 };
 
@@ -63,6 +69,14 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
+        {/* Explicit OG tags help WhatsApp / Facebook scrapers */}
+        <meta property="og:image" content={`${SITE_URL}/assets/og-loopingbinary.jpg`} />
+        <meta property="og:image:secure_url" content={`${SITE_URL}/assets/og-loopingbinary.jpg`} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Looping Binary — We Build. We Grow. We Train." />
+        <meta name="twitter:image" content={`${SITE_URL}/assets/og-loopingbinary.jpg`} />
       </head>
       <body>
         <a className="skip-link" href="#main">

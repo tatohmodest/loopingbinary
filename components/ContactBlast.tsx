@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { composeInquiry, mailUrl, whatsappUrl } from "@/lib/contact";
+import { composeInquiry, EMAIL, mailUrl, whatsappUrl } from "@/lib/contact";
 
 export default function ContactBlast() {
   const [name, setName] = useState("");
@@ -15,7 +15,7 @@ export default function ContactBlast() {
 
   return (
     <section className="blast" id="contact" aria-labelledby="contact-title">
-      <p className="blast-kicker">Douala · WhatsApp · hello@loopingbinary.com</p>
+      <p className="blast-kicker">Douala · WhatsApp · {EMAIL}</p>
       <h2 id="contact-title">Let&apos;s build it.</h2>
       <p className="blast-sub">
         Tell us what you&apos;re trying to build, what problem you&apos;re
@@ -66,7 +66,7 @@ export default function ContactBlast() {
         +237 650 318 856
       </a>
       <a className="blast-mail" href={mailUrl(message)} data-cursor="mail">
-        loopingbinary@gmail.com
+        {EMAIL}
       </a>
     </section>
   );

@@ -4,7 +4,7 @@ import ContactBlast from "@/components/ContactBlast";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a project with Looping Binary. Douala, Cameroon. WhatsApp +237 650 318 856. hello@loopingbinary.com",
+    "Start a project with Looping Binary. Douala, Cameroon. WhatsApp +237 650 318 856. loopingbinary@gmail.com",
   alternates: { canonical: "/contact" },
 };
 

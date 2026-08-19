@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     locale: "en_CM",
     images: [
       {
-        url: "/assets/og-loopingbinary.png",
-        width: 1920,
-        height: 1080,
+        url: "/assets/og-loopingbinary.jpg",
+        width: 1200,
+        height: 630,
         alt: "About Looping Binary — Douala technology company",
       },
     ],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Looping Binary",
     description: ABOUT_DESCRIPTION,
-    images: ["/assets/og-loopingbinary.png"],
+    images: ["/assets/og-loopingbinary.jpg"],
   },
   robots: { index: true, follow: true },
 };
