@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import BrandMark from "@/components/BrandMark";
 
 const LINKS = [
@@ -13,15 +14,22 @@ const LINKS = [
 ] as const;
 
 export default function Nav() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const onHome = pathname === "/";
+  const solid = !onHome || scrolled || open;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    if (!onHome) {
+      setScrolled(false);
+      return;
+    }
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [onHome]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -42,7 +50,7 @@ export default function Nav() {
 
   return (
     <>
-      <header className={`top${scrolled ? " is-solid" : ""}`}>
+      <header className={`top${solid ? " is-solid" : ""}`}>
         <Link href="/" className="top-mark" aria-label="Looping Binary home" onClick={close}>
           <BrandMark variant="infinity" />
           <span className="top-word">
