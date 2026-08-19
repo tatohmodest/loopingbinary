@@ -5,7 +5,7 @@ export default function ClearHero() {
     <section className="ch" aria-labelledby="hero-brand">
       <div className="ch-media" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/lb_client_projects/presto.png" alt="" />
+        <img src="/assets/hero-builders.png" alt="" />
         <div className="ch-wash" />
       </div>
 
@@ -20,7 +20,7 @@ export default function ClearHero() {
           software, digital growth, and talent in one loop.
         </p>
         <div className="ch-cta">
-          <Link href="#projects" className="btn btn-solid">
+          <Link href="#projects" className="btn btn-hero-primary">
             See projects
           </Link>
           <Link href="/contact" className="btn btn-ghost">
