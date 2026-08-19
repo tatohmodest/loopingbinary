@@ -151,7 +151,7 @@ export default function AboutPage() {
           "https://tatohmodest.vercel.app",
         ],
         description:
-          "Software developer, technology educator, and entrepreneur. Founder & CEO of Looping Binary in Douala, Cameroon.",
+          "Founder and CEO of Looping Binary. Building digital presence for Cameroonian businesses, practical technology training, and products that create opportunity.",
         image: `${SITE_URL}/assets/team/tatoh-modest-wilton.jpg`,
         nationality: "CM",
         knowsAbout: [
@@ -279,33 +279,34 @@ export default function AboutPage() {
             educator, entrepreneur, and the founder of Looping Binary.
           </p>
           <p>
-            He founded Looping Binary around a simple belief:{" "}
-            <strong>
-              Africa has incredible technological talent, but that talent needs
-              access to the right tools, opportunities, communities, and
-              platforms to thrive.
-            </strong>
+            He built Looping Binary for one reason:{" "}
+            <strong>to create real opportunities for people.</strong> Too many
+            Cameroonian businesses still operate the old way, without a strong
+            digital presence. Looping Binary exists to change that: to put
+            businesses online, help them reach more clients, and give them the
+            tools to rise and grow in a market that is moving fast.
           </p>
           <p>
-            His work sits at the intersection of software engineering,
-            education, entrepreneurship, and technology innovation. Through
-            Looping Binary, Tatoh has worked on digital products, learning
-            platforms, developer programs, and initiatives designed to help
-            students and professionals move from simply learning technology to
-            actually <strong>building with it</strong>.
+            The same spirit drives the training side. School often leaves people
+            with theory and incomplete pieces. Looping Binary focuses on{" "}
+            <strong>practical knowledge you can use</strong>: stable skills,
+            real projects, and pathways into opportunity, so people can build
+            with technology and open doors for others too.
           </p>
           <p>
-            One of those initiatives is the{" "}
-            <Link href="/work/junior-dev">Looping Binary Junior Dev program</Link>
-            , which gives young developers chances to learn, collaborate, work
-            on projects, compete, and gain practical experience beyond the
-            classroom.
+            That is also why the company builds its own products. Products that
+            grow are products that can help other people grow. Through
+            platforms, programs like{" "}
+            <Link href="/work/junior-dev">Junior Dev</Link>, and client work,
+            Tatoh is shaping Looping Binary as an ecosystem where businesses go
+            digital, talent becomes capable, and opportunity keeps looping
+            forward.
           </p>
           <blockquote className="founder-quote">
             <p>
-              “We don&apos;t just want to teach people technology. We want to
-              give them the confidence, tools, and opportunities to build with
-              it.”
+              “I did not start Looping Binary to talk about technology. I
+              started it to create opportunities: for businesses to grow, and
+              for people to learn in a way that actually works.”
             </p>
           </blockquote>
           <div className="founder-links">
