@@ -152,6 +152,7 @@ export default function AboutPage() {
         ],
         description:
           "Software developer, technology educator, and entrepreneur. Founder & CEO of Looping Binary in Douala, Cameroon.",
+        image: `${SITE_URL}/assets/team/tatoh-modest-wilton.jpg`,
         nationality: "CM",
         knowsAbout: [
           "Software engineering",
@@ -188,7 +189,7 @@ export default function AboutPage() {
         </div>
         <div className="doc-hero-art" aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/illustrations/illust-welcome.png" alt="" />
+          <img src="/assets/illustrations/illust-founder.png" alt="" />
         </div>
       </section>
 
@@ -261,9 +262,12 @@ export default function AboutPage() {
       </section>
 
       <section className="founder" id="founder" aria-labelledby="founder-title">
-        <div className="founder-art" aria-hidden="true">
+        <div className="founder-art founder-art--photo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/illustrations/illust-founder.png" alt="" />
+          <img
+            src="/assets/team/tatoh-modest-wilton.jpg"
+            alt="Tatoh Modest Wilton, Founder and CEO of Looping Binary"
+          />
         </div>
         <div className="founder-copy">
           <p className="eyebrow">Meet the founder</p>

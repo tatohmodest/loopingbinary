@@ -21,6 +21,7 @@ export default function JsonLd() {
           name: "Tatoh Modest Wilton",
           alternateName: ["Modest Wilton", "Tatoh Modest"],
           url: "https://tatohmodest.vercel.app",
+          image: `${SITE_URL}/assets/team/tatoh-modest-wilton.jpg`,
           sameAs: [
             "https://www.linkedin.com/in/tatoh-modest-97036a212/",
             "https://github.com/tatohmodest",

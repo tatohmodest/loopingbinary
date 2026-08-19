@@ -284,17 +284,17 @@ ul[role="list"] { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 68% center;
-  transform: scale(1.03);
+  object-position: center center;
+  transform: scale(1.02);
   filter: none;
-  animation: hero-breathe-soft 18s ease-in-out infinite alternate;
+  animation: hero-breathe-soft 20s ease-in-out infinite alternate;
 }
 .ch-wash {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(8, 16, 12, 0.72) 0%, rgba(8, 16, 12, 0.42) 38%, rgba(8, 16, 12, 0.12) 70%, rgba(8, 16, 12, 0.28) 100%),
-    linear-gradient(180deg, rgba(8, 16, 12, 0.35) 0%, transparent 32%, rgba(8, 16, 12, 0.55) 100%);
+    linear-gradient(105deg, rgba(6, 12, 10, 0.78) 0%, rgba(6, 12, 10, 0.45) 36%, rgba(6, 12, 10, 0.18) 62%, rgba(6, 12, 10, 0.35) 100%),
+    linear-gradient(180deg, rgba(6, 12, 10, 0.4) 0%, transparent 34%, rgba(6, 12, 10, 0.62) 100%);
 }
 .ch-stage {
   position: relative;
@@ -1055,6 +1055,17 @@ ul[role="list"] { list-style: none; }
   height: 100%;
   object-fit: cover;
 }
+.founder-art--photo {
+  aspect-ratio: 4 / 5;
+  background: #d7e0da;
+  max-height: 560px;
+  justify-self: start;
+  width: min(100%, 420px);
+}
+.founder-art--photo img {
+  object-position: center top;
+  filter: none;
+}
 .founder-copy h2 {
   font-family: var(--display);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -1409,11 +1420,11 @@ ul[role="list"] { list-style: none; }
   .top-cta { display: none; }
   .top { grid-template-columns: 1fr auto; }
   .ch-stage { padding-bottom: 3.2rem; max-width: 100%; }
-  .ch-media img { object-position: 55% 40%; }
+  .ch-media img { object-position: center 45%; }
   .ch-wash {
     background:
-      linear-gradient(180deg, rgba(8, 16, 12, 0.45) 0%, rgba(8, 16, 12, 0.2) 35%, rgba(8, 16, 12, 0.72) 100%),
-      linear-gradient(90deg, rgba(8, 16, 12, 0.55) 0%, rgba(8, 16, 12, 0.15) 100%);
+      linear-gradient(180deg, rgba(6, 12, 10, 0.5) 0%, rgba(6, 12, 10, 0.22) 38%, rgba(6, 12, 10, 0.78) 100%),
+      linear-gradient(90deg, rgba(6, 12, 10, 0.55) 0%, rgba(6, 12, 10, 0.2) 100%);
   }
   .blast-form { grid-template-columns: 1fr; }
   .case-body, .work-grid, .stack-grid { grid-template-columns: 1fr; }
