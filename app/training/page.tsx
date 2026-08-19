@@ -15,23 +15,29 @@ export default function TrainingPage() {
 
   return (
     <main id="main" className="doc">
-      <section className="doc-hero">
-        <p className="eyebrow">Training</p>
-        <h1>Develop people who can build.</h1>
-        <p className="case-lede">
-          The goal is not a certificate. The goal is skills, then projects,
-          then experience, then opportunity — on live Looping Binary work.
-        </p>
-        <div className="hero-cta">
-          <Link href="https://intellex.loopingbinary.com" data-cursor="learn">
-            Start learning
-          </Link>
-          <Link href="https://intern.loopingbinary.com" data-cursor="intern">
-            Apply for internship
-          </Link>
-          <Link href="https://juniordev.loopingbinary.com" data-cursor="join">
-            Join Junior Dev
-          </Link>
+      <section className="doc-hero doc-hero--illus">
+        <div className="doc-hero-copy">
+          <p className="eyebrow">Training</p>
+          <h1>Develop people who can build.</h1>
+          <p className="case-lede">
+            The goal is not a certificate. The goal is skills, then projects,
+            then experience, then opportunity — on live Looping Binary work.
+          </p>
+          <div className="hero-cta">
+            <Link href="https://intellex.loopingbinary.com">
+              Start learning
+            </Link>
+            <Link href="https://intern.loopingbinary.com">
+              Apply for internship
+            </Link>
+            <Link href="https://juniordev.loopingbinary.com">
+              Join Junior Dev
+            </Link>
+          </div>
+        </div>
+        <div className="doc-hero-art" aria-hidden="true">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/illustrations/illust-train.png" alt="" />
         </div>
       </section>
 
