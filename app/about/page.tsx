@@ -13,6 +13,10 @@ const ABOUT_KEYWORDS = [
   "Tatoh Modest Wilton founder",
   "Modest Wilton",
   "Modest Wilton Looping Binary",
+  "Seven Advanced Academy",
+  "Seven International University",
+  "Seven Group",
+  "Tatoh Modest Seven Academy",
   "African tech company",
   "African technology ecosystem",
   "software company Africa",
@@ -143,7 +147,29 @@ export default function AboutPage() {
         name: "Tatoh Modest Wilton",
         alternateName: ["Modest Wilton", "Tatoh Modest"],
         jobTitle: "Founder & CEO",
-        worksFor: { "@id": `${SITE_URL}/#org` },
+        worksFor: [
+          { "@id": `${SITE_URL}/#org` },
+          {
+            "@type": "Organization",
+            name: "Seven Advanced Academy",
+            url: "https://sevenadvancedacademy.com/",
+            parentOrganization: {
+              "@type": "Organization",
+              name: "Seven Group",
+              url: "https://www.thesevengroup.net/",
+            },
+          },
+          {
+            "@type": "Organization",
+            name: "Seven International University",
+            url: "https://seven-university.com/",
+            parentOrganization: {
+              "@type": "Organization",
+              name: "Seven Group",
+              url: "https://www.thesevengroup.net/",
+            },
+          },
+        ],
         url: "https://tatohmodest.vercel.app",
         sameAs: [
           "https://www.linkedin.com/in/tatoh-modest-97036a212/",
@@ -151,7 +177,7 @@ export default function AboutPage() {
           "https://tatohmodest.vercel.app",
         ],
         description:
-          "Founder and CEO of Looping Binary. Building digital presence for Cameroonian businesses, practical technology training, and products that create opportunity.",
+          "Founder and CEO of Looping Binary. Works at Seven Advanced Academy and Seven International University under Seven Group. Building digital presence for Cameroonian businesses, practical technology training, and products that create opportunity.",
         image: `${SITE_URL}/assets/team/tatoh-modest-wilton.jpg`,
         nationality: "CM",
         knowsAbout: [
@@ -160,6 +186,8 @@ export default function AboutPage() {
           "Entrepreneurship",
           "Developer programs",
           "African tech talent",
+          "Seven Advanced Academy",
+          "Seven International University",
         ],
       },
     ],
@@ -276,7 +304,32 @@ export default function AboutPage() {
           <p>
             <strong>Tatoh Modest Wilton</strong>, also known as{" "}
             <strong>Modest Wilton</strong>, is a software developer, technology
-            educator, entrepreneur, and the founder of Looping Binary.
+            educator, entrepreneur, and the founder of Looping Binary. He also
+            works at{" "}
+            <a
+              href="https://sevenadvancedacademy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Seven Advanced Academy
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://seven-university.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Seven International University
+            </a>
+            , institutions under{" "}
+            <a
+              href="https://www.thesevengroup.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Seven Group
+            </a>
+            .
           </p>
           <p>
             He built Looping Binary for one reason:{" "}
