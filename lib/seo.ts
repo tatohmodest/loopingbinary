@@ -2,7 +2,7 @@ export const SITE_URL = "https://loopingbinary.com";
 export const SITE_NAME = "Looping Binary";
 
 export const SITE_DESCRIPTION =
-  "Looping Binary is a Douala, Cameroon technology company that builds software, mobile apps, and EdTech platforms, grows businesses, trains developers, and operates products like Intellex, Zela, Tech Shop, and Junior Dev. Founded by Tatoh Modest Wilton. We Build. We Grow. We Train.";
+  "Looping Binary is a Douala, Cameroon technology company that builds software, mobile apps, and EdTech platforms, grows businesses, trains developers, and operates products like Intellex, Zela, Tech Shop, Junior Dev, and LBPay. Founded by Tatoh Modest Wilton. We Build. We Grow. We Train.";
 
 export const KEYWORDS: string[] = [
   "Looping Binary",
@@ -58,6 +58,15 @@ export const KEYWORDS: string[] = [
   "Laji Pearl",
   "Strategix",
   "SGS Fans",
+  "Jimmy Home Textile",
+  "Jimmy Textile",
+  "home textile Cameroon",
+  "bedsheets Cameroon",
+  "LBPay",
+  "LB Pay",
+  "LBPay Cameroon",
+  "Cameroon payments",
+  "mobile money API Cameroon",
   "Intellex",
   "Intellex LMS",
   "Intellex Looping Binary",

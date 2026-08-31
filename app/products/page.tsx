@@ -5,7 +5,7 @@ import { PRODUCT_WORK } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Technology built and operated by Looping Binary: Intellex, Zela, Tech Shop, Junior Dev, Auth, App, and LB Vote.",
+    "Technology built and operated by Looping Binary: Intellex, Zela, Tech Shop, Junior Dev, Auth, App, LB Vote, and LBPay.",
   alternates: { canonical: "/products" },
 };
 

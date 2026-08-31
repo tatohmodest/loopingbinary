@@ -6,7 +6,7 @@ import { KEYWORDS } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Client work and live products from Looping Binary in Douala: Pejah, Presto, Laji, Strategix, Intellex, Zela, Tech Shop, Junior Dev, and more.",
+    "Client work and live products from Looping Binary in Douala: Pejah, Presto, Laji, Strategix, Jimmy Home Textile, Intellex, Zela, Tech Shop, Junior Dev, LBPay, and more.",
   keywords: KEYWORDS,
   alternates: { canonical: "/work" },
 };

@@ -62,7 +62,7 @@ export const PILLARS = [
       "Zela",
       "Tech Shop",
       "Junior Dev",
-      "Auth, App, and LB Vote",
+      "Auth, App, LB Vote, and LBPay",
     ],
   },
 ] as const;
@@ -121,7 +121,7 @@ export const LOOP_STEPS = [
 ] as const;
 
 export const PROGRAM_SLUGS = ["intellex", "internship", "junior-dev"] as const;
-export const PLATFORM_SLUGS = ["zela", "tech-shop", "lb-app", "auth", "lbvote"] as const;
+export const PLATFORM_SLUGS = ["zela", "tech-shop", "lb-app", "auth", "lbvote", "lbpay"] as const;
 
 export const FOOTER = {
   company: [
@@ -143,6 +143,7 @@ export const FOOTER = {
     { href: "/work/tech-shop", label: "Tech Shop" },
     { href: "/work/junior-dev", label: "Junior Dev" },
     { href: "/work/lbvote", label: "LB Vote" },
+    { href: "/work/lbpay", label: "LBPay" },
     { href: "/work/auth", label: "Auth" },
     { href: "/work/lb-app", label: "App / Control" },
   ],

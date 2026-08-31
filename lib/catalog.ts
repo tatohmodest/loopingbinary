@@ -155,6 +155,33 @@ export const WORK: WorkItem[] = [
     coverflow: true,
   },
   {
+    slug: "jimmy-home-textile",
+    name: "Jimmy Home Textile",
+    kind: "client",
+    tag: "Home · Commerce",
+    headline: "A Cameroonian textile house that sells comfort like it is craft.",
+    summary:
+      "Bedsheets, curtains, towels, and bedding with a quiet luxury storefront, WhatsApp sales, and delivery across Cameroon.",
+    body: [
+      "Jimmy Home Textile needed a shop that felt like a house, not a catalog dump. Bedsheets, bed covers, curtains, blankets, pillowcases, and towels had to sit in rooms people could already imagine living in.",
+      "We built a dark, considered commerce surface: serif headlines, atelier photography, collections, order tracking, and a WhatsApp path that matches how Cameroonian customers actually buy.",
+      "The result is a home textile house that reads as premium without pricing people out. Delivery across Cameroon, careful packing, and a shop that can grow with the collection.",
+    ],
+    image: "/lb_client_projects/jimmyhometextile.png",
+    href: "https://jimmytextile.vercel.app",
+    accent: "#c4b6a6",
+    year: "2026",
+    location: "Cameroon",
+    services: ["E-commerce", "Brand site", "Catalog"],
+    results: [
+      "Live on jimmytextile.vercel.app",
+      "Collections, gallery, and order tracking",
+      "WhatsApp-first sales path",
+    ],
+    featured: true,
+    coverflow: true,
+  },
+  {
     slug: "intellex",
     name: "Intellex",
     kind: "product",
@@ -341,6 +368,32 @@ export const WORK: WorkItem[] = [
       "Host dashboard",
       "XAF-native pricing",
     ],
+  },
+  {
+    slug: "lbpay",
+    name: "LBPay",
+    kind: "product",
+    tag: "Payments",
+    headline: "Move XAF with the quiet confidence of a bank, and the speed of Mobile Money.",
+    summary:
+      "A Cameroon wallet, checkout, and payments API for MTN Money, Orange Money, and cards.",
+    body: [
+      "LBPay is Looping Binary's payments layer. Wallets, checkout, payment links, and a developer API so money can move in XAF without stitching together five providers.",
+      "The product is built for Cameroon first: MTN Money, Orange Money, cards, PIN-confirmed ledgers, and a surface that feels like a bank rather than a gadget.",
+      "Hosts, merchants, and developers get one place to send, receive, collect, and reconcile. The same stack we use to get paid is the stack we ship.",
+    ],
+    image: "/lb_projects/lbpay.png",
+    href: "https://lbpay.vercel.app",
+    accent: "#00bf63",
+    year: "2026",
+    location: "Cameroon",
+    services: ["Wallets", "Checkout", "Payments API"],
+    results: [
+      "MTN, Orange, and card rails",
+      "Developer API and payment links",
+      "XAF-native ledger",
+    ],
+    coverflow: true,
   },
 ];
 
