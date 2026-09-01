@@ -39,7 +39,7 @@ export default async function WorkDetailPage({ params }: Props) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={item.image} alt="" />
         <div className="case-bleed-copy">
-          <p className="eyebrow">{item.kind === "client" ? "Client work" : "Product"}</p>
+          <p className="eyebrow">{item.kind === "client" ? "Client work" : "Platform"}</p>
           <h1>{item.name}</h1>
           <p className="case-lede">{item.headline}</p>
           <div className="case-meta">

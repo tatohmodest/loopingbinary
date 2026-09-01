@@ -232,6 +232,32 @@ export const WORK: WorkItem[] = [
     coverflow: true,
   },
   {
+    slug: "lbpay",
+    name: "LBPay",
+    kind: "product",
+    tag: "Payments",
+    headline: "Move XAF with the quiet confidence of a bank, and the speed of Mobile Money.",
+    summary:
+      "A Cameroon wallet, checkout, and payments API for MTN Money, Orange Money, and cards.",
+    body: [
+      "LBPay is Looping Binary's payments layer. Wallets, checkout, payment links, and a developer API so money can move in XAF without stitching together five providers.",
+      "The product is built for Cameroon first: MTN Money, Orange Money, cards, PIN-confirmed ledgers, and a surface that feels like a bank rather than a gadget.",
+      "Hosts, merchants, and developers get one place to send, receive, collect, and reconcile. The same stack we use to get paid is the stack we ship.",
+    ],
+    image: "/lb_projects/lbpay.png",
+    href: "https://lbpay.loopingbinary.com",
+    accent: "#00bf63",
+    year: "2026",
+    location: "Cameroon",
+    services: ["Wallets", "Checkout", "Payments API"],
+    results: [
+      "Live on lbpay.loopingbinary.com",
+      "MTN, Orange, and card rails",
+      "Developer API and payment links",
+    ],
+    coverflow: true,
+  },
+  {
     slug: "tech-shop",
     name: "Tech Shop",
     kind: "product",
@@ -368,32 +394,6 @@ export const WORK: WorkItem[] = [
       "Host dashboard",
       "XAF-native pricing",
     ],
-  },
-  {
-    slug: "lbpay",
-    name: "LBPay",
-    kind: "product",
-    tag: "Payments",
-    headline: "Move XAF with the quiet confidence of a bank, and the speed of Mobile Money.",
-    summary:
-      "A Cameroon wallet, checkout, and payments API for MTN Money, Orange Money, and cards.",
-    body: [
-      "LBPay is Looping Binary's payments layer. Wallets, checkout, payment links, and a developer API so money can move in XAF without stitching together five providers.",
-      "The product is built for Cameroon first: MTN Money, Orange Money, cards, PIN-confirmed ledgers, and a surface that feels like a bank rather than a gadget.",
-      "Hosts, merchants, and developers get one place to send, receive, collect, and reconcile. The same stack we use to get paid is the stack we ship.",
-    ],
-    image: "/lb_projects/lbpay.png",
-    href: "https://lbpay.vercel.app",
-    accent: "#00bf63",
-    year: "2026",
-    location: "Cameroon",
-    services: ["Wallets", "Checkout", "Payments API"],
-    results: [
-      "MTN, Orange, and card rails",
-      "Developer API and payment links",
-      "XAF-native ledger",
-    ],
-    coverflow: true,
   },
 ];
 

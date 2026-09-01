@@ -1,17 +1,18 @@
 import Link from "next/link";
 import { CLIENT_WORK } from "@/lib/catalog";
+import ProjectLink from "@/components/ProjectLink";
 
 export default function ProjectGallery() {
   return (
     <section className="pg" id="projects" aria-labelledby="projects-title">
       <div className="pg-head">
         <div>
-          <p className="sec-kicker">Projects</p>
+          <p className="sec-kicker">Client projects</p>
           <h2 id="projects-title" className="sec-title">
             Work you can open and understand.
           </h2>
           <p className="sec-lede">
-            Real client sites and platforms. Tap any one to see the story.
+            Real client sites and platforms. Tap any one to open the live work.
           </p>
         </div>
         <Link href="/work" className="sec-link">
@@ -22,7 +23,7 @@ export default function ProjectGallery() {
       <ul className="pg-grid" role="list">
         {CLIENT_WORK.map((item, i) => (
           <li key={item.slug}>
-            <Link href={`/work/${item.slug}`} className="pg-card">
+            <ProjectLink item={item} className="pg-card">
               <div className="pg-shot">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={item.image} alt="" />
@@ -36,7 +37,7 @@ export default function ProjectGallery() {
                   </p>
                 </div>
               </div>
-            </Link>
+            </ProjectLink>
           </li>
         ))}
       </ul>

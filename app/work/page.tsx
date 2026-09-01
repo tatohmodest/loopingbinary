@@ -44,7 +44,7 @@ export default function WorkIndexPage() {
       ))}
 
       <p className="eyebrow" style={{ padding: "4rem 6vw 0.8rem" }}>
-        Products
+        Platform
       </p>
       <div className="stack-grid">
         {products.map((item) => (
