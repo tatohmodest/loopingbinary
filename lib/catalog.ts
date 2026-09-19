@@ -128,6 +128,7 @@ export const WORK: WorkItem[] = [
     featured: true,
     coverflow: true,
   },
+  /*
   {
     slug: "sgsfans",
     name: "SG SuperFans",
@@ -154,6 +155,7 @@ export const WORK: WorkItem[] = [
     featured: true,
     coverflow: true,
   },
+  */
   {
     slug: "jimmy-home-textile",
     name: "Jimmy Home Textile",
